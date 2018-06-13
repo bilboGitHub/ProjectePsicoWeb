@@ -1,0 +1,38 @@
+.text-only{
+	padding: calc(50px + 10vw);
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	hgroup{
+		flex-basis: calc(50%);  
+		justify-content: top;
+		flex-direction: column;
+		align-self: flex-start;
+		padding: 0 calc(10vw + -10px);
+		text-align: left;
+		h2{
+			margin-top: 0px;
+		}
+	}
+	article{
+		flex-basis: calc(50%);  
+		justify-content: top;
+		flex-direction: column;
+		align-self: flex-start;
+		padding:0 10px;
+		h3{
+			font-size: 1.5rem;
+			margin-bottom: $pad/2;
+		}
+		ul{
+			list-style: disc;
+			list-style-position: inside;
+			li{
+				margin-bottom: $pad/3;
+				width: 50%;
+				float: left;
+			}
+		}
+	}	
+}

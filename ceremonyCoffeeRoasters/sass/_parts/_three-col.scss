@@ -1,0 +1,144 @@
+.three-col{
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	padding: $pad/2 calc(10vw + 30px) ;
+	.ajaxified-cart-feedback{
+		display: none!important;
+	}
+	article{
+		flex-basis: calc(33.33%);  
+		justify-content: center;
+		flex-direction: column;
+		align-self: flex-start;
+		padding:$pad/3;
+		.quicklinks{
+			.label{
+				line-height: 1rem;
+			}
+			.links{
+				padding-top: $pad/4;
+				line-height: 1.5;
+				a{
+					color: black;
+					text-decoration: none;
+					font-weight: 500;
+					font-size: 0.9rem;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.button{
+			display: inline-block;
+			margin-right: $pad/3;
+		}
+	}
+	&.subs{
+		padding-bottom: $pad;
+	}
+	&.alt{
+		background: transparent;
+		article{
+			flex-basis: calc(20vw - 20px);
+			hgroup.standard{
+				h5{
+					font-family: $sans;
+					font-size: 1rem;
+					font-weight: 500;
+					margin-top: 0;
+				}
+				p{
+					font-size: 0.8rem;
+					a{
+						color: black;
+						text-decoration: none;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			&.double{
+				flex-basis: 75%;
+				@include clearfix;
+				h1{
+					max-width: 100%;
+				}
+				form{
+					input[type="text"],
+					input[type="email"],
+					input[type="password"],
+					input[type="tel"]{
+					    width: 40%;
+					    float: left;
+					    margin-right: 4%;					
+					}
+					input[type=submit]{
+						clear: both;
+					}
+
+				}
+				&.wide-form{
+					form{
+						.selector{
+							float: left;
+							clear: both;
+							width: 100%;
+							padding-bottom: 0;
+							select{
+								margin-top: 0;
+								max-width: 100%;
+								width: 100%;
+								border-bottom: 1px solid black;
+								border-radius: 0px;
+								padding-bottom: 10px;
+								font-weight: normal;
+								background-size: auto calc(100% - 10px);
+								background-position: right 0px;								
+							}
+						}
+						input[type="text"],
+						input[type="email"],
+						input[type="tel"]{
+							clear: both;
+							width: 100%!important;
+							
+						}
+						input[type="checkbox"]{
+							width: auto!important;
+							margin-right: $pad/3;
+						}
+					}
+				}
+			}	
+			table{
+				margin-top: $pad/2;
+				display: table;
+				width: 100%;
+				th{
+					font-weight: 500;
+				}
+				a{
+					color: black;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+				td,th{
+					text-align: left;
+					font-size: 0.8rem;
+					padding: $pad/4 $pad/4 $pad/4 0;
+				}
+				td{
+					border-top: 1px solid #eee;
+				}
+			}		
+		}
+	}
+	&.account{
+		
+	}
+}

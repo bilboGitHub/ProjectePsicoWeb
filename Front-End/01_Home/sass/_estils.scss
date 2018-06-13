@@ -1,6 +1,9 @@
+@import "variables";
+@import "mixins";
+
 html,
 body {
-	position: fixed;
+// 	position: fixed;
 	margin: 0;
 	padding: 0;
 	top:0;
@@ -13,91 +16,7 @@ body {
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 }
-#main-scrollbar{
-	position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-	opacity: 0;
-	filter:blur(5px);
-	background: #fcfbf9;
-	pointer-events: none;
-	transform:scale(1.01);
-	transition: filter $ease 1s, -webkit-filter  $ease 1s, opacity $ease 1s, transform $ease 1s;
-}
-.loaded{
-	#main-scrollbar{
-		pointer-events: all;
-		opacity: 1;
-		filter:blur(0);
-		transform: scale(1);
-	}
-}
-#admin_bar_iframe{
-	display:none!important;
-}
-::selection {
-	color: white;
-	background: black; 
-}
-::-moz-selection {
-	color: white;
-	background: black; 
-}
-#grid{
-	position: fixed;
-	top:0;
-	left: $pad;
-	z-index: 10000000;
-	height: 100%;
-	width: calc(100% - 100px);
-	pointer-events: none;
-	mix-blend-mode: multiply;
-	div{
-		position: relative;
-		float: left;
-		top:0;
-		background: paleGreen;
-		width: calc(10% - 20px);
-		height: 100%;
-		margin-right: $pad/3;
-	}
-	&.hide{display: none;}
-	@include breakpoint(tablet){
-		width: calc(100% - 10px);
-		left:15px;
-	}
-}
-#wrapper{
-	@extend %clearfix;
-	position: relative;
-	#header-spacer{
-		width: 100%;
-		height: $pad*3;
-		//display: none;
-		&.small{
-			height: $pad*2;
-		}
-		@include breakpoint(tablet){
-			height: $pad;	
-		}
-	}
-	&.alert-shown{
-		#header-spacer{
-			height: $pad*4;
-			&.small{
-				height: $pad*2;
-			}
 
-		}		
-		@include breakpoint(tablet){
-			#header-spacer{
-				height: $pad;
-			}
-		}
-	}
-}
 header.global{
 	position: fixed;
 	top:0;
@@ -109,18 +28,35 @@ header.global{
 		padding: 0 $pad $pad/2;
 		z-index: 100;
 		transition: transform .5s $ease;
-		@include clearfix;		
+		@include clearfix;
+		a{
+			h1{
+				// line-height: $pad/2;
+				text-transform: uppercase;
+				text-decoration: none;
+				// font-weight: 500;
+				// font-size: 2rem;
+				// letter-spacing: 0.075rem;
+				color: black;		
+				display: inline-block;
+				transition: color 1s $ease;
+				position: relative;
+			}
+		}	
 		ul.main{
 			position: relative;
 			margin-top: $pad;
 			li{
 				float: left;
 				margin-right: $pad/2;
+				&:last-child {
+					margin-right: 0;
+				}
 				a{
 					line-height: $pad/2;
 					text-transform: uppercase;
 					text-decoration: none;
-					font-weight: 500;
+					font-weight: 600; //de 500 a 600
 					font-size: 0.8rem;
 					letter-spacing: 0.075rem;
 					color: black;		
@@ -144,7 +80,7 @@ header.global{
 							transition: transform .5s $ease .2s;
 							transform: translateX(-50%) scaleX(1);
 						}
-					}							
+					}						
 				}
 				&.last{
 					margin-right: $pad/3;
@@ -161,57 +97,6 @@ header.global{
 				margin-left: 0;
 			}
 		}
-		#search{
-			margin-right: $pad/3;
-			.icon{
-				line-height: $pad/2;
-				cursor: pointer;
-				transition: color 1s $ease;
-			}
-		}
-		#cart{
-			margin-right: 0px;
-			position: relative;
-			span#count{
-				font-size: 0.8rem;
-				text-align: center;
-				line-height: $pad/1.9;
-				display: block;
-				width: $pad/2;
-				height: $pad/2;
-				background: #eee;
-				border-radius: 100%;				
-			}
-			span#status{
-				position: absolute;
-				bottom:0;
-				right:-5px;
-				width: 10px;
-				height: 10px;
-				background: #8ebe4c;
-				border-radius: 100%;
-				transition: transform .2s $ease;
-				&.hide{
-					transform: scale(0);
-				}
-			}
-			.target{
-				position: absolute;
-				top:0;
-				left: 0;
-				z-index: 100;
-				width: 100%;
-				height: 100%;
-				display: block;
-				transition: none;
-				&:after{
-					display: none;
-				}
-				&:hover{
-					opacity: 1;
-				}
-			}
-		}
 	}
 	.logo{
 		position: absolute;
@@ -220,14 +105,6 @@ header.global{
 		bottom:$pad*0.75;
 		transform:translateX(-50%);
 		color: black;
-		svg{
-			height: $pad/3;
-			width: auto;
-			.logo-fill{
-				fill: black;
-				transition: fill 1s $ease;
-			}
-		}
 		span{
 			position: absolute;
 			top:100%;
@@ -748,106 +625,7 @@ header.global{
 		}
 	}	
 }
-.show-mobile-menu{
-	@include breakpoint(tablet){
-		header.global #mobile-toggle{
-			.icon{
-				&.icon-menu{
-					opacity: 0;
-				}
-				&.icon-cancel{
-					opacity: 1;
-				}
-			}
-		}		
-		header.global #mobile-menu{
-			transition: max-height 1s $ease;
-			max-height: calc(100vh - #{$pad});
-		}
-	}
-}
-.invert-nav{
-	header.global{
-		nav.global{
-			ul.main {
-				li{
-					a,.icon{
-						color: white;
-						&:after{
-							background: white;
-						}
-					}
-				}
-			}
-			.logo{
-				span{
-					color: white;
-				}
-				svg .logo-fill{
-					fill: white;
-				}
-			}	
-		}
-		.veil{
-			background: black;
-		}
-	}
-	&.show-drop{
-		header.global{
-			nav.global{
-				ul.main {
-					li{
-						a,.icon{
-							color: black;
-							&:after{
-								background: black;
-							}
-						}
-					}
-				}
-				.logo{
-					span{
-						color: black;
-					}
-					svg *{
-						fill: black;
-					}
-				}	
-			}
-			.veil{
-				//background: white;
-			}
-		}		
-	}
-}
-.veil.full{
-	position: fixed;
-	top:0;
-	left:0;
-	width:100%;
-	height: 100%;
-	z-index: 6000;
-	background: black;
-	visibility: hidden;
-	pointer-events: none;
-	opacity: 0;
-	transition: .5s $ease .5s;
-}
-.show-drop{
-	.veil.full{
-		opacity: 0.75;
-		visibility: visible;
-		transition: .5s $ease;
-	}
-}
-.show-minicart{
-	.veil.full{
-		opacity: 0;
-		visibility: visible;
-		pointer-events: all;
-		
-	}
-}
+
 footer.global{
 	padding: $pad*1.5 $pad $pad*2;
 	float: left;
@@ -1085,56 +863,96 @@ footer.global{
 			display: none;
 		}
 	}
-	aside{
-		float: right;
-		width: 15%;
-		ul{
+	nav.esquerra{
+		width: 35%;
+		float: left;
+		padding-bottom: $pad*2;
+		ul.main{
 			li{
-				margin-bottom: $pad/2;
-				font-size: 1.2rem;
-				line-height: 1.5;
-				span{
-					text-transform: uppercase;
-					font-size: 0.9rem;
-					display: inline-block;
-					letter-spacing: 1px;
-					color: #888888;
-				}
+				float: right;
+				width: calc(25% - #{$pad});
+				margin-left: $pad;
 				a{
 					text-decoration: none;
 					color: black;
-					transition: color $slow $ease;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					margin-bottom: $pad/3;
+					display: inline-block;
 					&:hover{
 						color: #888888;
 					}
-					&.icon{
-						font-size: 1.5rem;
-						margin-right: $pad/2;
-					}
 				}
-				
-			}
-		}
-		@include breakpoint(tablet){
-			width: 100%;
-			float: left;
-			clear: both;
-			text-align: center;
-			ul{
-				li{
-					&#gift-card-btn{
-						display: none;
-					}
-					a{
-						&.icon{
-							font-size: 1.5rem;
-							margin: 0 $pad/4;
+				ul{
+					width: 100%;
+					li{
+						margin-left: 0;
+						width: 100%;
+						a{
+							color: #888888;
+							text-transform: none;
+							&:hover{
+								color: black;
+							}
 						}
 					}
 				}
 			}
 		}
+		@include breakpoint(tablet){
+			display: none;
+		}
 	}
+	// aside{
+	// 	float: right;
+	// 	width: 15%;
+	// 	ul{
+	// 		li{
+	// 			margin-bottom: $pad/2;
+	// 			font-size: 1.2rem;
+	// 			line-height: 1.5;
+	// 			span{
+	// 				text-transform: uppercase;
+	// 				font-size: 0.9rem;
+	// 				display: inline-block;
+	// 				letter-spacing: 1px;
+	// 				color: #888888;
+	// 			}
+	// 			a{
+	// 				text-decoration: none;
+	// 				color: black;
+	// 				transition: color $slow $ease;
+	// 				&:hover{
+	// 					color: #888888;
+	// 				}
+	// 				&.icon{
+	// 					font-size: 1.5rem;
+	// 					margin-right: $pad/2;
+	// 				}
+	// 			}
+				
+	// 		}
+	// 	}
+	// 	@include breakpoint(tablet){
+	// 		width: 100%;
+	// 		float: left;
+	// 		clear: both;
+	// 		text-align: center;
+	// 		ul{
+	// 			li{
+	// 				&#gift-card-btn{
+	// 					display: none;
+	// 				}
+	// 				a{
+	// 					&.icon{
+	// 						font-size: 1.5rem;
+	// 						margin: 0 $pad/4;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 	.logo{
 		float: left;
 		clear: both;
@@ -1182,31 +1000,3 @@ footer.global{
 		}
 	}
 }
-section{
-	width: 100%;
-	position: relative;
-	float: left;
-	clear: both;
-	&.first{
-		//padding-top: 120px;
-	}
-}
-#site-loader{
-	width: auto;
-	height: $pad/3;
-	opacity: 1;
-	position: absolute;
-	top:50vh;
-	left:50vw;
-	transform:translateY(-50%) translateX(-50%);
-	z-index: -1;
-	opacity: 0;
-	transition: opacity 1s $ease .25s;
-}
-
-.leaving{
-	#site-loader{
-		opacity: .25;
-		transition: opacity .25s $ease .25s;
-	}
-}	

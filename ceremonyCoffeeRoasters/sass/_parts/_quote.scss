@@ -1,0 +1,71 @@
+.quote{
+	padding: $pad;
+	text-align: center;
+	background: white;
+	hgroup{
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: $pad 0;
+		h1{
+			font-family: $serif;
+			font-style: italic;
+			font-size: 3rem;
+			line-height: 1.3;
+			font-weight: lighter;
+			padding: $pad 0;
+			opacity: 0.1;
+			@include filter(blur, 5px);
+			transform: translateY($pad);
+			transition: transform 0s $ease, filter 0s $ease, -webkit-filter 0s $ease, -moz-filter 0s $ease, -ms-filter 0s $ease, -o-filter 0s $ease, opacity 0s $ease;
+		}
+		h2{
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			margin-bottom: $pad/8;
+			padding-top: $pad;
+			position: relative;
+			opacity: 0;
+			transform: translateY($pad);
+			transition: transform 0s $ease 0s, opacity 0s $ease 0s;
+			&:after{
+				content:'';
+				position: absolute;
+				top:0;
+				left:50%;
+				width: $pad;
+				max-width: 0px;
+				height: 1px;
+				background: black;
+				transform: translateX(-50%);
+				transition: max-width 0s $ease 0s;
+			}
+		}
+		.label{
+			opacity: 0;
+			transition: opacity 0s $ease 0s;
+		}
+	}
+	&.on-screen{
+		hgroup {
+			h1{
+				@include filter(blur, 0px);
+				transform: translateY(0);
+				opacity: 1;
+				transition: transform 1s $ease, filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease, opacity 1s $ease;
+			}
+			h2{
+				opacity: 1;
+				transform: translateY(0);
+				transition: transform 1s $ease .5s, opacity 1s $ease .5s;
+				&:after{
+					max-width: $pad;
+					transition: max-width 1s $ease 1s;
+				}
+			}
+			.label{
+				opacity: 1;
+				transition: opacity 1s $ease 1.5s;
+			}			
+		}			
+	}
+}

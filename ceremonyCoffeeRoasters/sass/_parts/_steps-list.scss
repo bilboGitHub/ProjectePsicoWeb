@@ -1,0 +1,39 @@
+.steps-list{
+	padding: calc(50px + 10vw);
+	article{
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		figure{
+			flex-basis: calc(50%);  
+			justify-content: center;
+			flex-direction: column;
+			align-self: center;
+		    padding: $pad calc(10vw + -5px);
+			left: -5px;
+			position: relative;
+			img{
+				width: 100%;
+				height: auto;
+			}
+			&.has-video{
+				img{
+					display: none;
+				}
+				video{
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		hgroup{
+			flex-basis: calc(50%);  
+			justify-content: center;
+			flex-direction: column;
+			align-self: center;
+			padding: $pad/6;
+			
+		}
+		
+	}
+}
