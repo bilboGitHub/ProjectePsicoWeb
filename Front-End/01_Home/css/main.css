@@ -1041,13 +1041,15 @@ footer.global {
           width: 100%; }
           footer.global nav.global ul.main li ul li a {
             color: #888888;
-            text-transform: none; }
+            text-transform: none;
+            line-height: 1.5; }
             footer.global nav.global ul.main li ul li a:hover {
               color: black; }
     @media (max-width: 1024px) {
       footer.global nav.global {
         display: none; } }
   footer.global nav.esquerra {
+    /* nou */
     width: 35%;
     float: left;
     padding-bottom: 120px; }
@@ -1071,7 +1073,8 @@ footer.global {
           width: 100%; }
           footer.global nav.esquerra ul.main li ul li a {
             color: #888888;
-            text-transform: none; }
+            text-transform: none;
+            line-height: 1.5; }
             footer.global nav.esquerra ul.main li ul li a:hover {
               color: black; }
     @media (max-width: 1024px) {
@@ -1083,9 +1086,6 @@ footer.global {
     position: relative;
     text-decoration: none;
     color: black; }
-    footer.global .logo img {
-      height: 20px;
-      width: auto; }
     footer.global .logo span {
       margin-top: 0.5rem;
       display: inline-block;
@@ -1107,14 +1107,14 @@ footer.global {
           width: auto; }
         footer.global .logo span {
           text-align: center; } }
-  footer.global #tagline {
+  footer.global #missatgeFooter {
+    font-family: "PT Serif", serif;
     float: right;
-    clear: right;
-    width: auto;
-    height: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
     opacity: 0.15; }
     @media (max-width: 1024px) {
-      footer.global #tagline {
+      footer.global #missatgeFooter {
         display: none; } }
 
 .black-fill {

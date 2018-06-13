@@ -851,6 +851,7 @@ footer.global{
 						a{
 							color: #888888;
 							text-transform: none;
+							line-height: 1.5;
 							&:hover{
 								color: black;
 							}
@@ -863,7 +864,7 @@ footer.global{
 			display: none;
 		}
 	}
-	nav.esquerra{
+	nav.esquerra{  /* nou */
 		width: 35%;
 		float: left;
 		padding-bottom: $pad*2;
@@ -891,6 +892,7 @@ footer.global{
 						a{
 							color: #888888;
 							text-transform: none;
+							line-height: 1.5;
 							&:hover{
 								color: black;
 							}
@@ -960,10 +962,10 @@ footer.global{
 		text-decoration: none;
 		color: black;
 		@extend %clearfix;
-		img{
-			height: $pad/3;
-			width: auto;
-		}
+		// img{
+		// 	height: $pad/3;
+		// 	width: auto;
+		// }
 		span{
 			margin-top: 0.5rem;
 			display: inline-block;
@@ -989,11 +991,21 @@ footer.global{
 			}
 		}
 	}
-	#tagline{
+	// #tagline{
+	// 	float: right;
+	// 	clear: right;
+	// 	width: auto;
+	// 	height: $pad/3;
+	// 	opacity: 0.15;
+	// 	@include breakpoint(tablet){
+	// 		display: none;	
+	// 	}
+	// }
+	#missatgeFooter{
+		font-family: $serif;
 		float: right;
-		clear: right;
-		width: auto;
-		height: $pad/3;
+		font-size: 2.5rem;
+		letter-spacing: 0.1rem;
 		opacity: 0.15;
 		@include breakpoint(tablet){
 			display: none;	
