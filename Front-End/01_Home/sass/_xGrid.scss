@@ -1,0 +1,164 @@
+.grid{
+	padding: $pad*1.5 $pad 0;
+	@include clearfix;
+	h1.centered{
+		font-family: $serif;
+		font-size: 2rem;
+		text-align: center;
+		line-height: 1.2;
+	}
+	&.guide{
+		h1.centered{
+			padding-bottom: $pad;
+		}
+	}
+	aside.more{
+		text-align: center;
+		width: 100%;
+		margin-bottom: $pad;
+		margin-top: -$pad/2;
+		float: left;
+		clear: both;
+	}
+	hgroup{
+		float: left;
+		width: calc(20vw - 57px); //calc(20vw - 40px)
+		position: relative;
+		transform: translateY(25%);
+		opacity: 0;
+		transition: transform 1s $ease, opacity 2s $ease;
+		will-change: transform, opacity;
+	}
+	figure{
+		position: relative;
+		float: left;
+		margin-left: $pad/3;
+		margin-bottom: $pad/2;
+		overflow: hidden;
+		width: calc(40vw - 60px);
+		@extend %clearfix;
+		&.past{
+			display: none!important;
+		}
+		img{
+			width: 100%;
+			height: auto;
+			float: left;
+			backface-visibility: hidden;
+			transform: scale(1);
+			@include filter(grayscale, 100%);
+			transition:transform 1s $ease, filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
+			will-change: filter, transform;
+		}
+		div{
+			margin-bottom: $pad/4;
+			position: relative;
+			overflow: hidden;
+			@extend %clearfix;
+		}
+		figcaption{
+			.label{
+				display: block;
+			}
+			h4{
+				margin-top: $pad/5;
+				margin-bottom: $pad/5;
+				font-size: 1.25rem;
+			}
+			p{
+				//margin: $pad/5 0;
+				line-height: 1.5;
+			}
+			.cta{
+				margin-top: $pad/5;
+				display: inline-block;
+			}
+		}
+		&:hover{
+			img{
+				transform: scale(1.02);
+			}
+		}
+	}
+	&.top{
+		padding-top: $pad;
+		padding-bottom: $pad;
+		figure{
+			figcaption{
+				p{
+					max-width: 60%;
+				}
+			}
+		}
+	}
+	&.list{
+		h1{
+			display: block;
+			width: 100%;
+		}
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		padding-right: $pad/1.5;
+		.filters{
+			padding-right: $pad/3;
+		}
+		hgroup{
+			opacity: 1;
+			transform: translateY(0%);
+			padding-right: $pad/1.5;
+		}
+		figure{
+			margin-left: 0;
+			flex-basis: calc(33.33%);  
+			justify-content: center;
+			flex-direction: column;
+			align-self: flex-start;
+			margin-bottom:$pad;
+
+			img{
+				width: calc(100% - 20px);
+				height: auto;
+				@include filter(grayscale, 0%);
+			}
+			&:nth-of-type(3n){
+				margin-right: 0;
+			}			
+		}	
+	}
+	&.on-screen,
+	&.passed{
+		hgroup{
+			opacity: 1;
+			transform: translateY(0);
+		}
+		img{
+			@include filter(grayscale, 0%);
+			transition:transform 2s $ease, filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;			
+		}
+	}
+	@include breakpoint(tablet){
+		padding: $pad $pad/4;
+		hgroup{
+			float: left;
+			width: 100%;
+			text-align: center;
+			transform:translate(0);
+			opacity: 1;
+		}
+		figure{
+		    width: calc(100% - 20vw);
+			margin: $pad/2 10vw;
+		}
+	}
+}
+.loaded .grid.top{
+	hgroup{
+		opacity: 1;
+		transform: translateY(0);
+	}
+	img{
+		@include filter(grayscale, 0%);
+		transition:transform 2s $ease, filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;			
+	}
+}
