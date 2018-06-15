@@ -450,6 +450,9 @@ body {
     #wrapper.alert-shown #header-spacer {
       height: 60px; } }
 
+.fas {
+  opacity: 0.2; }
+
 header.global {
   position: fixed;
   top: 0;
@@ -1615,6 +1618,13 @@ section {
     flex-direction: column;
     align-self: flex-start;
     padding: 20px; }
+    @media (max-width: 1024px) {
+      .three-col article {
+        padding: 0 0 30px;
+        flex-basis: 100%;
+        max-width: 550px;
+        float: none;
+        margin: 0 auto; } }
     .three-col article .quicklinks .label {
       line-height: 1rem; }
     .three-col article .quicklinks .links {
@@ -1636,10 +1646,13 @@ section {
     background: transparent; }
     .three-col.alt article {
       flex-basis: calc(20vw - 20px); }
+      @media (max-width: 1024px) {
+        .three-col.alt article {
+          flex-basis: 100%; } }
       .three-col.alt article hgroup.standard h5 {
         font-family: "Lato", sans-serif;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
         margin-top: 0; }
       .three-col.alt article hgroup.standard p {
         font-size: 0.8rem; }

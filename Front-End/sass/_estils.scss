@@ -101,6 +101,9 @@ body {
 		}
 	}
 }
+.fas{
+	opacity: 0.2;
+}
 header.global{
 	position: fixed;
 	top:0;
@@ -164,7 +167,7 @@ header.global{
 							transition: transform .5s $ease .2s;
 							transform: translateX(-50%) scaleX(1);
 						}
-					}						
+					}				
 				}
 				&.last{
 					margin-right: $pad/3;

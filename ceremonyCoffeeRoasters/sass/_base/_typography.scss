@@ -75,6 +75,10 @@
     font-weight: normal;
     font-style: normal;
   }
+// exemple: alex
+//   img[src^=".jpg"] {
+      
+// }
   [class^="icon-"]:before, [class*=" icon-"]:before {
       font-family: "fontello";
       font-style: normal;
