@@ -1,0 +1,7 @@
+CREATE TABLE FAQ (
+	id_FAQ SMALLINT UNSIGNED PRIMARY KEY,
+    pregunta_FAQ VARCHAR(100) NOT NULL DEFAULT "",
+    resposta_FAQ TEXT(1000) NOT NULL DEFAULT "",
+    categoria_FAQ enum("infantil","juvenil","adult","parella") NOT NULL DEFAULT "",
+    data_FAQ DATE DEFAULT CURRENT_DATE ""
+) ENGINE=InnoDB;
