@@ -1,5 +1,6 @@
 <?php
-    require "../Business/business_FAQ.php";
+    require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_FAQ.php"; //<--apple
+    // require "../../Business/business_FAQ.php"; //<--windows
 ?>
 
 <html>
