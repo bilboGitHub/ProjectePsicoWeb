@@ -2,6 +2,131 @@ CREATE TABLE FAQ (
 	id_FAQ SMALLINT UNSIGNED PRIMARY KEY,
     pregunta_FAQ VARCHAR(100) NOT NULL DEFAULT "",
     resposta_FAQ TEXT(1000) NOT NULL DEFAULT "",
-    categoria_FAQ enum("infantil","juvenil","adult","parella") NOT NULL DEFAULT "",
+    categoria_FAQ enum("infantil","adolescents","adults","parelles") NOT NULL DEFAULT "",
     data_FAQ DATE DEFAULT CURRENT_DATE ""
 ) ENGINE=InnoDB;
+
+-----------------------------------------------------------------------------------------------
+informe error:
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1339
+Illegal string offset 'Data_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1342
+Illegal string offset 'Index_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1354
+Illegal string offset 'Data_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1358
+Illegal string offset 'Index_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1376
+Illegal string offset 'Data_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1377
+Illegal string offset 'Index_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1382
+Illegal string offset 'Data_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+Warning in .\libraries\classes\Controllers\Table\TableStructureController.php#1382
+Illegal string offset 'Index_length'
+
+Backtrace
+
+.\libraries\classes\Controllers\Table\TableStructureController.php#1278: PhpMyAdmin\Controllers\Table\TableStructureController->getTableStats()
+.\libraries\classes\Controllers\Table\TableStructureController.php#378: PhpMyAdmin\Controllers\Table\TableStructureController->displayStructure(
+array,
+array,
+array,
+,
+array,
+array,
+)
+.\tbl_structure.php#57: PhpMyAdmin\Controllers\Table\TableStructureController->indexAction()
+
+-------------------------------------------------------
