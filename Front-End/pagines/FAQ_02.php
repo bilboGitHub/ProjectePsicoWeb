@@ -1,7 +1,7 @@
 <!-- 2.	Crea un formulari per poder inserir una nova FAQ en la Base de Dades. -->
 
 <?php
-    require "../Negoci/business.php";
+    require "../../Business/business_FAQ.php";
 ?>
 
 <h1>INSERTAR FAQ</h1>

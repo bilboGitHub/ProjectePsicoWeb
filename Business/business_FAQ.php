@@ -166,15 +166,25 @@ class business_FAQ {
         }        
     }
 
-    public function cercarPerIDpais(&$error, $IDpais) {
-        $objDataPais = new Acces();
+    public function cercarPerID(&$error, $id_FAQ) {
+        $objDataFAQ = new dataFAQ();
 
-        $registre = $objDataPais->cercarPerIDpais($error, $IDpais);
+        $registre = $objDataFAQ->cercarPerID($error, $id_FAQ);
         if ($registre) 
-            return new Pais($IDpais, $registre['nombre'], $registre['continente'], $registre['region'], $registre['superficie'], $registre['ano_indep'], $registre['poblacion'], $registre['experanza_vida'], $registre['PNB'], $registre['codigo']);
+            return new business_FAQ($id_FAQ, $registre['pregunta_FAQ'], $registre['resposta_FAQ'], $registre['categoria_FAQ'], $registre['data_FAQ']);
         else 
             return false;
     }
+
+    // public function cercarPerIDpais(&$error, $IDpais) {
+    //     $objDataPais = new Acces();
+
+    //     $registre = $objDataPais->cercarPerIDpais($error, $IDpais);
+    //     if ($registre) 
+    //         return new Pais($IDpais, $registre['nombre'], $registre['continente'], $registre['region'], $registre['superficie'], $registre['ano_indep'], $registre['poblacion'], $registre['experanza_vida'], $registre['PNB'], $registre['codigo']);
+    //     else 
+    //         return false;
+    // }
 
     public function Insertar(&$error) {
         $objDataFAQ = new dataFAQ();
@@ -189,16 +199,28 @@ class business_FAQ {
     // }
 
     public function Modificar(&$error) {
-        $objDataPais = new Acces();
-        $resultat = $objDataPais->Modificar($error,$this->IDpais, $this->nom, $this->continent, $this->regio, $this->superficie, $this->any_indep, $this->poblacio, $this->vida, $this->PNB, $this->codi);
+        $objDataFAQ = new dataFAQ();
+        $resultat = $objDataFAQ->Modificar($error, $this->id_FAQ, $this->pregunta_FAQ, $this->resposta_FAQ, $this->categoria_FAQ, $this->data_FAQ );
         return $resultat;
     }
+
+    // public function Modificar(&$error) {
+    //     $objDataPais = new Acces();
+    //     $resultat = $objDataPais->Modificar($error,$this->IDpais, $this->nom, $this->continent, $this->regio, $this->superficie, $this->any_indep, $this->poblacio, $this->vida, $this->PNB, $this->codi);
+    //     return $resultat;
+    // }
   
     public function Eliminar(&$error){
-        $objDataPais = new Acces();
-        $resultat = $objDataPais->Eliminar($error,$this->IDpais);
+        $objDataFAQ = new dataFAQ();
+        $resultat = $objDataFAQ->Eliminar($error, $this->id_FAQ);
         return $resultat;
     }
+
+    // public function Eliminar(&$error){
+    //     $objDataPais = new Acces();
+    //     $resultat = $objDataPais->Eliminar($error,$this->IDpais);
+    //     return $resultat;
+    // }
 
 }
 
