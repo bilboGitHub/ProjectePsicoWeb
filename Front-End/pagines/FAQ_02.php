@@ -1,7 +1,7 @@
 <!-- 2.	Crea un formulari per poder inserir una nova FAQ en la Base de Dades. -->
 
 <?php
-    require "../../Business/business_FAQ.php";
+    require "../Business/business_FAQ.php";
 ?>
 
 <h1>INSERTAR FAQ</h1>
@@ -39,7 +39,7 @@
 
 if (isset($_POST["btInsert"])) {
 	
-	$objFAQ = new business_FAQ($_POST["id"], $_POST["pregunta"], $_POST["resposta"], $_POST["categoria"], $_POST["data"];
+	$objFAQ = new business_FAQ($_POST["id"], $_POST["pregunta"], $_POST["resposta"], $_POST["categoria"], $_POST["data"]);
 
 
 			

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../Data/conexion.php";
+require_once "../Data/data_FAQ.php";
 
 class business_FAQ {
     private $id_FAQ;
@@ -60,7 +60,7 @@ class business_FAQ {
     }
 
 
-    public function Llistar(&$error) {
+    public function Llistar(&$error) {  //error:exactly 1 expected in
         $objDataFAQ = new dataFAQ();
         $arrayRegistres = $objDataFAQ->Llistar($error);
         

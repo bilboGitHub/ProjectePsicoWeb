@@ -1,5 +1,5 @@
 <?php
-    require "../../Business/business_FAQ.php";
+    require "../Business/business_FAQ.php";
 ?>
 
 <html>
@@ -11,7 +11,7 @@
 <?php  
     $error="";
     $business_FAQ = new business_FAQ();
-    $arrayFAQ = $business_FAQ-> Llistar();
+    $arrayFAQ = $business_FAQ-> Llistar($error); //<--- problema:Uncaught ArgumentCountError
 
     if ($error=="") {
         echo "<table border='2'>";
@@ -23,16 +23,17 @@
         echo "<th>DATA</th>";
         echo "</tr>";
 
-        foreach ($arrayFAQ as $faq) {
-            echo "<tr>";
-            echo "<td>" . $faq->getId_FAQ()."</td>";
-            echo "<td>" . $faq->getPregunta_FAQ(). "</td>";
-            echo "<td>" . $faq->getResposta_FAQ(). "</td>";
-            echo "<td>" . $faq->getCategoria_FAQ(). "</td>";
-            echo "<td>" . $faq->getData_FAQ(). "</td>";
-            echo "</tr>";
+        if($arrayFAQ) {
+            foreach ($arrayFAQ as $faq) {
+                echo "<tr>";
+                echo "<td>" . $faq->getId_FAQ()."</td>";
+                echo "<td>" . $faq->getPregunta_FAQ(). "</td>";
+                echo "<td>" . $faq->getResposta_FAQ(). "</td>";
+                echo "<td>" . $faq->getCategoria_FAQ(). "</td>";
+                echo "<td>" . $faq->getData_FAQ(). "</td>";
+                echo "</tr>";
+            }
         }
-
         echo "</table>";
     }
     else

@@ -1,5 +1,5 @@
 <?php
-    require "../Negoci/business.php";
+    require "../Business/business_FAQ.php";
 ?>
 
 <html>
@@ -10,12 +10,12 @@
 
 <?php
     $error = "";
-    $FAQ = new Pais();
+    $FAQ = new business_FAQ();
     $arrayFAQ = $FAQ -> Llistar($error);
 ?>
 
 <form action="FAQ_03.php" method="post">
-    Paissos:
+    FAQ:
     <select name="slFAQ">
         <option value=""></option>  
     <?php foreach ($arrayFAQ as $fa) { ?>
@@ -27,16 +27,16 @@
 
 <?php
     if (isset($_POST['btMostrar'], $_POST['slFAQ']) and $_POST['slFAQ'] != "" ) {
+        $FAQ = $FAQ -> cercarPerID($error, $_POST['slFAQ']);
 
-        $FAQ2 = $FAQ -> cercarPerID($error, $_POST['slFAQ']);
 ?>
         <br><br>
         <table border='2'>
-           <tr><td>ID: </td><td><input type="text" name="tbID" value="<?php echo $FAQ2->getId_FAQ() ?>"></td></tr>
-           <tr><td>Pregunta: </td><td><input type="text" name="tbPregunta" value="<?php echo $FAQ2->getPregunta_FAQ() ?>"></td></tr>
-           <tr><td>Resposta: </td><td><input type="text" name="tbResposta" value="<?php echo $FAQ2->getResposta_FAQ() ?>"></td></tr>
-           <tr><td>Categoria: </td><td><input type="text" name="tbCategoria" value="<?php echo $FAQ2->getCategoria_FAQ() ?>"></td></tr>
-           <tr><td>Data: </td><td><input type="text" name="tbData" value="<?php echo $FAQ2->getData_FAQ() ?>"></td></tr>                   
+           <tr><td>ID: </td><td><input type="text" name="tbID" value="<?php echo $FAQ->getId_FAQ() ?>"></td></tr>
+           <tr><td>Pregunta: </td><td><input type="text" name="tbPregunta" value="<?php echo $FAQ->getPregunta_FAQ() ?>"></td></tr>
+           <tr><td>Resposta: </td><td><input type="text" name="tbResposta" value="<?php echo $FAQ->getResposta_FAQ() ?>"></td></tr>
+           <tr><td>Categoria: </td><td><input type="text" name="tbCategoria" value="<?php echo $FAQ->getCategoria_FAQ() ?>"></td></tr>
+           <tr><td>Data: </td><td><input type="text" name="tbData" value="<?php echo $FAQ->getData_FAQ() ?>"></td></tr>                   
         </table>
 
         <br>
@@ -51,7 +51,7 @@
 
     if (isset($_POST['btModificar']) or isset($_POST['btBorrar'])) {
 
-        $objFAQ2 = new Pais ($_POST['tbID'], $_POST['tbPregunta'], $_POST['tbResposta'], $_POST['tbCategoria'], $_POST['tbData'], $_POST['tbAny_indep'], $_POST['tbPoblacio'], $_POST['tbVida'], $_POST['tbPNB'], $_POST['tbCodi']);
+        $objFAQ2 = new business_FAQ ($_POST['tbID'], $_POST['tbPregunta'], $_POST['tbResposta'], $_POST['tbCategoria'], $_POST['tbData']);
 
         if (isset($_POST['btModificar'])) {
 

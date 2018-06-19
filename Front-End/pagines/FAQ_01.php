@@ -2,7 +2,7 @@
 Afegeix un Camp (camp de text o desplegable) per poder filtrar per id_FAQ. -->
 
 <?php
-    require "../../Business/business_FAQ.php";
+    require "../Business/business_FAQ.php";
 
    	$business_FAQ = new business_FAQ();
    	$arrayFAQ = $business_FAQ-> selectFAQ();
@@ -26,7 +26,7 @@ Afegeix un Camp (camp de text o desplegable) per poder filtrar per id_FAQ. -->
 	else
 		$FAQFiltrat = "";
 
-$arrayFAQ = $FAQ-> mostrarFAQPerID($FAQFiltrat);
+$arrayFAQ = $business_FAQ-> mostrarFAQPerID($FAQFiltrat); //<--- problema: Undefined variable: FAQ
 
 
 echo "<table border='1'>";
@@ -41,14 +41,16 @@ echo "<table border='1'>";
 
 // bucle que recorrera cada registre i mostra cada camp en la taula
 
-foreach ($arrayFAQ as $fag) {
-	echo "<tr>";
-	echo "<td>" . $faq->getId_FAQ() . "</td>";
-	echo "<td>" . $faq->getPregunta_FAQ() . "</td>";
-	echo "<td>" . $faq->getResposta_FAQ() . "</td>";
-	echo "<td>" . $faq->getCategoria_FAQ() . "</td>";
-	echo "<td>" . $faq->getData_FAQ() . "</td>";
-	echo "</tr>";
+if($arrayFAQ) {
+	foreach ($arrayFAQ as $faq) {
+		echo "<tr>";
+		echo "<td>" . $faq->getId_FAQ() . "</td>";
+		echo "<td>" . $faq->getPregunta_FAQ() . "</td>";
+		echo "<td>" . $faq->getResposta_FAQ() . "</td>";
+		echo "<td>" . $faq->getCategoria_FAQ() . "</td>";
+		echo "<td>" . $faq->getData_FAQ() . "</td>";
+		echo "</tr>";
+	}
 }
 
 echo "</table>"; // fi de la taula

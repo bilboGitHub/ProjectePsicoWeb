@@ -1,5 +1,5 @@
 <?php
-    require "../../Business/business_FAQ.php";
+    require "../Business/business_FAQ.php";
 ?>
 
 <html>

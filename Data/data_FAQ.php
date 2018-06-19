@@ -56,12 +56,12 @@ class dataFAQ {
     // }
 
     public function mostrarFAQPerID($ID) {
-        $connexio = new conexion();
+        $conexion = new conexion();
         $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_FAQ like :id');
         $consulta->bindParam(':id', $ID);
         $consulta->execute();
         $arrayRegistres = $consulta->fetchAll();
-        $connexio = null;
+        $conexion = null;
         return $arrayRegistres;
     }
 
@@ -86,11 +86,12 @@ class dataFAQ {
     }
 
     public function cercarPerID(&$error, $id_FAQ) {
+        $registre=array();
         $conexion = new conexion();
-        $consulta = $connexio->prepare('SELECT id_FAQ, nombre, continente, region, superficie FROM ' . self::TAULA . ' WHERE id_FAQ = :id_FAQ');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_FAQ = :id_FAQ');
         $consulta->bindParam(':id_FAQ', $id_FAQ); 
         $resultat=$consulta->execute();
-        $connexio = null;
+        $conexion = null;
 
         if (!$resultat)
             $error=($consulta->errorInfo())[2];
@@ -116,9 +117,9 @@ class dataFAQ {
     // }
 
     public function Insertar(&$error, $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ) {
-        $connexio = new Connexio();
+        $conexion = new conexion();
         
-        $consulta = $connexio->prepare('INSERT INTO ' . self::TAULA . ' (id_FAQ, pregunta_FAQ, resposta_FAQ, categoria_FAQ, data_FAQ) VALUES(:id_FAQ, :pregunta_FAQ, :resposta_FAQ, :categoria_FAQ, :data_FAQ)');
+        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (id_FAQ, pregunta_FAQ, resposta_FAQ, categoria_FAQ, data_FAQ) VALUES(:id_FAQ, :pregunta_FAQ, :resposta_FAQ, :categoria_FAQ, :data_FAQ)');
         
         $consulta->bindParam(':id_FAQ', $id_FAQ);
         $consulta->bindParam(':pregunta_FAQ', $pregunta_FAQ);
@@ -127,7 +128,7 @@ class dataFAQ {
         $consulta->bindParam(':data_FAQ', $data_FAQ);
 
         $resultat = $consulta->execute();
-        $connexio = null;
+        $conexion = null;
 
         if (!$resultat)
             $error=($consulta->errorInfo())[2];
@@ -160,10 +161,10 @@ class dataFAQ {
     //     return $resultat;
     // }
 
-    public function Modificar(&$error $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ ) {
+    public function Modificar(&$error, $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ ) {
         $conexion = new conexion();
 
-        $consulta = $conexion->prepare('UPDATE ' . self::TAULA . ' SET pregunta_FAQ = :pregunta_FAQ, resposta_FAQ = :resposta_FAQ, categoria_FAQ = :categoria_FAQ, data_FAQ = :data_FAQ');
+        $consulta = $conexion->prepare('UPDATE ' . self::TAULA . ' SET pregunta_FAQ = :pregunta_FAQ, resposta_FAQ = :resposta_FAQ, categoria_FAQ = :categoria_FAQ, data_FAQ = :data_FAQ WHERE id_FAQ= :id_FAQ');
 
         $consulta->bindParam(':id_FAQ', $id_FAQ);
         $consulta->bindParam(':pregunta_FAQ', $pregunta_FAQ);
@@ -210,7 +211,7 @@ class dataFAQ {
         $consulta = $conexion->prepare('DELETE FROM ' . self::TAULA . ' WHERE id_FAQ= :id_FAQ' );
         $consulta->bindParam(':id_FAQ', $id_FAQ);
         $resultat=$consulta->execute();
-        $connexio = null;
+        $conexion = null;
 
         if (!$resultat)
             $error=($consulta->errorInfo())[2];
