@@ -1,7 +1,7 @@
 <?php
 
-require_once "/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/data_FAQ.php"; //<--apple
-// require_once "../Data/data_FAQ.php"; //<--windows
+// require_once "/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/data_FAQ.php"; //<--apple
+require_once "../Data/data_FAQ.php"; //<--windows
 
 class business_FAQ {
     private $id_FAQ;
