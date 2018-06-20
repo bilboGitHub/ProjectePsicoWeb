@@ -4,8 +4,8 @@ class conexion extends PDO {
     private const DB_HOST="localhost";
     private const DB_NAME="psicoexperts_db";
     private const DB_USER="root";
-    // private const DB_PASS="root"; //<--apple
-    private const DB_PASS=""; //<--windows
+    private const DB_PASS="root"; //<--apple
+    // private const DB_PASS=""; //<--windows
 	
 
 	public function __construct() {

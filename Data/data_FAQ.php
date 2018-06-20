@@ -1,7 +1,7 @@
 <?php
 
-// require_once '/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/conexion.php'; //<--apple
-require_once 'conexion.php'; //<--windows
+require_once '/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/conexion.php'; //<--apple
+// require_once 'conexion.php'; //<--windows
 
 class dataFAQ {
 

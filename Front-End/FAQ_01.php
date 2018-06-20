@@ -2,8 +2,8 @@
 Afegeix un Camp (camp de text o desplegable) per poder filtrar per id_FAQ. -->
 
 <?php
-    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_FAQ.php"; //<--apple
-    require "../Business/business_FAQ.php"; //<--windows
+    require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_FAQ.php"; //<--apple
+    // require "../Business/business_FAQ.php"; //<--windows
 	
    	$business_FAQ = new business_FAQ();
    	$arrayFAQ = $business_FAQ-> selectFAQ();

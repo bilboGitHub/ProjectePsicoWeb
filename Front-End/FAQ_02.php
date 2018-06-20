@@ -1,8 +1,8 @@
 <!-- 2.	Crea un formulari per poder inserir una nova FAQ en la Base de Dades. -->
 
 <?php
-    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_FAQ.php"; //<--apple
-    require "../Business/business_FAQ.php"; //<--windows
+    require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_FAQ.php"; //<--apple
+    // require "../Business/business_FAQ.php"; //<--windows
 ?>
 
 <h1>INSERTAR FAQ</h1>

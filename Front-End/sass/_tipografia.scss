@@ -58,6 +58,42 @@ html {
         font-size: 0.7rem
     }
 }
+.button, .rc_label__autodeliver{
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    color: white!important;
+    background: black;
+    opacity:1;
+    font-size: 0.8rem;
+    position: relative;
+    padding: $pad/4!important;
+    border:none;
+    font-weight: 500;
+    -webkit-appearance: none;
+    -moz-appearance : none;
+    appearance : none;
+    border-radius: 0;
+    cursor: pointer;
+    margin-right: $pad/4;
+    transition: background 0.25s $ease, color 0.25s $ease;
+    &:hover{
+        background: white;
+        color: black!important;
+        text-decoration: none;
+    }
+    &.transparent{
+        background: rgba(255,255,255,0);
+        color: black!important;
+        &:hover{
+            background: white!important;
+        }
+    }
+    &.rc_label{
+        background: rgba(255,255,255,1);
+        color: black!important;
+    }
+}
 .label{
     text-transform: uppercase;
     text-decoration: none;
