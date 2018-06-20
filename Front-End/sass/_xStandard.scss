@@ -1,0 +1,199 @@
+.standard-intro{
+	padding: 60px calc(10vw + 50px);
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	@include clearfix;
+	hgroup.standard{
+	    padding: $pad;
+	    opacity: 0;
+	    position: relative;
+	    transform: translateY($pad);
+	    transition: opacity 1s $ease, transform 1s $ease;
+		flex-basis: calc(50%);  
+		justify-content: center;
+		flex-direction: column;
+		align-self: center;
+
+		h2{
+			padding: 0;
+		}
+		h4{
+			font-family: $sans;
+			font-style: normal;
+		}
+	    p{
+		    max-width: 25vw;
+		    opacity: 0.7;
+		    &.price{
+			    opacity: 1;
+			    margin: $pad/2 auto;
+		    }
+	    }
+	    .button{
+		    margin-right: 0;
+		    display: inline-block;
+		    margin-top: $pad/3;
+	    }
+	    &.middle{
+		    //position: absolute;
+		   // top: 50%;
+		   // left: 60px;
+		    //transform: translateY(-25%);
+		    margin-top: 0;		    
+	    }
+	    .past-message{
+		    display: none;
+		    padding-top: $pad/4;
+		    font-style: italic;
+	    }
+	    form.past{
+		    .button{
+			    display: none;
+		    }
+		    .past-message{
+			    display: block;
+		    }
+	    }
+	}
+	.feature{
+		flex-basis: calc(50%);  
+		justify-content: center;
+		flex-direction: column;
+		align-self: center;
+		img{
+			margin-top: $pad;
+			width: calc(30vw - 50px);
+			height: auto;
+			@include filter(grayscale, 100%);
+			transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
+			will-change: filter;			
+		}
+		video{
+			margin-top: $pad;
+			width: calc(30vw - 50px);
+			height: auto;
+			position: relative;
+		}
+		&.has-video{
+			img{
+				display: none;
+			}
+		}
+	}
+	aside.title{
+		flex-basis: calc(100%);  
+		justify-content: center;
+		flex-direction: column;
+		align-self: center;
+		h1{
+			font-family: $serif;
+			font-size: 2rem;
+			padding-top: $pad/10;
+		}
+		p{
+			margin-top: $pad/4;
+			font-family: $serif;
+			max-width: 30vw;
+			line-height: 1.5;
+			font-style: italic;
+			//font-size: 1.2rem;
+		}
+	}
+
+	&.right{
+		.feature{
+			img{
+				float: right;
+			}
+			video{
+				float: right;
+			}
+		}
+	}
+	&.large{
+		padding: $pad;
+		hgroup.standard{
+			padding: $pad $pad*2.5 $pad $pad*2;
+			
+		}
+		.feature{
+			padding-left: 40px;
+			//padding: $pad*2 $pad*2 $pad*2 $pad*2.5;
+			img, video{
+				width: 100%;
+				//margin-left: 10%;
+				margin-top: 0;
+			}
+		}
+	}
+	&.first{
+		//padding-top: $pad*4;
+		padding-top: 0;
+	}
+}
+.loaded .standard-intro{
+	hgroup.standard{
+		opacity: 1;
+		transform: translateY(0);
+		&.middle{
+			//transform: translateY(-50%);
+		}
+	}
+	.feature{
+		img{
+			@include filter(grayscale, 0%);
+		}
+	}
+}
+.standard-photos{
+	padding: $pad*2 $pad $pad*3;
+	width: 100%;
+	@include clearfix;
+	figure{
+		float: left;
+		margin-right: 80px;
+		position: relative;
+		width: calc(50vw - 100px);
+		img{
+			width: 100%;
+			height: auto;
+			@include filter(grayscale, 100%);
+			transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
+			will-change: filter;			
+		}
+		video{
+			width: 100%;
+			height: auto;
+		}
+		&.has-video{
+			img{
+				display: none;
+			}
+		}
+		figcaption{
+			position: absolute;
+			bottom:-$pad/2;
+			left:0;
+			opacity: 0.7;
+			font-family: $serif;
+			font-style: italic;
+		}
+		&:nth-of-type(2n){
+			margin-right: 0;
+		}
+		&:nth-of-type(3n){
+			clear: both;
+		}
+	}
+	&.on-screen,
+	&.passed{
+		figure{
+			img{
+				@include filter(grayscale, 0%);
+			}
+		}
+	}	
+}

@@ -12,6 +12,13 @@
 // @import "";
 // @import "";
 
+    // scrollbar
+// @import "_xSmooth-scrollbar";
+
+    // 03_tractament <-- de moment no funciona, imatge gris i desepareixen les lletres
+@import "_xStandard";
+@import "_xFilters";
+
     // 05_FAQ, 06_contacte, 07_Account i 07_Register
 @import "_xQuote";
 @import "_xThree-col";
@@ -19,6 +26,6 @@
     // 07_Account i 07_Register
 @import "_xFields";
 
-    // 08_privacitat.html
+    // 08_privacitat
 @import "_xText-list";
 @import "_xText-header";
