@@ -3,6 +3,9 @@
 	width: 100%;
 	@include clearfix;
 	padding:$pad 0 $pad*1.5;
+	@include breakpoint(tablet){
+		padding-top: 0;
+	}
 	article{
 		margin: 0 auto;
 		width: calc(60vw - 80px);

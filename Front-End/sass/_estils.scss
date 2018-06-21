@@ -36,6 +36,9 @@ body {
 		filter:blur(0);
 		transform: scale(1);
 	}
+	@include breakpoint(tablet){
+		background: #fcfbf9;
+	}
 }
 #admin_bar_iframe{
 	display:none!important;
@@ -83,7 +86,8 @@ body {
 			height: $pad*2;
 		}
 		@include breakpoint(tablet){
-			height: $pad;	
+			height: $pad;
+			width: 100%;
 		}
 	}
 	&.alert-shown{
@@ -182,6 +186,57 @@ header.global{
 			&.right{
 				float: right;
 				margin-left: 0;
+			}
+		}
+		#search{
+			margin-right: $pad/3;
+			.icon{
+				line-height: $pad/2;
+				cursor: pointer;
+				transition: color 1s $ease;
+			}
+		}
+		#cart{
+			margin-right: 0px;
+			position: relative;
+			span#count{
+				font-size: 0.8rem;
+				text-align: center;
+				line-height: $pad/1.9;
+				display: block;
+				width: $pad/2;
+				height: $pad/2;
+				background: #eee;
+				border-radius: 100%;				
+			}
+			span#status{
+				position: absolute;
+				bottom:0;
+				right:-5px;
+				width: 10px;
+				height: 10px;
+				background: #8ebe4c;
+				border-radius: 100%;
+				transition: transform .2s $ease;
+				&.hide{
+					transform: scale(0);
+				}
+			}
+			.target{
+				position: absolute;
+				top:0;
+				left: 0;
+				z-index: 100;
+				width: 100%;
+				height: 100%;
+				display: block;
+				transition: none;
+				&:after{
+					display: none;
+				}
+				&:hover{
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -1091,56 +1146,56 @@ footer.global{
 			display: none;
 		}
 	}
-	// aside{
-	// 	float: right;
-	// 	width: 15%;
-	// 	ul{
-	// 		li{
-	// 			margin-bottom: $pad/2;
-	// 			font-size: 1.2rem;
-	// 			line-height: 1.5;
-	// 			span{
-	// 				text-transform: uppercase;
-	// 				font-size: 0.9rem;
-	// 				display: inline-block;
-	// 				letter-spacing: 1px;
-	// 				color: #888888;
-	// 			}
-	// 			a{
-	// 				text-decoration: none;
-	// 				color: black;
-	// 				transition: color $slow $ease;
-	// 				&:hover{
-	// 					color: #888888;
-	// 				}
-	// 				&.icon{
-	// 					font-size: 1.5rem;
-	// 					margin-right: $pad/2;
-	// 				}
-	// 			}
+	aside{
+		float: right;
+		width: 15%;
+		ul{
+			li{
+				margin-bottom: $pad/2;
+				font-size: 1.2rem;
+				line-height: 1.5;
+				span{
+					text-transform: uppercase;
+					font-size: 0.9rem;
+					display: inline-block;
+					letter-spacing: 1px;
+					color: #888888;
+				}
+				a{
+					text-decoration: none;
+					color: black;
+					transition: color $slow $ease;
+					&:hover{
+						color: #888888;
+					}
+					&.icon{
+						font-size: 1.5rem;
+						margin-right: $pad/2;
+					}
+				}
 				
-	// 		}
-	// 	}
-	// 	@include breakpoint(tablet){
-	// 		width: 100%;
-	// 		float: left;
-	// 		clear: both;
-	// 		text-align: center;
-	// 		ul{
-	// 			li{
-	// 				&#gift-card-btn{
-	// 					display: none;
-	// 				}
-	// 				a{
-	// 					&.icon{
-	// 						font-size: 1.5rem;
-	// 						margin: 0 $pad/4;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+			}
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+			float: left;
+			clear: both;
+			text-align: center;
+			ul{
+				li{
+					&#gift-card-btn{
+						display: none;
+					}
+					a{
+						&.icon{
+							font-size: 1.5rem;
+							margin: 0 $pad/4;
+						}
+					}
+				}
+			}
+		}
+	}
 	.logo{
 		float: left;
 		clear: both;
@@ -1177,16 +1232,16 @@ footer.global{
 			}
 		}
 	}
-	// #tagline{
-	// 	float: right;
-	// 	clear: right;
-	// 	width: auto;
-	// 	height: $pad/3;
-	// 	opacity: 0.15;
-	// 	@include breakpoint(tablet){
-	// 		display: none;	
-	// 	}
-	// }
+	#tagline{
+		float: right;
+		clear: right;
+		width: auto;
+		height: $pad/3;
+		opacity: 0.15;
+		@include breakpoint(tablet){
+			display: none;	
+		}
+	}
 	#missatgeFooter{
 		font-family: $serif;
 		float: right;

@@ -427,6 +427,9 @@ body {
   opacity: 1;
   filter: blur(0);
   transform: scale(1); }
+@media (max-width: 1024px) {
+  .loaded {
+    background: #fcfbf9; } }
 
 #admin_bar_iframe {
   display: none !important; }
@@ -472,7 +475,8 @@ body {
       height: 120px; }
     @media (max-width: 1024px) {
       #wrapper #header-spacer {
-        height: 60px; } }
+        height: 60px;
+        width: 100%; } }
   #wrapper.alert-shown #header-spacer {
     height: 240px; }
     #wrapper.alert-shown #header-spacer.small {
@@ -550,6 +554,48 @@ header.global {
       header.global nav.global ul.main.right {
         float: right;
         margin-left: 0; }
+    header.global nav.global #search {
+      margin-right: 20px; }
+      header.global nav.global #search .icon {
+        line-height: 30px;
+        cursor: pointer;
+        transition: color 1s cubic-bezier(0.28, 0, 0.18, 1); }
+    header.global nav.global #cart {
+      margin-right: 0px;
+      position: relative; }
+      header.global nav.global #cart span#count {
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 31.5789473684px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: #eee;
+        border-radius: 100%; }
+      header.global nav.global #cart span#status {
+        position: absolute;
+        bottom: 0;
+        right: -5px;
+        width: 10px;
+        height: 10px;
+        background: #8ebe4c;
+        border-radius: 100%;
+        transition: transform 0.2s cubic-bezier(0.28, 0, 0.18, 1); }
+        header.global nav.global #cart span#status.hide {
+          transform: scale(0); }
+      header.global nav.global #cart .target {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: none; }
+        header.global nav.global #cart .target:after {
+          display: none; }
+        header.global nav.global #cart .target:hover {
+          opacity: 1; }
   header.global .logo {
     position: absolute;
     left: 50%;
@@ -1237,6 +1283,39 @@ footer.global {
     @media (max-width: 1024px) {
       footer.global nav.esquerra {
         display: none; } }
+  footer.global aside {
+    float: right;
+    width: 15%; }
+    footer.global aside ul li {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+      line-height: 1.5; }
+      footer.global aside ul li span {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: inline-block;
+        letter-spacing: 1px;
+        color: #888888; }
+      footer.global aside ul li a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.25s cubic-bezier(0.28, 0, 0.18, 1); }
+        footer.global aside ul li a:hover {
+          color: #888888; }
+        footer.global aside ul li a.icon {
+          font-size: 1.5rem;
+          margin-right: 30px; }
+    @media (max-width: 1024px) {
+      footer.global aside {
+        width: 100%;
+        float: left;
+        clear: both;
+        text-align: center; }
+        footer.global aside ul li#gift-card-btn {
+          display: none; }
+        footer.global aside ul li a.icon {
+          font-size: 1.5rem;
+          margin: 0 15px; } }
   footer.global .logo {
     float: left;
     clear: both;
@@ -1264,6 +1343,15 @@ footer.global {
           width: auto; }
         footer.global .logo span {
           text-align: center; } }
+  footer.global #tagline {
+    float: right;
+    clear: right;
+    width: auto;
+    height: 20px;
+    opacity: 0.15; }
+    @media (max-width: 1024px) {
+      footer.global #tagline {
+        display: none; } }
   footer.global #missatgeFooter {
     font-family: "PT Serif", serif;
     float: right;
@@ -2240,6 +2328,9 @@ form button, .rc_layout__content input[type=submit],
     display: table; }
   .text-list:after {
     clear: both; }
+  @media (max-width: 1024px) {
+    .text-list {
+      padding-top: 0; } }
   .text-list article {
     margin: 0 auto;
     width: calc(60vw - 80px);
