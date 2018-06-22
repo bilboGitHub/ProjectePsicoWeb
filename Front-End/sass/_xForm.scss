@@ -1,0 +1,128 @@
+.hidden{
+	display: none;
+}
+.form{
+	background: white;
+	padding: $pad 0;
+	.heading{
+		text-align: center;
+		padding: $pad 0;
+		width: 75%;
+		margin: 0 auto;
+		font-family: $serif;
+		font-size: 2rem;
+		font-weight: 500;
+	}
+	.note{
+		text-align: center;
+		padding: $pad 0;
+		width: 75%;
+		margin: 0 auto;
+		font-size: 1rem;
+		
+	}
+	h2{
+		padding:$pad/2 0 $pad/10 0;
+		margin: 0 $pad/3;
+		font-size: 1.5rem;
+		font-weight: 400;
+		float: left;
+		clear: both;
+		width: 100%;
+	}
+
+	.wpcf7-form-control-wrap{
+		position: relative;
+		width:calc(50% - 40px);
+		margin: $pad/3;
+		float: left;
+		
+	}
+	.wpcf7-form-control-wrap.message{
+		width: calc(100% - 40px);
+		clear: both;
+		margin-top: 0;		
+	}
+	label{
+		width: calc(100% - 40px);
+		clear: both;
+		display: block;
+		padding-top: $pad/3;
+		margin: 0 $pad/3;
+	}
+	textarea{
+
+		border: 1px solid black;
+	}
+	input[type=file]{
+		padding: $pad/3;
+		background: #eee;
+		margin: 0 $pad/3 $pad/6;
+	}
+	div.wpcf7-response-output{
+		border: none!important;
+		text-align: center;
+		padding: $pad/2 0;
+		width: 75%;
+		margin: 0 auto;
+		font-size: 1rem;
+		font-weight: 500;		
+	}
+	span.wpcf7-not-valid-tip{
+		margin-top: $pad/6;
+		color: black!important;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		
+	}
+	input[type=submit],
+	input[type=button]{
+		margin: $pad/3 auto;		
+	}
+	.upload {
+		margin-top: $pad/6;
+	    position: relative;
+	    overflow: hidden;
+	   float: left;
+	   margin-left: $pad/3;
+	   .button{
+		   display: block;
+	   }
+	   .wpcf7-form-control-wrap{
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    margin: 0;
+		    z-index: 100;
+		    padding: 0;
+		    font-size: 20px;
+		    cursor: pointer;
+		    opacity: 0;		
+		    width: 100%;
+		    display: block;   
+	   }
+	}
+	.clear{
+		clear: both;
+	}
+	
+	div.wpcf7 .ajax-loader{
+	    margin: 20px auto;
+		position: relative;
+	    display: block;
+	}
+
+	.wpcf7{
+		width: calc(60vw - 40px);
+		margin: 0 auto;		
+
+	}
+
+	.sent{
+		.wpcf7-form-control, .upload .button, label{			
+			pointer-events:none;
+			cursor: pointer;
+			opacity: 0.25;
+		}
+	}
+}

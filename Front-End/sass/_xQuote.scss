@@ -2,10 +2,16 @@
 	padding: $pad;
 	text-align: center;
 	background: white;
+	@include breakpoint(tablet){
+		padding: 0 10px;
+	}
 	hgroup{
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: $pad 0;
+		@include breakpoint(tablet){
+			margin: 0 30px;
+		}
 		h1{
 			font-family: $serif;
 			font-style: italic;
@@ -17,6 +23,9 @@
 			@include filter(blur, 5px);
 			transform: translateY($pad);
 			transition: transform 0s $ease, filter 0s $ease, -webkit-filter 0s $ease, -moz-filter 0s $ease, -ms-filter 0s $ease, -o-filter 0s $ease, opacity 0s $ease;
+			@include breakpoint(tablet){
+				font-size: 1.5rem;
+			}
 		}
 		h2{
 			font-size: 1.2rem;

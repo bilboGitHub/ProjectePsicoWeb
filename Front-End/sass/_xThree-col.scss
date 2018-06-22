@@ -7,6 +7,9 @@
 	.ajaxified-cart-feedback{
 		display: none!important;
 	}
+	@include breakpoint(tablet){
+		padding: 30px 30px 0;
+	}
 	article{
 		flex-basis: calc(33.33%);  
 		justify-content: center;
@@ -21,6 +24,11 @@
 			max-width: 550px;
 			float: none;
 			margin: 0 auto;
+		}
+		hgroup{
+			@include breakpoint(tablet){
+				max-width: 440px;
+			}
 		}
 		.quicklinks{
 			.label{
@@ -43,6 +51,11 @@
 		.button{
 			display: inline-block;
 			margin-right: $pad/3;
+			@include breakpoint(tablet){
+				margin-right: 0;
+				margin-bottom: 30px;
+				clear: both;
+			}
 		}
 	}
 	&.subs{
@@ -78,6 +91,9 @@
 			&.double{
 				flex-basis: 75%;
 				@include clearfix;
+				@include breakpoint(tablet){
+					flex-basis: 100%;
+				}
 				h1{
 					max-width: 100%;
 				}

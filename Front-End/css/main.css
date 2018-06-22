@@ -1657,6 +1657,9 @@ section {
   filter: grayscale(0%);
   transition: transform 2s cubic-bezier(0.28, 0, 0.18, 1), filter 1s cubic-bezier(0.28, 0, 0.18, 1), -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1); }
 
+@media (max-width: 1024px) {
+  #hero {
+    margin-top: 60px; } }
 #hero .cycle-nav {
   z-index: 1000;
   position: absolute;
@@ -1716,6 +1719,21 @@ section {
     margin-top: 60px;
     transform: translateY(-50%);
     width: calc(30vw - 50px); }
+    @media (max-width: 1024px) {
+      #hero article hgroup {
+        top: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+        width: calc(100% - 40px);
+        padding: 30px;
+        transform: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: visible;
+        background: white;
+        position: relative;
+        max-width: 460px;
+        margin: -30px auto 30px; } }
     #hero article hgroup .label, #hero article hgroup .cta, #hero article hgroup p {
       opacity: 0;
       transition: opacity 0.5s cubic-bezier(0.28, 0, 0.18, 1); }
@@ -1723,6 +1741,10 @@ section {
       width: 75%; }
     #hero article hgroup h1 {
       padding-top: 12px; }
+      @media (max-width: 1024px) {
+        #hero article hgroup h1 {
+          padding-bottom: 0;
+          margin: 0 auto; } }
     #hero article hgroup .sequenced span {
       position: relative;
       overflow: hidden;
@@ -1939,6 +1961,9 @@ section {
     font-style: italic; }
   #hero article.invert hgroup {
     color: white; }
+    @media (max-width: 1024px) {
+      #hero article.invert hgroup {
+        color: black; } }
     #hero article.invert hgroup a {
       color: white; }
   #hero article.left hgroup {
@@ -2185,11 +2210,15 @@ section {
         #hero article hgroup .sequenced span {
           display: inline-block; }
         #hero article hgroup p {
-          margin: 0 auto 10px; }
+          margin: 0 auto 10px;
+          width: 100%; }
         #hero article hgroup .cta {
           margin-top: 0; } }
 #hero.standard hgroup {
   margin-top: 0; }
+  @media (max-width: 1024px) {
+    #hero.standard hgroup {
+      margin-top: -30px; } }
 
 /*.mouse-left{
 	#hero:hover{
@@ -2445,6 +2474,9 @@ section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row; }
+  @media (max-width: 1024px) {
+    .standard-intro {
+      padding: 30px; } }
   .standard-intro:before, .standard-intro:after {
     content: " ";
     display: table; }
@@ -2460,14 +2492,26 @@ section {
     justify-content: center;
     flex-direction: column;
     align-self: center; }
+    @media (max-width: 1024px) {
+      .standard-intro hgroup.standard {
+        flex-basis: 100%;
+        padding: 30px 0;
+        max-width: 440px;
+        margin: 0 auto; } }
     .standard-intro hgroup.standard h2 {
       padding: 0; }
     .standard-intro hgroup.standard h4 {
       font-family: "Lato", sans-serif;
       font-style: normal; }
+      @media (max-width: 1024px) {
+        .standard-intro hgroup.standard h4 {
+          padding-right: 0; } }
     .standard-intro hgroup.standard p {
       max-width: 25vw;
       opacity: 0.7; }
+      @media (max-width: 1024px) {
+        .standard-intro hgroup.standard p {
+          max-width: 300px; } }
       .standard-intro hgroup.standard p.price {
         opacity: 1;
         margin: 30px auto; }
@@ -2490,6 +2534,11 @@ section {
     justify-content: center;
     flex-direction: column;
     align-self: center; }
+    @media (max-width: 1024px) {
+      .standard-intro .feature {
+        flex-basis: 100%;
+        max-width: 440px;
+        margin: 0 auto; } }
     .standard-intro .feature img {
       margin-top: 60px;
       width: calc(30vw - 50px);
@@ -2501,11 +2550,21 @@ section {
       filter: grayscale(100%);
       transition: filter 1s cubic-bezier(0.28, 0, 0.18, 1), -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1);
       will-change: filter; }
+      @media (max-width: 1024px) {
+        .standard-intro .feature img {
+          width: 100%;
+          position: relative;
+          margin: 0 auto; } }
     .standard-intro .feature video {
       margin-top: 60px;
       width: calc(30vw - 50px);
       height: auto;
       position: relative; }
+      @media (max-width: 1024px) {
+        .standard-intro .feature video {
+          width: 100%;
+          position: relative;
+          margin: 0 auto; } }
     .standard-intro .feature.has-video img {
       display: none; }
   .standard-intro aside.title {
@@ -2513,6 +2572,11 @@ section {
     justify-content: center;
     flex-direction: column;
     align-self: center; }
+    @media (max-width: 1024px) {
+      .standard-intro aside.title {
+        max-width: 440px;
+        margin: 0 auto;
+        padding-bottom: 30px; } }
     .standard-intro aside.title h1 {
       font-family: "PT Serif", serif;
       font-size: 2rem;
@@ -2525,8 +2589,14 @@ section {
       font-style: italic; }
   .standard-intro.right .feature img {
     float: right; }
+    @media (max-width: 1024px) {
+      .standard-intro.right .feature img {
+        float: none; } }
   .standard-intro.right .feature video {
     float: right; }
+    @media (max-width: 1024px) {
+      .standard-intro.right .feature video {
+        float: none; } }
   .standard-intro.large {
     padding: 60px; }
     .standard-intro.large hgroup.standard {
@@ -2650,10 +2720,16 @@ section {
   padding: 60px;
   text-align: center;
   background: white; }
+  @media (max-width: 1024px) {
+    .quote {
+      padding: 0 10px; } }
   .quote hgroup {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 0; }
+    @media (max-width: 1024px) {
+      .quote hgroup {
+        margin: 0 30px; } }
     .quote hgroup h1 {
       font-family: "PT Serif", serif;
       font-style: italic;
@@ -2669,6 +2745,9 @@ section {
       filter: blur(5px);
       transform: translateY(60px);
       transition: transform 0s cubic-bezier(0.28, 0, 0.18, 1), filter 0s cubic-bezier(0.28, 0, 0.18, 1), -webkit-filter 0s cubic-bezier(0.28, 0, 0.18, 1), -moz-filter 0s cubic-bezier(0.28, 0, 0.18, 1), -ms-filter 0s cubic-bezier(0.28, 0, 0.18, 1), -o-filter 0s cubic-bezier(0.28, 0, 0.18, 1), opacity 0s cubic-bezier(0.28, 0, 0.18, 1); }
+      @media (max-width: 1024px) {
+        .quote hgroup h1 {
+          font-size: 1.5rem; } }
     .quote hgroup h2 {
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -2720,6 +2799,9 @@ section {
   padding: 30px calc(10vw + 30px); }
   .three-col .ajaxified-cart-feedback {
     display: none !important; }
+  @media (max-width: 1024px) {
+    .three-col {
+      padding: 30px 30px 0; } }
   .three-col article {
     flex-basis: calc(33.33%);
     justify-content: center;
@@ -2733,6 +2815,9 @@ section {
         max-width: 550px;
         float: none;
         margin: 0 auto; } }
+    @media (max-width: 1024px) {
+      .three-col article hgroup {
+        max-width: 440px; } }
     .three-col article .quicklinks .label {
       line-height: 1rem; }
     .three-col article .quicklinks .links {
@@ -2748,6 +2833,11 @@ section {
     .three-col article .button {
       display: inline-block;
       margin-right: 20px; }
+      @media (max-width: 1024px) {
+        .three-col article .button {
+          margin-right: 0;
+          margin-bottom: 30px;
+          clear: both; } }
   .three-col.subs {
     padding-bottom: 60px; }
   .three-col.alt {
@@ -2776,6 +2866,9 @@ section {
           display: table; }
         .three-col.alt article.double:after {
           clear: both; }
+        @media (max-width: 1024px) {
+          .three-col.alt article.double {
+            flex-basis: 100%; } }
         .three-col.alt article.double h1 {
           max-width: 100%; }
         .three-col.alt article.double form input[type="text"],
@@ -2826,6 +2919,105 @@ section {
           padding: 15px 15px 15px 0; }
         .three-col.alt article table td {
           border-top: 1px solid #eee; }
+
+.hidden {
+  display: none; }
+
+.form {
+  background: white;
+  padding: 60px 0; }
+  .form .heading {
+    text-align: center;
+    padding: 60px 0;
+    width: 75%;
+    margin: 0 auto;
+    font-family: "PT Serif", serif;
+    font-size: 2rem;
+    font-weight: 500; }
+  .form .note {
+    text-align: center;
+    padding: 60px 0;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1rem; }
+  .form h2 {
+    padding: 30px 0 6px 0;
+    margin: 0 20px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    float: left;
+    clear: both;
+    width: 100%; }
+  .form .wpcf7-form-control-wrap {
+    position: relative;
+    width: calc(50% - 40px);
+    margin: 20px;
+    float: left; }
+  .form .wpcf7-form-control-wrap.message {
+    width: calc(100% - 40px);
+    clear: both;
+    margin-top: 0; }
+  .form label {
+    width: calc(100% - 40px);
+    clear: both;
+    display: block;
+    padding-top: 20px;
+    margin: 0 20px; }
+  .form textarea {
+    border: 1px solid black; }
+  .form input[type=file] {
+    padding: 20px;
+    background: #eee;
+    margin: 0 20px 10px; }
+  .form div.wpcf7-response-output {
+    border: none !important;
+    text-align: center;
+    padding: 30px 0;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 500; }
+  .form span.wpcf7-not-valid-tip {
+    margin-top: 10px;
+    color: black !important;
+    font-size: 0.8rem;
+    text-transform: uppercase; }
+  .form input[type=submit],
+  .form input[type=button] {
+    margin: 20px auto; }
+  .form .upload {
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-left: 20px; }
+    .form .upload .button {
+      display: block; }
+    .form .upload .wpcf7-form-control-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      z-index: 100;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      width: 100%;
+      display: block; }
+  .form .clear {
+    clear: both; }
+  .form div.wpcf7 .ajax-loader {
+    margin: 20px auto;
+    position: relative;
+    display: block; }
+  .form .wpcf7 {
+    width: calc(60vw - 40px);
+    margin: 0 auto; }
+  .form .sent .wpcf7-form-control, .form .sent .upload .button, .form .sent label {
+    pointer-events: none;
+    cursor: pointer;
+    opacity: 0.25; }
 
 .filtered .filterable {
   display: none; }

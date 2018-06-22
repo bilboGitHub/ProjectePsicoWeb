@@ -4,7 +4,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-
+	@include breakpoint(tablet){
+		padding: 30px;
+	}
 	@include clearfix;
 	hgroup.standard{
 	    padding: $pad;
@@ -16,17 +18,29 @@
 		justify-content: center;
 		flex-direction: column;
 		align-self: center;
-
+		@include breakpoint(tablet){
+			// -ms-flex-basis: 100%;
+			flex-basis: 100%;
+			padding: 30px 0;
+			max-width: 440px;
+			margin: 0 auto;
+		}
 		h2{
 			padding: 0;
 		}
 		h4{
 			font-family: $sans;
 			font-style: normal;
+			@include breakpoint(tablet){
+				padding-right: 0;
+			}
 		}
 	    p{
 		    max-width: 25vw;
-		    opacity: 0.7;
+			opacity: 0.7;
+			@include breakpoint(tablet){
+				max-width: 300px;
+			}
 		    &.price{
 			    opacity: 1;
 			    margin: $pad/2 auto;
@@ -63,19 +77,37 @@
 		justify-content: center;
 		flex-direction: column;
 		align-self: center;
+		@include breakpoint(tablet){
+			// ms-flex-basis: 100%;
+			flex-basis: 100%;
+			max-width: 440px;
+			margin: 0 auto;
+		}
 		img{
 			margin-top: $pad;
 			width: calc(30vw - 50px);
 			height: auto;
 			@include filter(grayscale, 100%);
 			transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
-			will-change: filter;			
+			will-change: filter;
+			@include breakpoint(tablet){
+				width: 100%;
+				position: relative;
+				margin: 0 auto;
+				// display: block;
+			}
 		}
 		video{
 			margin-top: $pad;
 			width: calc(30vw - 50px);
 			height: auto;
 			position: relative;
+			@include breakpoint(tablet){
+				width: 100%;
+				position: relative;
+				margin: 0 auto;
+				// display: block;
+			}
 		}
 		&.has-video{
 			img{
@@ -88,6 +120,11 @@
 		justify-content: center;
 		flex-direction: column;
 		align-self: center;
+		@include breakpoint(tablet){
+			max-width: 440px;
+			margin: 0 auto;
+			padding-bottom: 30px;
+		}
 		h1{
 			font-family: $serif;
 			font-size: 2rem;
@@ -107,9 +144,15 @@
 		.feature{
 			img{
 				float: right;
+				@include breakpoint(tablet){
+					float: none;
+				}
 			}
 			video{
 				float: right;
+				@include breakpoint(tablet){
+					float: none;
+				}
 			}
 		}
 	}
