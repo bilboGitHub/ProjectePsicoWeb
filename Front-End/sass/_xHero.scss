@@ -12,13 +12,13 @@
 		background: rgba(255,255,255,0);
 		&.next{
 			right:0;
-			cursor: url('../images/ui-cursor-right.png')36 36,auto;
-		    cursor: -webkit-image-set(url('../images/ui-cursor-right.png')1x,url('../images/ui-cursor-right@2x.png')2x)36 36,auto;			
+			cursor: url('imatges/ui-cursor-right.png')36 36,auto;
+		    cursor: -webkit-image-set(url('imatges/ui-cursor-right.png')1x,url('imatges/ui-cursor-right@2x.png')2x)36 36,auto;			
 		}
 		&.prev{
 			left: 0;
-			cursor: url('../images/ui-cursor-left.png')36 36,auto;
-		    cursor: -webkit-image-set(url('../images/ui-cursor-left.png')1x,url('../images/ui-cursor-left@2x.png')2x)36 36,auto;			
+			cursor: url('imatges/ui-cursor-left.png')36 36,auto;
+		    cursor: -webkit-image-set(url('imatges/ui-cursor-left.png')1x,url('imatges/ui-cursor-left@2x.png')2x)36 36,auto;			
 		}
 	}
 	article{
@@ -256,12 +256,12 @@
 .invert-nav #hero{
 	.cycle-nav{
 		&.next{
-			cursor: url('../images/ui-cursor-right-white.png')36 36,auto;
-		    cursor: -webkit-image-set(url('../images/ui-cursor-right-white.png')1x,url('../images/ui-cursor-right-white@2x.png')2x)36 36,auto;			
+			cursor: url('imatges/ui-cursor-right-white.png')36 36,auto;
+		    cursor: -webkit-image-set(url('imatges/ui-cursor-right-white.png')1x,url('imatges/ui-cursor-right-white@2x.png')2x)36 36,auto;			
 		}
 		&.prev{
-			cursor: url('../images/ui-cursor-left-white.png')36 36,auto;
-		    cursor: -webkit-image-set(url('../images/ui-cursor-left-white.png')1x,url('../images/ui-cursor-left-white@2x.png')2x)36 36,auto;			
+			cursor: url('imatges/ui-cursor-left-white.png')36 36,auto;
+		    cursor: -webkit-image-set(url('imatges/ui-cursor-left-white.png')1x,url('imatges/ui-cursor-left-white@2x.png')2x)36 36,auto;			
 		}
 	}	
 }
