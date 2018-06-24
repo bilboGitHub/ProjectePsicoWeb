@@ -11,6 +11,10 @@
 		font-size: 2rem;
 		text-align: center;
 		line-height: 1.2;
+		@include breakpoint(tablet){
+			text-align: left;
+			}
+		
 	}
 	&.guide{
 		h1.centered{
@@ -33,6 +37,13 @@
 		opacity: 0;
 		transition: transform 1s $ease, opacity 2s $ease;
 		will-change: transform, opacity;
+		@include breakpoint(tablet){
+			float: left;
+			width: 100%;
+			text-align: center;
+			transform: translate(0);
+			opacity: 1;
+		}
 	}
 	figure{
 		position: relative;
@@ -109,12 +120,18 @@
 			display: block;
 			width: 100%;
 		}
+		@include breakpoint(tablet){
+			padding-right: $pad/2;
+			}
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
 		padding-right: $pad/1.5;
 		.filters{
 			padding-right: $pad/3;
+			@include breakpoint(tablet){
+				padding-right: 0;
+				}
 		}
 		hgroup{
 			opacity: 1;
@@ -128,16 +145,38 @@
 			flex-direction: column;
 			align-self: flex-start;
 			margin-bottom:$pad;
-
+			@include breakpoint(tablet){
+				-ms-flex-basis: 100%;
+				flex-basis: 100%;
+				width: 100%;
+				margin: 30px 0;
+			}
 			img{
 				width: calc(100% - 20px);
 				height: auto;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				display: block;
 				@include filter(grayscale, 0%);
+				@include breakpoint(tablet){
+					width: 100%;
+				}
 			}
 			&:nth-of-type(3n){
 				margin-right: 0;
 			}			
-		}	
+		}
+		#no-events{
+			display: none;
+			padding: 0 60px 90px;
+			width: 100%;
+			text-align: center;
+			h2{
+				font-family: $serif;
+				font-size: 2rem;
+				opacity: 0.8;
+			}
+		}
 	}
 	&.on-screen,
 	&.passed{

@@ -28,6 +28,10 @@ body {
 	pointer-events: none;
 	transform:scale(1.01);
 	transition: filter $ease 1s, -webkit-filter  $ease 1s, opacity $ease 1s, transform $ease 1s;
+	.scroll-content{
+		-webkit-backface-visibility: hidden;
+    	backface-visibility: hidden;
+	}
 }
 .loaded{
 	#main-scrollbar{

@@ -5,9 +5,16 @@
 	width: 100%;
 	z-index: 10000;
 	position: relative;
+
 	hgroup{
 		float: left;
 		width: 50%;
+		@include breakpoint(tablet){
+			width: 100%;
+			text-align: left;
+			margin: 22px 0px 0;
+			padding-right: 0;
+		}
 		p{
 			margin-top: $pad/6;
 			font-size: 1.5rem;
@@ -27,6 +34,30 @@
 		margin: 0;
 		hgroup{
 			width: 40%;
+		}
+		.fields{
+			float: left;
+			margin-left: 0;
+			width: 100%;
+			margin-top: $pad/4;
+			.filter{
+				margin-left: 0;
+				width:50%;
+				padding-right: $pad/1.5;
+				.icon{
+					right:$pad/4;
+				}
+				.label{
+					text-align: left;
+				}
+				.selected{
+					text-align: left;
+				}
+				.options{
+					left:0;
+				}
+			}
+
 		}
 	}
 	@include breakpoint(mobile){
