@@ -1272,6 +1272,10 @@ section{
 	position: relative;
 	float: left;
 	clear: both;
+    display: block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 	&.first{
 		//padding-top: 120px;
 	}

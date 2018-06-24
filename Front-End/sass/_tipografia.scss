@@ -100,6 +100,7 @@ html {
     letter-spacing: 0.1rem;
     font-size: 0.7rem;
     opacity: 0.9; 
+    font-weight: 600;
     &.link{
         position: relative;
         &:after{
@@ -236,9 +237,14 @@ hgroup.standard{
         li{
             width: 50%;
             float: left;
+            margin-bottom: 15px;
             text-align: center;
+            @include breakpoint(tablet){
+                width: 100%;
+                clear: both;
+            }
             p{
-                font-weight: 700;
+                font-weight: 900;
                 margin-top: 0;
                 margin-bottom: 0;
                 text-transform: uppercase;
