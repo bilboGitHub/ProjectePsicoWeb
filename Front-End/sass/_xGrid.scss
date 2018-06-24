@@ -1,5 +1,10 @@
 .grid{
 	padding: $pad*1.5 $pad 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 	@include clearfix;
 	h1.centered{
 		font-family: $serif;
@@ -34,6 +39,12 @@
 		float: left;
 		margin-left: $pad/3;
 		margin-bottom: $pad/2;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+		position: relative;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 		overflow: hidden;
 		width: calc(40vw - 60px);
 		@extend %clearfix;
@@ -44,8 +55,10 @@
 			width: 100%;
 			height: auto;
 			float: left;
+			display: block;
 			backface-visibility: hidden;
 			transform: scale(1);
+			position: relative;
 			@include filter(grayscale, 100%);
 			transition:transform 1s $ease, filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
 			will-change: filter, transform;
@@ -138,7 +151,10 @@
 		}
 	}
 	@include breakpoint(tablet){
-		padding: $pad $pad/4;
+		padding: $pad $pad/2;
+		max-width: 500px;
+		margin: 0 auto;
+		float: none;
 		hgroup{
 			float: left;
 			width: 100%;
@@ -147,8 +163,8 @@
 			opacity: 1;
 		}
 		figure{
-		    width: calc(100% - 20vw);
-			margin: $pad/2 10vw;
+		    width: calc(100%);
+			margin: $pad/2 0;
 		}
 	}
 }

@@ -1002,6 +1002,7 @@ footer.global{
 			text-align: center;	
 			height: auto;
 			background:none;
+			padding: 0;
 			div{
 				position: relative;
 				top:0;
@@ -1035,6 +1036,12 @@ footer.global{
 				input[type=email]{
 					text-align: center;
 					background: black;
+					// background: none;
+					// color: black;
+					// line-height: 1.5;
+					// height: auto;
+					// padding: 6px 0;
+					// border-bottom: 1px solid black;
 				}
 				input[type=submit]{
 					right: auto;
@@ -1043,6 +1050,12 @@ footer.global{
 					background: none;
 					margin-top: $pad/3;
 					color:black;
+					// margin-top: 30px;
+					// color: white;
+					// background: black;
+					// padding: 15px;
+					// height: auto;
+					// line-height: 1;
 				}
 			}
 			&.default{
@@ -1209,15 +1222,16 @@ footer.global{
 		// }
 		span{
 			margin-top: 0.5rem;
-			display: inline-block;
+			display: block;
 			position: absolute;
 			top:100%;
 			left:0;
 			width: 100%;
 			text-align: left;
 			text-transform: uppercase;
-			letter-spacing: 1px;
-			font-size: 0.66rem;
+			letter-spacing: 0.02rem;
+			font-size: 0.8rem;
+			white-space: nowrap;
 		}		
 		@include breakpoint(tablet){
 			text-align: center;

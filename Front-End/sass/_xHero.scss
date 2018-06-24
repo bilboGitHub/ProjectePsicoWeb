@@ -48,6 +48,17 @@
 			will-change: transform, filter;
 			@include filter(grayscale, 50%);
 			transition:filter 2s $ease, -webkit-filter 2s $ease, -moz-filter 2s $ease, -ms-filter 2s $ease, -o-filter 2s $ease;
+			&:not(.object){
+				@include breakpoint(tablet-landscape){
+					width: 100%;
+				}
+				@include breakpoint(tablet){
+					width: 200%;
+					left:50%;
+					transform:translateX(-50%) translateY(0%)!important;
+					height: auto;
+				}
+			}
 		}
 		&.has-video{
 			img{
@@ -173,12 +184,12 @@
 		}
 		@include breakpoint(tablet){
 			text-align: center;
-			img{
-				width: auto;
-				left:50%;
-				transform:translateX(-50%)!important;
-				height: 100vh;
-			}
+			// img{
+			// 	width: auto;
+			// 	left:50%;
+			// 	transform:translateX(-50%)!important;
+			// 	height: 100vh;
+			// }
 			video{
 				position: absolute;
 				top:50%;
@@ -189,12 +200,12 @@
 				z-index: 10;
 			}
 			hgroup{
-				top: auto!important;
-				left:0!important;
-				bottom:$pad!important;
-				right: auto!important;
-				width: 100%;
-				transform: none;
+				// top: auto!important;
+				// left:0!important;
+				// bottom:$pad!important;
+				// right: auto!important;
+				// width: 100%;
+				// transform: none;
 				h1{
 					padding-bottom: 0;
 				}
