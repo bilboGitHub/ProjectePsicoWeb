@@ -1,6 +1,69 @@
 .hidden{
 	display: none;
 }
+section{
+	&.form{
+		@include breakpoint(tablet){
+			overflow: hidden;
+			padding: 60px 30px;
+		}
+		.gform_wrapper{
+			width: calc(60vw - 40px);
+			margin: 0 auto;
+			@include breakpoint(tablet){
+				width: 100%;
+			}
+		}
+		.gfield{
+			position: relative;
+			width: calc(50% - 40px);
+			margin: 20px;
+			float: left;
+			h2, label{
+				margin: 0;
+    			padding: 0;
+			}
+			@include breakpoint(mobile-portrait){
+				width: calc(100% - 40px);
+				clear: both;
+			}			
+		}
+		.gfield_label, .charleft, .gfield_visibility_, .gform_validation_container {
+			display: none !important;
+		}
+		.full-width{
+			width: calc(100% - 40px);
+			clear: both;
+			margin-bottom: 0;
+			h2, label{
+				margin: 0;
+				padding: 0;				
+			}		
+		}
+		textarea{
+			padding: 15px;
+			border: 1px solid black;			
+		}
+		.ginput_recaptcha{
+			margin-bottom: 20px;
+    		display: inline-block;
+		}
+		.centered{
+			text-align: center;
+		}
+		.note{
+			@include breakpoint(tablet){
+				padding: 15px 0;
+			}
+		}
+		label{
+			@include breakpoint(tablet){
+				line-height: 1.5;
+    			margin: 0;
+			}			
+		}
+	}
+}
 .form{
 	background: white;
 	padding: $pad 0;

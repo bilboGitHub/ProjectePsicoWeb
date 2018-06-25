@@ -3,13 +3,13 @@
 // require_once '/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/conexion.php'; //<--apple
 require_once 'conexion.php'; //<--windows
 
-class dataFAQ {
+class datacontacte {
 
-    const TAULA = 'faq';
+    const TAULA = 'contacte';
 
     public function Llistar(&$error) {
         $conexion = new conexion();
-        $consulta = $conexion->prepare('SELECT id_FAQ, pregunta_FAQ, resposta_FAQ, categoria_FAQ, data_FAQ FROM ' . self::TAULA);
+        $consulta = $conexion->prepare('SELECT id_contacte, nom_contacte, cognoms_contacte, email_contacte, data_contacte FROM ' . self::TAULA);
         $resultat = $consulta->execute();
 
         if (!$resultat)
@@ -37,9 +37,9 @@ class dataFAQ {
     //     return $arrayRegistres;
     // }
 
-    public function selectFAQ() {
+    public function selectcontacte() {
         $connexio = new conexion();
-        $consulta = $connexio->prepare('SELECT id_FAQ FROM ' . self::TAULA);
+        $consulta = $connexio->prepare('SELECT id_contacte FROM ' . self::TAULA);
         $consulta->execute();
         $arrayRegistres = $consulta->fetchAll();
         $conexion = null;
@@ -56,9 +56,9 @@ class dataFAQ {
     //     return $arrayRegistres;
     // }
 
-    public function mostrarFAQPerID($ID) {
+    public function mostrarcontactePerID($ID) {
         $conexion = new conexion();
-        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_FAQ like :id');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_contacte like :id');
         $consulta->bindParam(':id', $ID);
         $consulta->execute();
         $arrayRegistres = $consulta->fetchAll();
@@ -86,11 +86,11 @@ class dataFAQ {
         return $arrayRegistres;
     }
 
-    public function cercarPerID(&$error, $id_FAQ) {
+    public function cercarPerID(&$error, $id_contacte) {
         $registre=array();
         $conexion = new conexion();
-        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_FAQ = :id_FAQ');
-        $consulta->bindParam(':id_FAQ', $id_FAQ); 
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_contacte = :id_contacte');
+        $consulta->bindParam(':id_contacte', $id_contacte); 
         $resultat=$consulta->execute();
         $conexion = null;
 
@@ -117,16 +117,16 @@ class dataFAQ {
     //     return $registre;
     // }
 
-    public function Insertar(&$error, $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ) {
+    public function Insertar(&$error, $id_contacte, $nom_contacte, $cognoms_contacte, $email_contacte, $data_contacte) {
         $conexion = new conexion();
         
-        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (id_FAQ, pregunta_FAQ, resposta_FAQ, categoria_FAQ, data_FAQ) VALUES(:id_FAQ, :pregunta_FAQ, :resposta_FAQ, :categoria_FAQ, :data_FAQ)');
+        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (id_contacte, nom_contacte, cognoms_contacte, email_contacte, data_contacte) VALUES(:id_contacte, :nom_contacte, :cognoms_contacte, :email_contacte, :data_contacte)');
         
-        $consulta->bindParam(':id_FAQ', $id_FAQ);
-        $consulta->bindParam(':pregunta_FAQ', $pregunta_FAQ);
-        $consulta->bindParam(':resposta_FAQ', $resposta_FAQ);
-        $consulta->bindParam(':categoria_FAQ', $categoria_FAQ);
-        $consulta->bindParam(':data_FAQ', $data_FAQ);
+        $consulta->bindParam(':id_contacte', $id_contacte);
+        $consulta->bindParam(':nom_contacte', $nom_contacte);
+        $consulta->bindParam(':cognoms_contacte', $cognoms_contacte);
+        $consulta->bindParam(':email_contacte', $email_contacte);
+        $consulta->bindParam(':data_contacte', $data_contacte);
 
         $resultat = $consulta->execute();
         $conexion = null;
@@ -162,16 +162,16 @@ class dataFAQ {
     //     return $resultat;
     // }
 
-    public function Modificar(&$error, $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ ) {
+    public function Modificar(&$error, $id_contacte, $nom_contacte, $cognoms_contacte, $email_contacte, $data_contacte ) {
         $conexion = new conexion();
 
-        $consulta = $conexion->prepare('UPDATE ' . self::TAULA . ' SET pregunta_FAQ = :pregunta_FAQ, resposta_FAQ = :resposta_FAQ, categoria_FAQ = :categoria_FAQ, data_FAQ = :data_FAQ WHERE id_FAQ= :id_FAQ');
+        $consulta = $conexion->prepare('UPDATE ' . self::TAULA . ' SET nom_contacte = :nom_contacte, cognoms_contacte = :cognoms_contacte, email_contacte = :email_contacte, data_contacte = :data_contacte WHERE id_contacte= :id_contacte');
 
-        $consulta->bindParam(':id_FAQ', $id_FAQ);
-        $consulta->bindParam(':pregunta_FAQ', $pregunta_FAQ);
-        $consulta->bindParam(':resposta_FAQ', $resposta_FAQ);
-        $consulta->bindParam(':categoria_FAQ', $categoria_FAQ);
-        $consulta->bindParam(':data_FAQ', $data_FAQ);
+        $consulta->bindParam(':id_contacte', $id_contacte);
+        $consulta->bindParam(':nom_contacte', $nom_contacte);
+        $consulta->bindParam(':cognoms_contacte', $cognoms_contacte);
+        $consulta->bindParam(':email_contacte', $email_contacte);
+        $consulta->bindParam(':data_contacte', $data_contacte);
 
         $resultat = $consulta->execute();
         $conexion = null;
@@ -207,10 +207,10 @@ class dataFAQ {
     //     return $resultat;
     // }
 
-    public function Eliminar(&$error, $id_FAQ) {
+    public function Eliminar(&$error, $id_contacte) {
         $conexion = new conexion();
-        $consulta = $conexion->prepare('DELETE FROM ' . self::TAULA . ' WHERE id_FAQ= :id_FAQ' );
-        $consulta->bindParam(':id_FAQ', $id_FAQ);
+        $consulta = $conexion->prepare('DELETE FROM ' . self::TAULA . ' WHERE id_contacte= :id_contacte' );
+        $consulta->bindParam(':id_contacte', $id_contacte);
         $resultat=$consulta->execute();
         $conexion = null;
 

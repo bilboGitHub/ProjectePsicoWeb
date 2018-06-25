@@ -1,80 +1,80 @@
 <?php
 
 // require_once "/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/data_FAQ.php"; //<--apple
-require_once "../Data/data_FAQ.php"; //<--windows
+require_once "../Data/data_contacte.php"; //<--windows
 
-class business_FAQ {
-    private $id_FAQ;
-    private $pregunta_FAQ;
-    private $resposta_FAQ;
-    private $categoria_FAQ;
-    private $data_FAQ;
+class business_contacte {
+    private $id_contacte;
+    private $nom_contacte;
+    private $cognoms_contacte;
+    private $email_contacte;
+    private $data_contacte;
 
 
-    public function __construct ($id_FAQ=null, $pregunta_FAQ=null, $resposta_FAQ=null, $categoria_FAQ=null, $data_FAQ=null) {
-        $this->id_FAQ = $id_FAQ;
-        $this->pregunta_FAQ = $pregunta_FAQ;
-        $this->resposta_FAQ = $resposta_FAQ;
-        $this->categoria_FAQ = $categoria_FAQ;        
-        $this->data_FAQ = $data_FAQ;      
+    public function __construct ($id_contacte=null, $nom_contacte=null, $cognoms_contacte=null, $email_contacte=null, $data_contacte=null) {
+        $this->id_contacte = $id_contacte;
+        $this->nom_contacte = $nom_contacte;
+        $this->cognoms_contacte = $cognoms_contacte;
+        $this->email_contacte = $email_contacte;        
+        $this->data_contacte = $data_contacte;      
     }
 
 
-    public function getId_FAQ() {
-        return $this->id_FAQ;
+    public function getId_contacte() {
+        return $this->id_contacte;
     }
 
-    public function setId_FAQ($id_FAQ) {
-        $this->id_FAQ = $id_FAQ;
+    public function setId_contacte($id_contacte) {
+        $this->id_contacte = $id_contacte;
     }
 
-    public function getPregunta_FAQ() {
-        return $this->pregunta_FAQ;
+    public function getnom_contacte() {
+        return $this->nom_contacte;
     }
 
-    public function setPregunta_FAQ($pregunta_FAQ) {
-        $this->pregunta_FAQ = $pregunta_FAQ;
+    public function setnom_contacte($nom_contacte) {
+        $this->nom_contacte = $nom_contacte;
     }
 
-    public function getResposta_FAQ() {
-        return $this->resposta_FAQ;
+    public function getcognoms_contacte() {
+        return $this->cognoms_contacte;
     }
 
-    public function setResposta_FAQ($resposta_FAQ) {
-        $this->resposta_FAQ = $resposta_FAQ;
+    public function setcognoms_contacte($cognoms_contacte) {
+        $this->cognoms_contacte = $cognoms_contacte;
     }
 
-    public function getCategoria_FAQ() {
-        return $this->categoria_FAQ;
+    public function getemail_contacte() {
+        return $this->email_contacte;
     }
 
-    public function setCategoria_FAQ($categoria_FAQ) {
-        $this->categoria_FAQ = $categoria_FAQ;
+    public function setemail_contacte($email_contacte) {
+        $this->email_contacte = $email_contacte;
     }
 
-    public function getData_FAQ() {
-        return $this->data_FAQ;
+    public function getData_contacte() {
+        return $this->data_contacte;
     }
 
-    public function setData_FAQ($data_FAQ) {
-        $this->data_FAQ = $data_FAQ;
+    public function setData_contacte($data_contacte) {
+        $this->data_contacte = $data_contacte;
     }
 
 
     public function Llistar(&$error) {  //error:exactly 1 expected in
-        $objDataFAQ = new dataFAQ();
-        $arrayRegistres = $objDataFAQ->Llistar($error);
+        $objDatacontacte = new datacontacte();
+        $arrayRegistres = $objDatacontacte->Llistar($error);
         
         if (!$arrayRegistres)
         	return false;
         else {
-        	$arrayFAQ = array();
+        	$arraycontacte = array();
         	foreach ($arrayRegistres as $registre) {
-        		$objFAQ = new business_FAQ($registre['id_FAQ'] ,$registre['pregunta_FAQ'] ,$registre['resposta_FAQ'] ,$registre['categoria_FAQ'] ,$registre['data_FAQ'] );
-        		$arrayFAQ[]=$objFAQ;
+        		$objcontacte = new business_contacte($registre['id_contacte'] ,$registre['nom_contacte'] ,$registre['cognoms_contacte'] ,$registre['email_contacte'] ,$registre['data_contacte'] );
+        		$arraycontacte[]=$objcontacte;
         	}
 
-        	return $arrayFAQ;
+        	return $arraycontacte;
 
         } 
         	
@@ -98,9 +98,9 @@ class business_FAQ {
     //     } 
     // }
 
-    public function selectFAQ() {
-        $objDataFAQ = new dataFAQ();
-        $arrayRegistres = $objDataFAQ->selectFAQ();
+    public function selectcontacte() {
+        $objDatacontacte = new datacontacte();
+        $arrayRegistres = $objDatacontacte->selectcontacte();
         return $arrayRegistres;
     }
 
@@ -112,19 +112,19 @@ class business_FAQ {
     // }
 
 
-    public function mostrarFAQPerID($ID) {
-        $objDataFAQ = new dataFAQ();
-        $arrayRegistres = $objDataFAQ->mostrarFAQPerID($ID);
+    public function mostrarcontactePerID($ID) {
+        $objDatacontacte = new datacontacte();
+        $arrayRegistres = $objDatacontacte->mostrarcontactePerID($ID);
         
         if (!$arrayRegistres)
             return false;
         else {
-            $arrayFAQ = array();
+            $arraycontacte = array();
             foreach ($arrayRegistres as $registre) {
-                $objFAQ = new business_FAQ($registre['id_FAQ'] ,$registre['pregunta_FAQ'] ,$registre['resposta_FAQ'] ,$registre['categoria_FAQ'] ,$registre['data_FAQ']);
-                $arrayFAQ[]=$objFAQ;
+                $objcontacte = new business_contacte($registre['id_contacte'] ,$registre['nom_contacte'] ,$registre['cognoms_contacte'] ,$registre['email_contacte'] ,$registre['data_contacte']);
+                $arraycontacte[]=$objcontacte;
             }
-            return $arrayFAQ;
+            return $arraycontacte;
         }        
     }
 
@@ -167,12 +167,12 @@ class business_FAQ {
         }        
     }
 
-    public function cercarPerID(&$error, $id_FAQ) {
-        $objDataFAQ = new dataFAQ();
+    public function cercarPerID(&$error, $id_contacte) {
+        $objDatacontacte = new datacontacte();
 
-        $registre = $objDataFAQ->cercarPerID($error, $id_FAQ);
+        $registre = $objDatacontacte->cercarPerID($error, $id_contacte);
         if ($registre) 
-            return new business_FAQ($id_FAQ, $registre['pregunta_FAQ'], $registre['resposta_FAQ'], $registre['categoria_FAQ'], $registre['data_FAQ']);
+            return new business_contacte($id_contacte, $registre['nom_contacte'], $registre['cognoms_contacte'], $registre['email_contacte'], $registre['data_contacte']);
         else 
             return false;
     }
@@ -188,8 +188,8 @@ class business_FAQ {
     // }
 
     public function Insertar(&$error) {
-        $objDataFAQ = new dataFAQ();
-        $resultat = $objDataFAQ->Insertar($error, $this->id_FAQ, $this->pregunta_FAQ, $this->resposta_FAQ, $this->categoria_FAQ, $this->data_FAQ );
+        $objDatacontacte = new datacontacte();
+        $resultat = $objDatacontacte->Insertar($error, $this->id_contacte, $this->nom_contacte, $this->cognoms_contacte, $this->email_contacte, $this->data_contacte );
         return $resultat;
     }
 
@@ -200,8 +200,8 @@ class business_FAQ {
     // }
 
     public function Modificar(&$error) {
-        $objDataFAQ = new dataFAQ();
-        $resultat = $objDataFAQ->Modificar($error, $this->id_FAQ, $this->pregunta_FAQ, $this->resposta_FAQ, $this->categoria_FAQ, $this->data_FAQ );
+        $objDatacontacte = new datacontacte();
+        $resultat = $objDatacontacte->Modificar($error, $this->id_contacte, $this->nom_contacte, $this->cognoms_contacte, $this->email_contacte, $this->data_contacte );
         return $resultat;
     }
 
@@ -212,8 +212,8 @@ class business_FAQ {
     // }
   
     public function Eliminar(&$error){
-        $objDataFAQ = new dataFAQ();
-        $resultat = $objDataFAQ->Eliminar($error, $this->id_FAQ);
+        $objDatacontacte = new datacontacte();
+        $resultat = $objDatacontacte->Eliminar($error, $this->id_contacte);
         return $resultat;
     }
 
