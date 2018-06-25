@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="Front-End/css/main.css">
 </head>
+
 <body class="home page-template-default page page-id-5 init loaded hero-start" cz-shortcut-listen="true"> <!--  -->
     <main id="main-scrollbar" data-scrollbar="" class="full-height" tabindex="1" style="overflow: hidden; outline: none;">
         <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px); pointer-events: auto;">
-    
+            <header></header>
             <div class="veil full fixed" style="top: 0px;"></div>
-
             <div id="wrapper" class="">
-
                 <section class="tbc-banner callout on-screen " style="background-color: rgb(255, 250, 209);">
                     <hgroup class="standard">
                         <span class="label">LET COLOR BE YOUR GUIDE</span>
@@ -39,9 +38,15 @@
                         <canvas id="colorCanvas" width="" height=""></canvas>
                     </div>
                 </section>
-    
+                <footer></footer>
             </div> <!--/wrapper-->
-
         </div>
+        <div class="scrollbar-track scrollbar-track-x" style="display: none;">
+            <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 1194px; transform: translate3d(0px, 0px, 0px);"></div>
+        </div>
+        <div class="scrollbar-track scrollbar-track-y" style="display: block;">
+            <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 149.558px; transform: translate3d(0px, 351.526px, 0px);"></div>
+        </div>
+        <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </main>
 </body>

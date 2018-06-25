@@ -3,14 +3,20 @@ figure.card{
 	float: left;
 	margin-right: 20px;
 	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 	img{
 		height: auto;
+		display: block;
 		width: 100%;
 		float: left;
 		z-index: 1;
 		transform: scale(1);
 		transition: transform 1s $ease;	
+		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
+		position: relative;
 	}
 	&.has-video{
 		&.video-loaded{
@@ -107,6 +113,9 @@ figure.card{
 			p{
 				font-size: 1.25rem;
 				margin: $pad/10 0;
+				@include breakpoint(tablet){
+					font-size: 1rem;
+				}
 			}
 		}		
 	}
@@ -229,6 +238,10 @@ figure.card{
 	position: relative;
 	.slick{
 		width: calc(56vw - 20px);
+		@include breakpoint(tablet-landscape){
+			max-width: 600px;
+			margin: 0 auto;
+		}
 	}
 	figure.card{
 		img{
@@ -273,6 +286,11 @@ figure.card{
 		figure.card{
 			margin-left: 20px;
 			margin-right: 20px;
+			@include breakpoint(tablet-landscape){
+				max-width: 220px;
+				margin-left: 0px;
+				margin-right: 40px;
+			}
 		}
 		hgroup{
 			position: relative;

@@ -1538,15 +1538,21 @@ figure.card {
   position: relative;
   float: left;
   margin-right: 20px;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); }
   figure.card img {
     height: auto;
+    display: block;
     width: 100%;
     float: left;
     z-index: 1;
     transform: scale(1);
     transition: transform 1s cubic-bezier(0.28, 0, 0.18, 1);
-    backface-visibility: hidden; }
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative; }
   figure.card.has-video.video-loaded video {
     opacity: 1; }
   figure.card.has-video.video-loaded img {
@@ -1619,6 +1625,9 @@ figure.card {
     figure.card.bottom figcaption p {
       font-size: 1.25rem;
       margin: 6px 0; }
+      @media (max-width: 1024px) {
+        figure.card.bottom figcaption p {
+          font-size: 1rem; } }
   figure.card .quickbuy {
     z-index: 10000;
     width: 100%;
@@ -1707,6 +1716,10 @@ figure.card {
   position: relative; }
   .cards .slick {
     width: calc(56vw - 20px); }
+    @media (max-width: 1024px) and (orientation: landscape) {
+      .cards .slick {
+        max-width: 600px;
+        margin: 0 auto; } }
   .cards figure.card img {
     transition: transform 1s cubic-bezier(0.28, 0, 0.18, 1), filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s;
     -webkit-filter: grayscale(100%);
@@ -1747,7 +1760,13 @@ figure.card {
         width: 100%; }
       .cards figure.card {
         margin-left: 20px;
-        margin-right: 20px; }
+        margin-right: 20px; } }
+    @media (max-width: 1024px) and (max-width: 1024px) and (orientation: landscape) {
+      .cards figure.card {
+        max-width: 220px;
+        margin-left: 0px;
+        margin-right: 40px; } }
+  @media (max-width: 1024px) {
       .cards hgroup {
         position: relative;
         right: auto;
