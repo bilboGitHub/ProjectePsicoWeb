@@ -117,16 +117,14 @@ class dataFAQ {
     //     return $registre;
     // }
 
-    public function Insertar(&$error, $id_FAQ, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ, $data_FAQ) {
+    public function Insertar(&$error, $pregunta_FAQ, $resposta_FAQ, $categoria_FAQ) {
         $conexion = new conexion();
         
-        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (id_FAQ, pregunta_FAQ, resposta_FAQ, categoria_FAQ, data_FAQ) VALUES(:id_FAQ, :pregunta_FAQ, :resposta_FAQ, :categoria_FAQ, :data_FAQ)');
+        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (pregunta_FAQ, resposta_FAQ, categoria_FAQ) VALUES(:pregunta_FAQ, :resposta_FAQ, :categoria_FAQ)');
         
-        $consulta->bindParam(':id_FAQ', $id_FAQ);
         $consulta->bindParam(':pregunta_FAQ', $pregunta_FAQ);
         $consulta->bindParam(':resposta_FAQ', $resposta_FAQ);
         $consulta->bindParam(':categoria_FAQ', $categoria_FAQ);
-        $consulta->bindParam(':data_FAQ', $data_FAQ);
 
         $resultat = $consulta->execute();
         $conexion = null;

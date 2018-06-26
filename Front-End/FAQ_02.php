@@ -20,13 +20,13 @@
     
 <h1>INSERTAR FAQ</h1>
 
-<form action="FAQ_02b.php" method="post">
+<form action="FAQ_02.php" method="post">
     <table border='2'>
-        <tr><td>id: </td><td><input type="text" name="id" size="100%"> </td></tr>
-        <tr><td>pregunta: </td><td><input type="text" name="pregunta" size="100%"></td></tr>
-        <tr><td>resposta: </td><td><input type="text" name="resposta" size="100%"></td></tr>
-        <tr><td>categoria: </td><td><input type="text" name="categoria" size="100%"></td></tr>
-        <tr><td>data: </td><td><input type="text" name="data" size="100%"></td></tr>
+        <!-- <tr><td>id: </td><td><input type="text" name="id" size="100"> </td></tr> -->
+        <tr><td>pregunta: </td><td><input type="text" name="pregunta" size="100"></td></tr>
+        <tr><td>resposta: </td><td><input type="text" name="resposta" size="100"></td></tr>
+        <tr><td>categoria: </td><td><input type="text" name="categoria" size="100"></td></tr>
+        <!-- <tr><td>data: </td><td><input type="text" name="data" size="100"></td></tr> -->
     </table>
     <br>
     <input type="submit" value="INSERTAR" name="btInsertar">
@@ -37,7 +37,7 @@
 
 if (isset($_POST['btInsertar'])) {
    $error="";         
-   $objFAQ = new business_FAQ($_POST['id'], $_POST['pregunta'], $_POST['resposta'], $_POST['categoria'], $_POST['data']);
+   $objFAQ = new business_FAQ(null, $_POST['pregunta'], $_POST['resposta'], $_POST['categoria'], null);
    
    $resultat = $objFAQ -> insertar($error);
 

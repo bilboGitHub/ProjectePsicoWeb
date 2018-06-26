@@ -1,6 +1,6 @@
 <?php
-    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_contacte.php"; //<--apple
-    require "../Business/business_contacte.php"; //<--windows
+    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_usuari.php"; //<--apple
+    require "../Business/business_usuari.php"; //<--windows
 ?>
 
 <html>
@@ -18,17 +18,12 @@
 
 <body>
     
-<h1>INSERTAR contacte</h1>
+<h1>INSERTAR usuari doctor</h1>
 
-<form action="contacte_02.php" method="post">
+<form action="usuari_02_registrardoctor.php" method="post">
     <table border=2>
-        <!-- <tr><td>id: </td><td><input type="text" name="id" size="100"> </td></tr> -->
-        <tr><td>nom: </td><td><input type="text" name="nom" size="100"></td></tr>
-        <tr><td>cognoms: </td><td><input type="text" name="cognoms" size="100"></td></tr>
         <tr><td>email: </td><td><input type="text" name="email" size="100"></td></tr>
-        <!-- <tr><td>data: </td><td><input type="text" name="data" size="100"></td></tr> -->
-        <tr><td>telefon: </td><td><input type="text" name="telefon" size="100"></td></tr>
-        <tr><td>missatge: </td><td><input type="text" name="missatge" size="100"></td></tr>
+        <tr><td>contrasenya: </td><td><input type="text" name="contrasenya" size="100"></td></tr>
     </table>
     <br>
     <input type="submit" value="INSERTAR" name="btInsertar">
@@ -39,9 +34,9 @@
 
 if (isset($_POST['btInsertar'])) {
    $error="";         
-   $objcontacte = new business_contacte(null, $_POST['nom'], $_POST['cognoms'], $_POST['email'], null, $_POST['telefon'], $_POST['missatge']);
+   $objusuari = new business_usuari(null, $_POST['email'], $_POST['contrasenya'], 1);
    
-   $resultat = $objcontacte -> insertar($error);
+   $resultat = $objusuari -> insertar($error);
 
    // Motrar el resultado de los registro de la base de datos
     if ($resultat)

@@ -3,10 +3,11 @@
 // require_once '/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/conexion.php'; //<--apple
 require_once 'conexion.php'; //<--windows
 // id_contacte --> id_usuari // email_contacte --> email_usuari // telefon_contacte --> contrasenya_usuari // missatge_contacte --> tipus_usuari
+// business_contacte --> business_usuari // datacontacte --> datausuari
 class datausuari {
 
     const TAULA = 'usuari';
-    id_usuari
+
     public function Llistar(&$error) {
         $conexion = new conexion();
         $consulta = $conexion->prepare('SELECT id_usuari, email_usuari, contrasenya_usuari, tipus_usuari FROM ' . self::TAULA);
@@ -22,7 +23,7 @@ class datausuari {
         return $arrayRegistres;
     }
 
-    public function selectcontacte() {
+    public function selectusuari() {
         $connexio = new conexion();
         $consulta = $connexio->prepare('SELECT id_usuari FROM ' . self::TAULA);
         $consulta->execute();
@@ -31,7 +32,7 @@ class datausuari {
         return $arrayRegistres;
     }
 
-    public function mostrarcontactePerID($ID) {
+    public function mostrarusuariPerID($ID) {
         $conexion = new conexion();
         $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE id_usuari like :id');
         $consulta->bindParam(':id', $ID);

@@ -190,7 +190,7 @@ class business_FAQ {
 
     public function Insertar(&$error) {
         $objDataFAQ = new dataFAQ();
-        $resultat = $objDataFAQ->Insertar($error, $this->id_FAQ, $this->pregunta_FAQ, $this->resposta_FAQ, $this->categoria_FAQ, $this->data_FAQ );
+        $resultat = $objDataFAQ->Insertar($error, $this->pregunta_FAQ, $this->resposta_FAQ, $this->categoria_FAQ );
         return $resultat;
     }
 

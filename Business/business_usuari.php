@@ -1,8 +1,9 @@
 <?php
 
-// require_once "/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/data_FAQ.php"; //<--apple
-require_once "../Data/data_contacte.php"; //<--windows
-// id_contacte --> id_usuari // email_usuari --> email_usuari // contrasenya_usuari --> contrasenya_usuari // tipus_usuari --> tipus_usuari
+// require_once "/Applications/MAMP/htdocs/ProjectePsicoWeb/Data/data_usuari.php"; //<--apple
+require_once "../Data/data_usuari.php"; //<--windows
+// id_contacte --> id_usuari // email_contacte --> email_usuari // telefon_contacte --> contrasenya_usuari // missatge_contacte --> tipus_usuari
+// business_contacte --> business_usuari // datacontacte --> datausuari
 class business_usuari {
 
     private $id_usuari;
@@ -53,71 +54,71 @@ class business_usuari {
 
 
     public function Llistar(&$error) {  //error:exactly 1 expected in
-        $objDatacontacte = new datacontacte();
-        $arrayRegistres = $objDatacontacte->Llistar($error);
+        $objdatausuari = new datausuari();
+        $arrayRegistres = $objdatausuari->Llistar($error);
         
         if (!$arrayRegistres)
         	return false;
         else {
-        	$arraycontacte = array();
+        	$arrayusuari = array();
         	foreach ($arrayRegistres as $registre) {
-        		$objcontacte = new business_contacte($registre['id_usuari'] ,$registre['email_usuari'] ,$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
-        		$arraycontacte[]=$objcontacte;
+        		$objusuari = new business_usuari($registre['id_usuari'] ,$registre['email_usuari'] ,$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
+        		$arrayusuari[]=$objusuari;
         	}
 
-        	return $arraycontacte;
+        	return $arrayusuari;
 
         } 
         	
     }
 
-    public function selectcontacte() {
-        $objDatacontacte = new datacontacte();
-        $arrayRegistres = $objDatacontacte->selectcontacte();
+    public function selectusuari() {
+        $objdatausuari = new datausuari();
+        $arrayRegistres = $objdatausuari->selectusuari();
         return $arrayRegistres;
     }
 
-    public function mostrarcontactePerID($ID) {
-        $objDatacontacte = new datacontacte();
-        $arrayRegistres = $objDatacontacte->mostrarcontactePerID($ID);
+    public function mostrarusuariPerID($ID) {
+        $objdatausuari = new datausuari();
+        $arrayRegistres = $objdatausuari->mostrarusuariPerID($ID);
         
         if (!$arrayRegistres)
             return false;
         else {
-            $arraycontacte = array();
+            $arrayusuari = array();
             foreach ($arrayRegistres as $registre) {
-                $objcontacte = new business_contacte($registre['id_usuari'] ,$registre['email_usuari'] ,$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
-                $arraycontacte[]=$objcontacte;
+                $objusuari = new business_usuari($registre['id_usuari'] ,$registre['email_usuari'] ,$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
+                $arrayusuari[]=$objusuari;
             }
-            return $arraycontacte;
+            return $arrayusuari;
         }        
     }
 
     public function cercarPerID(&$error, $id_usuari) {
-        $objDatacontacte = new datacontacte();
+        $objdatausuari = new datausuari();
 
-        $registre = $objDatacontacte->cercarPerID($error, $id_usuari);
+        $registre = $objdatausuari->cercarPerID($error, $id_usuari);
         if ($registre) 
-            return new business_contacte($id_usuari, $registre['email_usuari'],$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
+            return new business_usuari($id_usuari, $registre['email_usuari'],$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
         else 
             return false;
     }
     
     public function Insertar(&$error) {
-        $objDatacontacte = new datacontacte();
-        $resultat = $objDatacontacte->Insertar($error, $this->email_usuari, $this->contrasenya_usuari, $this->tipus_usuari );
+        $objdatausuari = new datausuari();
+        $resultat = $objdatausuari->Insertar($error, $this->email_usuari, $this->contrasenya_usuari, $this->tipus_usuari );
         return $resultat;
     }
 
     public function Modificar(&$error) {
-        $objDatacontacte = new datacontacte();
-        $resultat = $objDatacontacte->Modificar($error, $this->id_usuari, $this->email_usuari,  $this->contrasenya_usuari, $this->tipus_usuari );
+        $objdatausuari = new datausuari();
+        $resultat = $objdatausuari->Modificar($error, $this->id_usuari, $this->email_usuari,  $this->contrasenya_usuari, $this->tipus_usuari );
         return $resultat;
     }
 
     public function Eliminar(&$error){
-        $objDatacontacte = new datacontacte();
-        $resultat = $objDatacontacte->Eliminar($error, $this->id_usuari);
+        $objdatausuari = new datausuari();
+        $resultat = $objdatausuari->Eliminar($error, $this->id_usuari);
         return $resultat;
     }
 
