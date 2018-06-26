@@ -20,12 +20,12 @@
     <select name="slcontacte">
         <option value=""></option>  
     <?php foreach ($arraycontacte as $fa) { ?>
-               <option value="<?php echo $fa->getId_contacte() ?>"><?php echo $fa->getnom_contacte() ?></option>  
+               <option value="<?php echo $fa->getId_contacte() ?>"><?php echo $fa->getcognoms_contacte() ?></option>  
     <?php } ?>
     </select>
     <br><br>
     <input type="submit" value="Mostrar" name=btMostrar>
-
+    
 <?php
     if (isset($_POST['btMostrar'], $_POST['slcontacte']) and $_POST['slcontacte'] != "" ) {
         $contacte = $contacte -> cercarPerID($error, $_POST['slcontacte']);
@@ -37,7 +37,9 @@
            <tr><td>nom: </td><td><input type="text" name="tbnom" value="<?php echo $contacte->getnom_contacte() ?>"></td></tr>
            <tr><td>cognoms: </td><td><input type="text" name="tbcognoms" value="<?php echo $contacte->getcognoms_contacte() ?>"></td></tr>
            <tr><td>email: </td><td><input type="text" name="tbemail" value="<?php echo $contacte->getemail_contacte() ?>"></td></tr>
-           <tr><td>Data: </td><td><input type="text" name="tbData" value="<?php echo $contacte->getData_contacte() ?>"></td></tr>                   
+           <tr><td>Data: </td><td><input type="text" name="tbData" value="<?php echo $contacte->getData_contacte() ?>"></td></tr>
+           <tr><td>telefon: </td><td><input type="text" name="tbtelefon" value="<?php echo $contacte->gettelefon_contacte() ?>"></td></tr>
+           <tr><td>missatge: </td><td><input type="text" name="tbmissatge" value="<?php echo $contacte->getmissatge_contacte() ?>"></td></tr>                  
         </table>
 
         <br>
@@ -52,7 +54,7 @@
 
     if (isset($_POST['btModificar']) or isset($_POST['btBorrar'])) {
 
-        $objcontacte2 = new business_contacte ($_POST['tbID'], $_POST['tbnom'], $_POST['tbcognoms'], $_POST['tbemail'], $_POST['tbData']);
+        $objcontacte2 = new business_contacte ($_POST['tbID'], $_POST['tbnom'], $_POST['tbcognoms'], $_POST['tbemail'], $_POST['tbData'], $_POST['tbtelefon'], $_POST['tbmissatge'] );
 
         if (isset($_POST['btModificar'])) {
 

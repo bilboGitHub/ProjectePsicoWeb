@@ -22,6 +22,8 @@
         echo "<th>COGNOMS</th>";
         echo "<th>EMAIL</th>";
         echo "<th>DATA</th>";
+        echo "<th>TELEFON</th>";
+        echo "<th>MISSATGE</th>";
         echo "</tr>";
 
         if($arraycontacte) {
@@ -32,6 +34,8 @@
                 echo "<td>" . $faq->getcognoms_contacte(). "</td>";
                 echo "<td>" . $faq->getemail_contacte(). "</td>";
                 echo "<td>" . $faq->getData_contacte(). "</td>";
+                echo "<td>" . $faq->gettelefon_contacte(). "</td>";
+                echo "<td>" . $faq->getmissatge_contacte(). "</td>";
                 echo "</tr>";
             }
         }

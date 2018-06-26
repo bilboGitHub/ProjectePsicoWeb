@@ -16,6 +16,8 @@
         <tr><td>cognoms: </td><td><input type="text" name="cognoms"></td></tr>
         <tr><td>email: </td><td><input type="text" name="email"></td></tr>
         <tr><td>data: </td><td><input type="text" name="data"></td></tr>
+        <tr><td>telefon: </td><td><input type="text" name="telefon"></td></tr>
+        <tr><td>missatge: </td><td><input type="text" name="missatge"></td></tr>
     </table>
     <br>
     <input type="submit" value="INSERTAR" name="btInsertar">
@@ -26,7 +28,7 @@
 
 if (isset($_POST['btInsertar'])) {
    $error="";         
-   $objcontacte = new business_contacte($_POST['id'], $_POST['nom'], $_POST['cognoms'], $_POST['email'], $_POST['data']);
+   $objcontacte = new business_contacte($_POST['id'], $_POST['nom'], $_POST['cognoms'], $_POST['email'], $_POST['data'], $_POST['telefon'], $_POST['missatge']);
    
    $resultat = $objcontacte -> insertar($error);
 
