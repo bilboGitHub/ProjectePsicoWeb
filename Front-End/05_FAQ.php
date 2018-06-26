@@ -78,6 +78,10 @@
                         <h2>Som pares gais, hauria el nostre fill d’anar a teràpia?</h2>
                         <p>Doncs no hi ha perquè inquietar-se si el vostre fill no pateix símptomes que li causin gran malestar. El fet que els seus pares siguin o no siguin gais no és relació causa-efecte de psicopatologia en els fills, però com que no hi ha subjecte lliure de símptomes ni angoixa, sempre recomanem en qualsevol conjuntura familiar, consultar amb un especialista quan alguns símptomes apareixen o es resisteixen i ens serveixen d’alarma indicant que alguna cosa no va bé. Per a més informació, consulteu Psicòleg infantil Barcelona.</p>
                     </article> -->
+                    <!-- <article>
+                        <h2>A casa estem passant per un mal moment, què podem fer?</h2>
+                        <p>Nosaltres sempre diem el mateix, no hi ha perquè aguantar, esperar o mirar a una altra banda, això sempre complica encara més les coses i no es perd res per consultar i veure què passa. Un després sempre tria i decideix amb això, un pot decidir seguir endavant, fins on les seves forces li portin i altres en canvi, la seva decisió pot ser la de resoldre el malestar pel qual consulta i aturar-se aquí. Per a més informació, consulteu Psicòleg infantil Barcelona.</p>
+                    </article> -->
 
                     <?php  
                         $error="";
@@ -115,10 +119,6 @@
                             echo "ERRO: $error";                  
                     ?>
 
-                    <article>
-                        <h2>A casa estem passant per un mal moment, què podem fer?</h2>
-                        <p>Nosaltres sempre diem el mateix, no hi ha perquè aguantar, esperar o mirar a una altra banda, això sempre complica encara més les coses i no es perd res per consultar i veure què passa. Un després sempre tria i decideix amb això, un pot decidir seguir endavant, fins on les seves forces li portin i altres en canvi, la seva decisió pot ser la de resoldre el malestar pel qual consulta i aturar-se aquí. Per a més informació, consulteu Psicòleg infantil Barcelona.</p>
-                    </article>
                     <article class="last">
                         <h2>El meu fill no és normal si té alguna cosa d'això?</h2>
                         <p>No hi ha cap subjecte lliure de símptoma. No existeix la suposada normalitat i la franja que divideix patologia de “normalitat” és de vegades molt difusa. Tot i això, si teniu dubtes, esteu angoixats o simplement preocupats per algun motiu, podeu realitzat una consulta. No ens cansem de repetir que tot és molt més sa quan es pot dialogar, conversar i quan es dóna peu a obrir preguntes i qüestions sobre assumptes que potser mai haguéssim pensat que eren de major transcendència. Per a més informació, consulteu Psicòleg infantil Barcelona.</p>

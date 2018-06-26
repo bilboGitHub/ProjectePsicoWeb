@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
+<?php
+    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_contacte.php"; //<--apple
+    require "../Business/business_contacte.php"; //<--windows
+?>
+
 <body class="page-template-default page page-id-31 init loaded" cz-shortcut-listen="true"><!--  -->
     <main id="main-scrollbar" data-scrollbar="" class="full-height" tabindex="1" style="overflow: hidden; outline: none;">
         <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
@@ -56,7 +61,7 @@
                 <section class="form on-screen">
                     <p class="note">Estem ansiosos per escoltar-vos.</p>           
                     <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_3">
-                        <form method="post" enctype="multipart/form-data" id="gform_3" action="/contact-us/?form=gform_wrapper_3">
+                        <form method="post" enctype="multipart/form-data" id="gform_3" action="06_contacte.php">
                             <div class="gform_body">
                                 <ul id="gform_fields_3" class="gform_fields top_label form_sublabel_below description_below">  
                                     <li id="field_3_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
@@ -102,7 +107,7 @@
                                 </ul>
                             </div>
                             <div class="gform_footer top_label">
-                                <input type="submit" id="gform_submit_button_3" class="gform_button button" value="Enviar" tabindex="7" onclick="if(window[&quot;gf_submitting_3&quot;]){return false;}  window[&quot;gf_submitting_3&quot;]=true;  " onkeypress="if( event.keyCode == 13 ){ if(window[&quot;gf_submitting_3&quot;]){return false;} window[&quot;gf_submitting_3&quot;]=true;  jQuery(&quot;#gform_3&quot;).trigger(&quot;submit&quot;,[true]); }"> 
+                                <input type="submit" id="gform_submit_button_3" class="gform_button button" value="Enviar" name="btInsertar" tabindex="7" onclick="if(window[&quot;gf_submitting_3&quot;]){return false;}  window[&quot;gf_submitting_3&quot;]=true;  " onkeypress="if( event.keyCode == 13 ){ if(window[&quot;gf_submitting_3&quot;]){return false;} window[&quot;gf_submitting_3&quot;]=true;  jQuery(&quot;#gform_3&quot;).trigger(&quot;submit&quot;,[true]); }"> 
                                 <input type="hidden" class="gform_hidden" name="is_submit_3" value="1">
                                 <input type="hidden" class="gform_hidden" name="gform_submit" value="3">               
                                 <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
@@ -112,6 +117,23 @@
                                 <input type="hidden" name="gform_field_values" value="">            
                             </div>
                         </form>
+                        <?php
+
+                        if (isset($_POST['btInsertar'])) {
+                        $error="";         
+                        $objcontacte = new business_contacte(null, $_POST['input_1'], $_POST['input_2'], $_POST['input_3'], null, $_POST['input_4'], $_POST['input_5']);
+                        
+                        $resultat = $objcontacte -> insertar($error);
+
+                        // Motrar el resultado de los registro de la base de datos
+                            if ($resultat)
+                                echo "Registre insertat";
+                            else
+                                echo "Error en la inserció: $error";   
+                        }
+
+                        ?>
+
                     </div>
                     <script type="text/javascript"> if(typeof gf_global == 'undefined') var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ceremonycoffee.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ceremonycoffee.com\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 3) {jQuery('#input_3_1').textareaCount(    {    'maxCharacterSize': 150,    'originalStyle': 'ginput_counter',	 'truncate': true,	 'errorStyle' : '',    'displayFormat' : '#input of #max max characters'    } );if(typeof Placeholders != 'undefined'){
                         Placeholders.enable();

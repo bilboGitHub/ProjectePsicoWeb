@@ -4,6 +4,7 @@
 require_once "../Data/data_FAQ.php"; //<--windows
 
 class business_FAQ {
+    
     private $id_FAQ;
     private $pregunta_FAQ;
     private $resposta_FAQ;

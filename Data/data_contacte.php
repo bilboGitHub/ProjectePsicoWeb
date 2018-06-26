@@ -67,16 +67,14 @@ class datacontacte {
         return $registre;
     }
 
-    public function Insertar(&$error, $id_contacte, $nom_contacte, $cognoms_contacte, $email_contacte, $data_contacte, $telefon_contacte, $missatge_contacte) {
+    public function Insertar(&$error, $nom_contacte, $cognoms_contacte, $email_contacte, $telefon_contacte, $missatge_contacte) {
         $conexion = new conexion();
         
-        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' (id_contacte, nom_contacte, cognoms_contacte, email_contacte, data_contacte, telefon_contacte, missatge_contacte) VALUES(:id_contacte, :nom_contacte, :cognoms_contacte, :email_contacte, :data_contacte, :telefon_contacte, :missatge_contacte)');
+        $consulta = $conexion->prepare('INSERT INTO ' . self::TAULA . ' ( nom_contacte, cognoms_contacte, email_contacte, telefon_contacte, missatge_contacte) VALUES(:nom_contacte, :cognoms_contacte, :email_contacte, :telefon_contacte, :missatge_contacte)');
         
-        $consulta->bindParam(':id_contacte', $id_contacte);
         $consulta->bindParam(':nom_contacte', $nom_contacte);
         $consulta->bindParam(':cognoms_contacte', $cognoms_contacte);
         $consulta->bindParam(':email_contacte', $email_contacte);
-        $consulta->bindParam(':data_contacte', $data_contacte);
         $consulta->bindParam(':telefon_contacte', $telefon_contacte);
         $consulta->bindParam(':missatge_contacte', $missatge_contacte);
 

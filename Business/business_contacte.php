@@ -158,7 +158,7 @@ class business_contacte {
     
     public function Insertar(&$error) {
         $objDatacontacte = new datacontacte();
-        $resultat = $objDatacontacte->Insertar($error, $this->id_contacte, $this->nom_contacte, $this->cognoms_contacte, $this->email_contacte, $this->data_contacte, $this->telefon_contacte, $this->missatge_contacte );
+        $resultat = $objDatacontacte->Insertar($error, $this->nom_contacte, $this->cognoms_contacte, $this->email_contacte, $this->telefon_contacte, $this->missatge_contacte );
         return $resultat;
     }
 
