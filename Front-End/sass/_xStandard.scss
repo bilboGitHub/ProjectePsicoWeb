@@ -1,5 +1,5 @@
 .standard-intro{
-	padding: 60px calc(10vw + 50px);
+	padding: 60px; //padding: 60px calc(10vw + 50px);
 	width: 100%;
 	display: -ms-flexbox;
     display: flex;
@@ -99,10 +99,13 @@
 			margin: 0 auto;
 		}
 		img{
-			margin-top: $pad;
-			width: calc(30vw - 50px);
+			margin-top: 60px;
+			width: calc(100% - 10px);
 			height: auto;
-			@include filter(grayscale, 100%);
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			position: relative;
+			transform: translateZ(0);
 			transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
 			will-change: filter;
 			@include breakpoint(tablet){
@@ -226,20 +229,50 @@
 	}
 }
 .standard-photos{
-	padding: $pad*2 $pad $pad*3;
-	width: 100%;
+	padding: $pad*2 50px $pad*3;
+	// padding: $pad*2 $pad $pad*3;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	@include breakpoint(tablet){
+		padding: 60px 30px 0;
+		max-width: 500px;
+		margin: 0 auto;
+		float: none;
+	}
 	@include clearfix;
 	figure{
 		float: left;
 		margin-right: 80px;
 		position: relative;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translateY(60px);
+		opacity: 0;
 		width: calc(50vw - 100px);
+		@include breakpoint(tablet){
+			float: none;
+			margin: 0;
+			width: 100%;
+			padding: 0 0 60px 0;
+		}
 		img{
+			// width: 100%;
+			// height: auto;
+			// @include filter(grayscale, 100%);
+			// transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
+			// will-change: filter;
 			width: 100%;
 			height: auto;
-			@include filter(grayscale, 100%);
-			transition:filter 1s $ease, -webkit-filter 1s $ease, -moz-filter 1s $ease, -ms-filter 1s $ease, -o-filter 1s $ease;
-			will-change: filter;			
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			position: relative;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);			
 		}
 		video{
 			width: 100%;
@@ -264,10 +297,18 @@
 		&:nth-of-type(3n){
 			clear: both;
 		}
+		&:nth-child(1){
+			transition: transform 1s $ease .2s,opacity 1s $ease .2s;
+		}
+		&:nth-child(2n){
+			transition: transform 1s $ease .4s,opacity 1s $ease .4s;
+		}
 	}
 	&.on-screen,
 	&.passed{
 		figure{
+			transform: translateY(0);
+    		opacity: 1;
 			img{
 				@include filter(grayscale, 0%);
 			}

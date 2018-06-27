@@ -99,10 +99,22 @@ class business_usuari {
 
         $registre = $objdatausuari->cercarPerID($error, $id_usuari);
         if ($registre) 
-            return new business_usuari($id_usuari, $registre['email_usuari'],$registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
+            return new business_usuari($id_usuari, $registre['email_usuari'], $registre['contrasenya_usuari'] ,$registre['tipus_usuari'] );
         else 
             return false;
     }
+
+    public function cercarperemail(&$error, $email_usuari) {
+        $objdatausuari = new datausuari();
+
+        $registre = $objdatausuari->cercarpermail($error, $email_usuari);
+        if ($registre) 
+            return new business_usuari($email_usuari, $registre['contrasenya_usuari'] , $registre['tipus_usuari'] );
+        else 
+            return false;
+    }
+
+
     
     public function Insertar(&$error) {
         $objdatausuari = new datausuari();

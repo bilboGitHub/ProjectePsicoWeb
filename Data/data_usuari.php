@@ -58,6 +58,22 @@ class datausuari {
         return $registre;
     }
 
+    public function cercarperemail(&$error, $email_usuari) {
+        $registre=array();
+        $conexion = new conexion();
+        $consulta = $conexion->prepare('SELECT contrasenya_usuari,, tipus_usuari FROM ' . self::TAULA . ' WHERE email_usuari = :email_usuari');
+        $consulta->bindParam(':email_usuari', $email_usuari); 
+        $resultat=$consulta->execute();
+        $conexion = null;
+
+        if (!$resultat)
+            $error=($consulta->errorInfo())[2];
+        else
+            $registre = $consulta->fetch();
+
+        return $registre;
+    }
+
     public function Insertar(&$error, $email_usuari, $contrasenya_usuari, $tipus_usuari) {
         $conexion = new conexion();
         

@@ -2984,7 +2984,7 @@ scrollbar .overscroll-glow {
   filter: grayscale(0%); }
 
 .standard-intro {
-  padding: 60px calc(10vw + 50px);
+  padding: 60px;
   width: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -3071,13 +3071,12 @@ scrollbar .overscroll-glow {
         margin: 0 auto; } }
     .standard-intro .feature img {
       margin-top: 60px;
-      width: calc(30vw - 50px);
+      width: calc(100% - 10px);
       height: auto;
-      -webkit-filter: grayscale(100%);
-      -moz-filter: grayscale(100%);
-      -ms-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-      filter: grayscale(100%);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      transform: translateZ(0);
       transition: filter 1s cubic-bezier(0.28, 0, 0.18, 1), -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1);
       will-change: filter; }
       @media (max-width: 1024px) {
@@ -3170,8 +3169,19 @@ scrollbar .overscroll-glow {
   filter: grayscale(0%); }
 
 .standard-photos {
-  padding: 120px 60px 180px;
-  width: 100%; }
+  padding: 120px 50px 180px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+  @media (max-width: 1024px) {
+    .standard-photos {
+      padding: 60px 30px 0;
+      max-width: 500px;
+      margin: 0 auto;
+      float: none; } }
   .standard-photos:before, .standard-photos:after {
     content: " ";
     display: table; }
@@ -3181,17 +3191,26 @@ scrollbar .overscroll-glow {
     float: left;
     margin-right: 80px;
     position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translateY(60px);
+    opacity: 0;
     width: calc(50vw - 100px); }
+    @media (max-width: 1024px) {
+      .standard-photos figure {
+        float: none;
+        margin: 0;
+        width: 100%;
+        padding: 0 0 60px 0; } }
     .standard-photos figure img {
       width: 100%;
       height: auto;
-      -webkit-filter: grayscale(100%);
-      -moz-filter: grayscale(100%);
-      -ms-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-      filter: grayscale(100%);
-      transition: filter 1s cubic-bezier(0.28, 0, 0.18, 1), -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1), -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1);
-      will-change: filter; }
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
     .standard-photos figure video {
       width: 100%;
       height: auto; }
@@ -3208,12 +3227,19 @@ scrollbar .overscroll-glow {
       margin-right: 0; }
     .standard-photos figure:nth-of-type(3n) {
       clear: both; }
-  .standard-photos.on-screen figure img, .standard-photos.passed figure img {
-    -webkit-filter: grayscale(0%);
-    -moz-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
-    filter: grayscale(0%); }
+    .standard-photos figure:nth-child(1) {
+      transition: transform 1s cubic-bezier(0.28, 0, 0.18, 1) 0.2s, opacity 1s cubic-bezier(0.28, 0, 0.18, 1) 0.2s; }
+    .standard-photos figure:nth-child(2n) {
+      transition: transform 1s cubic-bezier(0.28, 0, 0.18, 1) 0.4s, opacity 1s cubic-bezier(0.28, 0, 0.18, 1) 0.4s; }
+  .standard-photos.on-screen figure, .standard-photos.passed figure {
+    transform: translateY(0);
+    opacity: 1; }
+    .standard-photos.on-screen figure img, .standard-photos.passed figure img {
+      -webkit-filter: grayscale(0%);
+      -moz-filter: grayscale(0%);
+      -ms-filter: grayscale(0%);
+      -o-filter: grayscale(0%);
+      filter: grayscale(0%); }
 
 .filters {
   margin: 60px 0 30px;
