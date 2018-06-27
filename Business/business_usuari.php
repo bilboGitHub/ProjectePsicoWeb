@@ -107,9 +107,9 @@ class business_usuari {
     public function cercarperemail(&$error, $email_usuari) {
         $objdatausuari = new datausuari();
 
-        $registre = $objdatausuari->cercarpermail($error, $email_usuari);
+        $registre = $objdatausuari->cercarperemail($error, $email_usuari);
         if ($registre) 
-            return new business_usuari($email_usuari, $registre['contrasenya_usuari'] , $registre['tipus_usuari'] );
+            return new business_usuari($registre['id_usuari'] , $email_usuari, $registre['contrasenya_usuari'] , $registre['tipus_usuari'] );
         else 
             return false;
     }

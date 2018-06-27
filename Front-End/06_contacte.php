@@ -53,7 +53,7 @@
                             <h5>Enllaços d'Interès</h5>
                             <p>
                                 <a href="02_nosaltres.html">Nosaltres</a><br>
-                                <a href="05_FAQ.html">FAQ</a>
+                                <a href="05_FAQ.php">FAQ</a>
                             </p>
                         </hgroup>
                     </article>

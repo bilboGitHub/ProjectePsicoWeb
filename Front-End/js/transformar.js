@@ -21,6 +21,47 @@ $(window).scroll(function(){
     })
 });
 
+function changing() {
+    // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.
+    $('#a').toggleClass('slick-current slick-active', 5000, function() {
+        // Con el $(this) estoy haciendo referencia al div #a previamente seleccionado, es lo mismo hacer $(this) que $('#a').
+        $(this).toggleClass('slick-current slick-active', function() {
+            $('#b').toggleClass('slick-current slick-active', 5000, function() {
+                $(this).toggleClass('slick-current slick-active');
+                $('#c').toggleClass('slick-current slick-active', 5000, function() {
+                    $(this).toggleClass('slick-current slick-active');
+                    // En la última parte de la lógica llamo a la propia función para que se ejecute en bucle. Aquí era donde estaba el error, lo he intentado con el delay() y el queue() pero no se ejecutaba en bucle, no me preguntes por qué.
+                    // Total, que ahora puedes jugar como quieras con estos parámetros del toggleClass o del add y removeClass.
+                    changing();
+                })
+            })
+        });
+    });
+}
+
+changing();
+
+function changing__() {
+    // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.
+    $('.a').toggleClass('hide blabla', 5000, function() {
+        // Con el $(this) estoy haciendo referencia al div #a previamente seleccionado, es lo mismo hacer $(this) que $('#a').
+        $(this).toggleClass('hide blabla', function() {
+            $('.b').toggleClass('hide blabla', 5000, function() {
+                $(this).toggleClass('hide blabla');
+                $('.c').toggleClass('hide blabla', 5000, function() {
+                    $(this).toggleClass('hide blabla');
+                    // En la última parte de la lógica llamo a la propia función para que se ejecute en bucle. Aquí era donde estaba el error, lo he intentado con el delay() y el queue() pero no se ejecutaba en bucle, no me preguntes por qué.
+                    // Total, que ahora puedes jugar como quieras con estos parámetros del toggleClass o del add y removeClass.
+                    changing();
+                })
+            })
+        });
+    });
+}
+
+
+
+
 // function heroJordi() {
 //     $("#hero1").css({
 //         "color": "red"

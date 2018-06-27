@@ -126,6 +126,29 @@ html {
     html {
       font-size: 12px; } }
 
+
+
+      
+      .hide{
+          opacity: 0;
+      }
+
+      .blabla{
+        color: #427d2e;
+    }
+      
+      .vermell {
+          background-color: red;
+      }
+      
+      .blau {
+          background-color: blue;
+      }
+      .verd {
+          background-color: green; 
+      }
+      
+
 .cta {
   text-transform: uppercase;
   text-decoration: none;

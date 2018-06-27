@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
+<?php
+    // require "/Applications/MAMP/htdocs/ProjectePsicoWeb/Business/business_usuari.php"; //<--apple
+    require "../Business/business_usuari.php"; //<--windows
+    require "redirect.php";
+?>
+
 <body id="account" class="template-login   init loaded" cz-shortcut-listen="true"><!--  -->
     <main id="main-scrollbar" data-scrollbar="" tabindex="1" style="overflow: hidden; outline: none;" class="">
         <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
@@ -28,18 +34,53 @@
                     </article>	
                     <article>
                         <div id="enter-pass">
-                            <form method="post" action="07_b_login.html" id="customer_login" accept-charset="UTF-8">
+                            <form method="post" action="07_account.php" id="customer_login" accept-charset="UTF-8">
                                 <input type="hidden" name="form_type" value="customer_login">
                                 <input type="hidden" name="utf8" value="✓">
                                 <hgroup class="standard">
                                     <h5>Pacient</h5>
                                     <p>Accediu al vostre compte a continuació</p>			
                                 </hgroup>
-                                <input type="email" name="customer[email]" id="CustomerEmail" class="" placeholder="Email" spellcheck="false" autocomplete="off" autocapitalize="off" autofocus="">
-                                <input type="password" name="customer[password]" id="CustomerPassword" class="" placeholder="Contrasenya">
-                                <input type="submit" class="button" value="Sign In">
+                                <input type="email" name="email" id="CustomerEmail" class="" placeholder="Email" spellcheck="false" autocomplete="off" autocapitalize="off" autofocus="">
+                                <input type="password" name="contrasenya" id="CustomerPassword" class="" placeholder="Contrasenya">
+                                <input type="submit" name="btsignin" class="button" value="Sign In">
                                 <!-- <a href="#" class="cta reset small">Reset Password</a> -->
                             </form>
+
+                            <?php
+
+                            if (isset($_POST['btsignin'])) {
+
+                                $error="";         
+                                $usuari = new business_usuari();
+                                $objusuari = $usuari -> cercarperemail($error, $_POST['email']);
+
+                                if ($error =="") {
+                                    if ($objusuari){
+                                        if ($objusuari->getcontrasenya_usuari() == $_POST['contrasenya']){
+                                            if($objusuari->gettipus_usuari() == 2){
+                                                redirect("09_administrador.html");
+                                            }
+                                            elseif($objusuari->gettipus_usuari() == 1){
+                                                redirect("09_doctor.php?id_usuari=". $objusuari->getid_usuari());
+                                            }
+                                            elseif($objusuari->gettipus_usuari() == 0){
+                                                redirect("09_pacient.php?id_usuari=". $objusuari->getid_usuari());
+                                            }
+                                        }
+                                        else{
+                                            echo "Contrasenya invalida";
+                                        }
+                                    }
+                                    else{
+                                        echo "No existeix Usuari amb aquest Email";   
+                                    }
+                                }
+                                else
+                                    echo "ERROR: $error";
+                            }
+
+                            ?>                            
                         </div>
                         <!-- <div id="reset-pass" class="hidden">
                             <form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">

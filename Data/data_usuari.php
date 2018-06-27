@@ -61,7 +61,7 @@ class datausuari {
     public function cercarperemail(&$error, $email_usuari) {
         $registre=array();
         $conexion = new conexion();
-        $consulta = $conexion->prepare('SELECT contrasenya_usuari,, tipus_usuari FROM ' . self::TAULA . ' WHERE email_usuari = :email_usuari');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TAULA . ' WHERE email_usuari = :email_usuari');
         $consulta->bindParam(':email_usuari', $email_usuari); 
         $resultat=$consulta->execute();
         $conexion = null;
