@@ -24,46 +24,18 @@
             <div class="veil full fixed" style="top: 0px;"></div>
             <div id="wrapper" class="">
                 <div id="header-spacer"></div>
-                <section class="three-col parallax  alt on-screen" style="transform: translateY(14.192px);" data-offset="177.39999389648438">
+                <section class="text-header on-screen">
+                    <!-- <div id="header-spacer"></div> -->
+                    <hgroup>
+                        <h1>TREBALLEM JUNTS!?</h1>
+                    </hgroup>
                     <article>
-                        <hgroup class="standard">	
-                            <h1>Contacteu</h1>
-                        </hgroup>
-                    </article>	
-                    <article>
-                        <hgroup class="standard">
-                            <h5>Psicologia Multidisciplinària</h5>
-                            <!-- <p>PsicoExperts Barcelona<br>
-                                C/ Comte Borrell 137<br>
-                                08015 Barcelona
-                            </p> -->
-                            <a href="https://maps.google.com?q=Carrer del Comte Borrell, 137, Barcelona" target="_blank" class="cta_jordi">PsicoExperts<br>
-                                C/ Comte Borrell 137<br>
-                                08015 Barcelona
-                            </a>
-                        </hgroup>
-                    </article>
-                    <article>
-                        <hgroup class="standard">
-                            <h5>Posa't en Contacte</h5>
-                            <p>
-                                <a href="mailto:info@psicoexpertsbarcelona.com">info@psicoexpertsbarcelona.com</a><br>
-                                12 345 67 89
-                            </p>
-                        </hgroup>
-                    </article>
-                    <article>
-                        <hgroup class="standard">
-                            <h5>Enllaços d'Interès</h5>
-                            <p>
-                                <a href="02_nosaltres.html">Nosaltres</a><br>
-                                <a href="05_FAQ.php">FAQ</a>
-                            </p>
-                        </hgroup>
+                        <h2>Busquem</h2>
+                        <p>Psicòlegs clínics i psicoterapeutes ubicats a Barcelona, amb un recorregut de més de deu anys de treball en clíniques privades i hospitals públics, així com en serveis de salut mental de Barcelona i rodalies.</p>
                     </article>
                 </section>
                 <section class="form on-screen">
-                    <p class="note">Estem ansiosos per escoltar-vos.</p>           
+                    <p class="heading">Creus que tens el que es necessita? Omple el formulari i ens posarem en contacte molt aviat.</p>           
                     <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_3">
                         <form method="post" enctype="multipart/form-data" id="gform_3" action="06_contacte.php">
                             <div class="gform_body">
@@ -92,9 +64,12 @@
                                             <input name="input_4" id="input_3_4" type="text" value="" class="medium" tabindex="4" placeholder="Telèfon" aria-invalid="false">
                                         </div>
                                     </li>
+                                    <li id="field_2_7" class="gfield full-width gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible">
+                                        <label>El teu missatge</label>
+                                    </li>
                                     <li id="field_3_5" class="gfield full-width gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-                                        <label class="gfield_label" for="input_3_5">El teu missatge<span class="gfield_required">*</span></label>
-                                        <div class="ginput_container ginput_container_textarea"><textarea name="input_5" id="input_3_5" class="textarea medium" tabindex="5" placeholder="El teu missatge *" aria-required="true" aria-invalid="false" rows="10" cols="50"></textarea>
+                                        <label class="gfield_label" for="input_3_5"><span class="gfield_required">*</span></label>
+                                        <div class="ginput_container ginput_container_textarea"><textarea name="input_5" id="input_3_5" class="textarea medium" tabindex="5" placeholder="" aria-required="true" aria-invalid="false" rows="10" cols="50"></textarea>
                                         </div>
                                     </li>
                                     <li id="field_3_6" class="gfield full-width centered field_sublabel_below field_description_below gfield_visibility_visible">

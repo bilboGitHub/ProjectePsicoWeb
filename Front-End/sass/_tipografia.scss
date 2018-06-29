@@ -18,7 +18,8 @@ html {
     @include breakpoint(mobile){font-size: 12px;}
 }
 
-.cta{
+.cta,
+.cta_jordi{
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.1rem;
@@ -254,6 +255,12 @@ hgroup.standard{
     .cta{
         display: inline-block;
         margin-top: $pad/2;
+        //font-size: 0.9rem;
+    }
+    .cta_jordi{
+        display: inline-block;
+        margin-top: $pad/4;
+        line-height: 1.5;
         //font-size: 0.9rem;
     }
     &.centered{

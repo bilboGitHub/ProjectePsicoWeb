@@ -1,24 +1,45 @@
 .text-header{
 	margin: $pad 0 $pad*2;
 	@include clearfix;
+	@include breakpoint(tablet){
+		margin: 0;
+		padding: $pad;
+	}
 	hgroup{
-
 		float: left;
 	    margin-left: calc(10vw + 50px);
 	    width: calc(20vw - 40px);
-	    margin-right: 20px;
+		margin-right: 20px;
+		@include breakpoint(tablet){
+			float: none;
+			margin: 20px auto;
+			width: 100%;
+			text-align: center;
+			max-width: 440px;
+		}
 		h1{
 			font-family: $serif;
 			font-size: 3rem;
 			margin-bottom: $pad/2;
 			padding-right: 25%;
 			line-height: 1.2;
+			@include breakpoint(tablet){
+				margin: 0;
+				padding: 0;
+			}
 		}
 		.label{
 			float: left;
 			clear: both;
+			@include breakpoint(tablet){
+				float: none;
+				display: block;
+			}
 			&.small{
 				font-size: .6rem;
+				@include breakpoint(tablet){
+					margin-top: 30px;
+				}
 			}
 			&.big{
 				font-weight: 500;
@@ -31,6 +52,15 @@
 	article{
 		float: left;
 		width: calc(40vw - 60px);
+		@include breakpoint(tablet){
+			width: 100%;
+			margin: 0 auto;
+			padding-top: 0;
+			max-width: 440px;
+			float: none;
+			clear: both;
+			text-align: center;
+		}
 		h2{
 			font-family: $sans;
 			font-size: 1.5rem;

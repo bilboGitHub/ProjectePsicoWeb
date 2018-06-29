@@ -1101,6 +1101,13 @@ footer.global{
 						color: #888888;
 					}
 				}
+				span{
+					color: black;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					margin-bottom: $pad/3;
+					display: inline-block;
+				}				
 				ul{
 					width: 100%;
 					li{
@@ -1141,6 +1148,14 @@ footer.global{
 					&:hover{
 						color: #888888;
 					}
+				}
+				span{
+					color: black;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					margin-bottom: $pad/3;
+					display: inline-block;
+
 				}
 				ul{
 					width: 100%;
@@ -1194,6 +1209,58 @@ footer.global{
 			}
 		}
 		@include breakpoint(tablet){
+			width: 100%;
+			float: left;
+			clear: both;
+			text-align: center;
+			ul{
+				li{
+					&#gift-card-btn{
+						display: none;
+					}
+					a{
+						&.icon{
+							font-size: 1.5rem;
+							margin: 0 $pad/4;
+						}
+					}
+				}
+			}
+		}
+	}
+	.xarxessocials{
+		display: none;
+		float: right;
+		width: 15%;
+		ul{
+			li{
+				margin-bottom: $pad/2;
+				font-size: 1.2rem;
+				line-height: 1.5;
+				span{
+					text-transform: uppercase;
+					font-size: 0.9rem;
+					display: inline-block;
+					letter-spacing: 1px;
+					color: #888888;
+				}
+				a{
+					text-decoration: none;
+					color: black;
+					transition: color $slow $ease;
+					&:hover{
+						color: #888888;
+					}
+					&.icon{
+						font-size: 1.5rem;
+						margin-right: $pad/2;
+					}
+				}
+				
+			}
+		}
+		@include breakpoint(tablet){
+			display: initial;
 			width: 100%;
 			float: left;
 			clear: both;

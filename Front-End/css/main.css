@@ -126,30 +126,8 @@ html {
     html {
       font-size: 12px; } }
 
-
-
-      
-      .hide{
-          opacity: 0;
-      }
-
-      .blabla{
-        color: #427d2e;
-    }
-      
-      .vermell {
-          background-color: red;
-      }
-      
-      .blau {
-          background-color: blue;
-      }
-      .verd {
-          background-color: green; 
-      }
-      
-
-.cta {
+.cta,
+.cta_jordi {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.1rem;
@@ -159,7 +137,8 @@ html {
   font-weight: 500;
   font-size: 0.9rem;
   transition: opacity 0.5s cubic-bezier(0.28, 0, 0.18, 1); }
-  .cta:after {
+  .cta:after,
+  .cta_jordi:after {
     content: '';
     position: absolute;
     top: 100%;
@@ -170,17 +149,22 @@ html {
     left: 50%;
     transform: translateX(-50%) scaleX(0);
     transition: transform 0.5s cubic-bezier(0.28, 0, 0.18, 1); }
-  .cta:hover {
+  .cta:hover,
+  .cta_jordi:hover {
     opacity: 1; }
-    .cta:hover:after {
+    .cta:hover:after,
+    .cta_jordi:hover:after {
       transition: transform 0.5s cubic-bezier(0.28, 0, 0.18, 1) 0.2s;
       transform: translateX(-50%) scaleX(1); }
-  .cta.white {
+  .cta.white,
+  .cta_jordi.white {
     opacity: 1;
     color: white; }
-    .cta.white:after {
+    .cta.white:after,
+    .cta_jordi.white:after {
       background: white; }
-  .cta.small {
+  .cta.small,
+  .cta_jordi.small {
     font-size: 0.9rem; }
 
 .button, .rc_label__autodeliver {
@@ -356,6 +340,10 @@ hgroup.standard .times {
 hgroup.standard .cta {
   display: inline-block;
   margin-top: 30px; }
+hgroup.standard .cta_jordi {
+  display: inline-block;
+  margin-top: 15px;
+  line-height: 1.5; }
 hgroup.standard.centered {
   text-align: center; }
   hgroup.standard.centered h1 {
@@ -1270,6 +1258,12 @@ footer.global {
         display: inline-block; }
         footer.global nav.global ul.main li a:hover {
           color: #888888; }
+      footer.global nav.global ul.main li span {
+        color: black;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: inline-block; }
       footer.global nav.global ul.main li ul {
         width: 100%; }
         footer.global nav.global ul.main li ul li {
@@ -1302,6 +1296,12 @@ footer.global {
         display: inline-block; }
         footer.global nav.esquerra ul.main li a:hover {
           color: #888888; }
+      footer.global nav.esquerra ul.main li span {
+        color: black;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: inline-block; }
       footer.global nav.esquerra ul.main li ul {
         width: 100%; }
         footer.global nav.esquerra ul.main li ul li {
@@ -1347,6 +1347,41 @@ footer.global {
         footer.global aside ul li#gift-card-btn {
           display: none; }
         footer.global aside ul li a.icon {
+          font-size: 1.5rem;
+          margin: 0 15px; } }
+  footer.global .xarxessocials {
+    display: none;
+    float: right;
+    width: 15%; }
+    footer.global .xarxessocials ul li {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+      line-height: 1.5; }
+      footer.global .xarxessocials ul li span {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: inline-block;
+        letter-spacing: 1px;
+        color: #888888; }
+      footer.global .xarxessocials ul li a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.25s cubic-bezier(0.28, 0, 0.18, 1); }
+        footer.global .xarxessocials ul li a:hover {
+          color: #888888; }
+        footer.global .xarxessocials ul li a.icon {
+          font-size: 1.5rem;
+          margin-right: 30px; }
+    @media (max-width: 1024px) {
+      footer.global .xarxessocials {
+        display: initial;
+        width: 100%;
+        float: left;
+        clear: both;
+        text-align: center; }
+        footer.global .xarxessocials ul li#gift-card-btn {
+          display: none; }
+        footer.global .xarxessocials ul li a.icon {
           font-size: 1.5rem;
           margin: 0 15px; } }
   footer.global .logo {
@@ -1766,6 +1801,8 @@ figure.card {
       margin-left: auto;
       margin-right: auto;
       max-width: 400px; }
+    .cards hgroup.trans_01, .cards hgroup.trans_02, .cards hgroup.trans_03, .cards hgroup.trans_04 {
+      display: none; }
   .cards.on-screen hgroup, .cards.passed hgroup {
     transform: translateY(-50%);
     opacity: 1; }
@@ -4044,22 +4081,44 @@ form button, .rc_layout__content input[type=submit],
     display: table; }
   .text-header:after {
     clear: both; }
+  @media (max-width: 1024px) {
+    .text-header {
+      margin: 0;
+      padding: 60px; } }
   .text-header hgroup {
     float: left;
     margin-left: calc(10vw + 50px);
     width: calc(20vw - 40px);
     margin-right: 20px; }
+    @media (max-width: 1024px) {
+      .text-header hgroup {
+        float: none;
+        margin: 20px auto;
+        width: 100%;
+        text-align: center;
+        max-width: 440px; } }
     .text-header hgroup h1 {
       font-family: "PT Serif", serif;
       font-size: 3rem;
       margin-bottom: 30px;
       padding-right: 25%;
       line-height: 1.2; }
+      @media (max-width: 1024px) {
+        .text-header hgroup h1 {
+          margin: 0;
+          padding: 0; } }
     .text-header hgroup .label {
       float: left;
       clear: both; }
+      @media (max-width: 1024px) {
+        .text-header hgroup .label {
+          float: none;
+          display: block; } }
       .text-header hgroup .label.small {
         font-size: .6rem; }
+        @media (max-width: 1024px) {
+          .text-header hgroup .label.small {
+            margin-top: 30px; } }
       .text-header hgroup .label.big {
         font-weight: 500;
         margin-top: 6px;
@@ -4068,6 +4127,15 @@ form button, .rc_layout__content input[type=submit],
   .text-header article {
     float: left;
     width: calc(40vw - 60px); }
+    @media (max-width: 1024px) {
+      .text-header article {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 0;
+        max-width: 440px;
+        float: none;
+        clear: both;
+        text-align: center; } }
     .text-header article h2 {
       font-family: "Lato", sans-serif;
       font-size: 1.5rem;

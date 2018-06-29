@@ -266,6 +266,13 @@ figure.card{
 			margin-right: auto;
 			max-width: 400px;
 		}
+		&.trans_01,
+		&.trans_02,
+		&.trans_03,
+		&.trans_04{
+			display: none;	
+		}
+
 	}
 	&.on-screen,
 	&.passed{

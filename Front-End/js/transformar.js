@@ -1,17 +1,37 @@
+// $(document).ready(function() {
+
+// function slide() {
+//     $( ".trans_01" ).fadeToggle(2000, function(){
+//         $( ".trans_01" ).fadeToggle(2000, function(){
+//             $( ".trans_02" ).fadeToggle(2000, function(){
+//                 $( ".trans_02" ).fadeToggle(2000, function(){
+//                     $( ".trans_03" ).fadeToggle(2000, function(){
+//                         $( ".trans_03" ).fadeToggle(2000, slide);
+//                     })
+//                 })
+//             })
+//         })
+//     });
+// }
+// slide();
+
 function slide() {
-    $( ".vermell" ).fadeToggle(2000, function(){
-        $( ".vermell" ).fadeToggle(2000, function(){
-            $( ".blau" ).fadeToggle(2000, function(){
-                $( ".blau" ).fadeToggle(2000, function(){
-                    $( ".verd" ).fadeToggle(2000, function(){
-                        $( ".verd" ).fadeToggle(2000, slide);
+    $( ".trans_01" ).fadeToggle(2000, function(){
+        $( ".trans_01" ).fadeToggle(2000, function(){
+            $( ".trans_02" ).fadeToggle(2000, function(){
+                $( ".trans_02" ).fadeToggle(2000, function(){
+                    $( ".trans_03" ).fadeToggle(2000, function(){
+                        $( ".trans_03" ).fadeToggle(2000, function(){
+                            $( ".trans_04" ).fadeToggle(2000, function(){
+                                $( ".trans_04" ).fadeToggle(2000, slide);
+                            })
+                        })
                     })
                 })
             })
         })
     });
 }
-
 slide();
 
 $(window).scroll(function(){
@@ -93,3 +113,5 @@ function changing__() {
 //     });
 // }
 // heroJordi();
+
+// });
