@@ -1,9 +1,9 @@
 .tbc-banner{
     height: 50vw;
     min-height: 600px;
-    background: white;
     cursor: pointer;
-    transition: background-color 2s $ease;
+    transition: background-color 1s $ease;
+    background-color: #f8ddc2;
     @include breakpoint(tablet-landscape){
         min-height: 400px;
         width: 100%;
@@ -28,8 +28,20 @@
         }    
     }
     figure{
-        display: none;
+        // display: none;
+        // &.flash_01{
+        //     background-color: #f8ddc2;
+        // }
+        // &.flash_02{
+        //     background-color: #dfcda3;
+        // }
+        // &.flash_03{
+        //     background-color: #cfddbb;
+        // }
+
     }
+
+
     #canvas-container{
         mix-blend-mode: overlay;
         opacity: 1;
@@ -50,3 +62,6 @@
         }
     }    
 }
+// .tbc-banner:hover{
+//     background-color: red;
+// }

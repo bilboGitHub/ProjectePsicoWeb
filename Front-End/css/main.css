@@ -2211,9 +2211,9 @@ scrollbar .overscroll-glow {
 .tbc-banner {
   height: 50vw;
   min-height: 600px;
-  background: white;
   cursor: pointer;
-  transition: background-color 2s cubic-bezier(0.28, 0, 0.18, 1); }
+  transition: background-color 1s cubic-bezier(0.28, 0, 0.18, 1);
+  background-color: #f8ddc2; }
   @media (max-width: 1024px) and (orientation: landscape) {
     .tbc-banner {
       min-height: 400px;
@@ -2232,8 +2232,6 @@ scrollbar .overscroll-glow {
     mix-blend-mode: luminosity; }
   .tbc-banner.on-screen hgroup, .tbc-banner.passed hgroup {
     opacity: 0.6; }
-  .tbc-banner figure {
-    display: none; }
   .tbc-banner #canvas-container {
     mix-blend-mode: overlay;
     opacity: 1; }
