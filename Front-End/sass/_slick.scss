@@ -20,7 +20,9 @@
     display: block;
     margin: 0;
     padding: 0;
-
+    @include breakpoint(mobile-portrait){
+        padding: 0px 50px;
+	}
     &:focus {
         outline: none;
     }
@@ -46,6 +48,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    @include breakpoint(tablet){
+        width: 1000px;
+    }
+    @include breakpoint(mobile){
+        width: 90%;
+        margin: 0px auto;
+	}
 
     &:before,
     &:after {

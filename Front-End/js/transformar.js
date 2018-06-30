@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
 // function slide() {
 //     $( ".trans_01" ).fadeToggle(2000, function(){
@@ -16,14 +16,14 @@
 // slide();
 
 function slide() {
-    $( ".trans_01" ).fadeToggle(2000, function(){
-        $( ".trans_01" ).fadeToggle(2000, function(){
-            $( ".trans_02" ).fadeToggle(2000, function(){
-                $( ".trans_02" ).fadeToggle(2000, function(){
-                    $( ".trans_03" ).fadeToggle(2000, function(){
-                        $( ".trans_03" ).fadeToggle(2000, function(){
-                            $( ".trans_04" ).fadeToggle(2000, function(){
-                                $( ".trans_04" ).fadeToggle(2000, slide);
+    $( ".trans_01" ).fadeToggle(2500, function(){
+        $( ".trans_01" ).fadeToggle(2500, function(){
+            $( ".trans_02" ).fadeToggle(2500, function(){
+                $( ".trans_02" ).fadeToggle(2500, function(){
+                    $( ".trans_03" ).fadeToggle(2500, function(){
+                        $( ".trans_03" ).fadeToggle(2500, function(){
+                            $( ".trans_04" ).fadeToggle(2500, function(){
+                                $( ".trans_04" ).fadeToggle(2500, slide);
                             })
                         })
                     })
@@ -34,12 +34,81 @@ function slide() {
 }
 slide();
 
+function flashcolor() {
+    $( ".flash_01" ).fadeToggle(1000, function(){
+        $( ".flash_01" ).fadeToggle(1000, function(){
+            $( ".flash_02" ).fadeToggle(1000, function(){
+                $( ".flash_02" ).fadeToggle(1000, function(){
+                    $( ".flash_03" ).fadeToggle(1000, function(){
+                        $( ".flash_03" ).fadeToggle(1000, function(){
+                            $( ".flash_04" ).fadeToggle(1000, function(){
+                                $( ".flash_04" ).fadeToggle(1000, function(){
+                                    $( ".flash_05" ).fadeToggle(1000, function(){
+                                        $( ".flash_05" ).fadeToggle(1000, function(){
+                                            $( ".flash_06" ).fadeToggle(1000, function(){
+                                                $( ".flash_06" ).fadeToggle(1000, flashcolor);
+                                            })
+                                        })
+                                    })
+                                })
+
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    });
+}
+flashcolor();
+
+function slide2() {
+    $( ".trans_01" ).fadeToggle(2500, function(){
+        $( ".trans_01" ).fadeToggle(2500, function(){
+            $( ".trans_02" ).fadeToggle(2500, function(){
+                $( ".trans_02" ).fadeToggle(2500, function(){
+                    $( ".trans_03" ).fadeToggle(2500, function(){
+                        $( ".trans_03" ).fadeToggle(2500, function(){
+                            $( ".trans_04" ).fadeToggle(2500, function(){
+                                $( ".trans_04" ).fadeToggle(2500, slide2);
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    });
+}
+// slide2();
+
+
+// $(window).scroll(function(){
+//     var pixels = $(window).scrollTop();
+//     var pixelsF = -(pixels)/10;
+//     $(".desplaçament_y").css({
+//         transform: 'translateY(' + pixelsF + 'px)'
+//     })
+// });
+
+
+var dimensio=$(document).width();
+console.log(dimensio)
+
 $(window).scroll(function(){
     var pixels = $(window).scrollTop();
-    $("#header").css({
-        "height": pixels
+    var pixelsF = -(pixels)*(dimensio/10000);
+    $(".desplaçament_y").css({
+        transform: 'translateY(' + pixelsF + 'px)'
     })
 });
+
+$(".canv_dime_ima1").css({
+    "width": dimensio/2
+})
+
+$(".canv_dime_ima2").css({
+    "width": dimensio/4
+})
 
 function changing() {
     // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.
@@ -114,4 +183,4 @@ function changing__() {
 // }
 // heroJordi();
 
-// });
+});

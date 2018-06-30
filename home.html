@@ -59,20 +59,6 @@
                     </ul>
                 </nav>
             </header>
-            <!-- <nav>
-                <div id="a" class="a vermell">
-                    <h1>caixa 1</h1>
-                </div>
-                <h1 class="a">caixa 1</h1>
-                <div class="a blau">
-                    <h1>caixa 2</h1>
-                </div>
-                <h1 class="b">caixa 2</h1>
-                <div class="c verd">
-                    <h1>caixa 3</h1>
-                </div>
-                <h1 class="c">caixa 3</h1>
-            </nav> -->
             <div class="veil full fixed" style="top: 0px;"></div><!-- no se perque serveix -->
             <div id="wrapper" class="">
                 <section id="hero" class="slick"> <!-- grups d'edats(slideShow amb imatges i texts) -->
@@ -124,11 +110,11 @@
                         </hgroup> -->
                     </article>
                 </section>
-                <section class="cards left products parallax on-screen" style="transform: translateY(-0.0240002px);" data-offset="552.6999969482422"> <!-- preus/filosofia -->
+                <section class="cards left products parallax on-screen desplaçament_y"> <!-- preus/filosofia --> <!-- style="transform: translateY(-0.0240002px);" data-offset="552.6999969482422" -->
                     <div class="slick slick-initialized slick-slider">
                         <div class="slick-list draggable">
-                            <div class="slick-track" style="opacity: 1; width: 650px; transform: translate3d(0px, 0px, 0px);">
-                                <figure class="card large bottom slick-slide slick-current slick-active" style="width: 305px;" tabindex="0" data-slick-index="0" aria-hidden="false">
+                            <div class="slick-track" > <!-- style="opacity: 1; width: 650px; transform: translate3d(0px, 0px, 0px);" -->
+                                <figure class="card large bottom slick-slide slick-current slick-active" > <!-- style="width: 305px;" tabindex="0" data-slick-index="0" aria-hidden="false" -->
                                         <figcaption>
                                             <span class="label">DIAGNOSIS</span> <!-- preus/primera sessio -->
                                             <p>Primera Sessió</p>
@@ -137,7 +123,7 @@
                                         <a href="Front-End/06_contacte.php" class="target"></a>
                                         <img src="Front-End/imatges/primeraSessio.jpg" />
                                 </figure>
-                                <figure class="card large bottom slick-slide slick-active" style="width: 305px;" tabindex="0" data-slick-index="1" aria-hidden="false"> <!-- preus/sessions normals -->
+                                <figure class="card large bottom slick-slide slick-active" > <!-- preus/sessions normals --> <!-- style="width: 305px;" tabindex="0" data-slick-index="1" aria-hidden="false" -->
                                         <figcaption>
                                             <span class="label">TERAPIA</span>
                                             <p>Cada Sessió</p>
@@ -174,45 +160,45 @@
                         <a class="cta" href="Front-End/06_contacte.php">CONTACTE ARA</a>
                     </hgroup>
                 </section>
- <!-- tractaments(slideShow, amb colors i texts) -->
-                <!-- <section class="tbc-banner callout">
-                    <figure class="current" data-color="#f8ddc2">
-                        <hgroup class="standard centered">
+ <!-- tractaments(slideShow, amb colors i texts) --> 
+                <section class="tbc-banner callout on-screen " > <!-- style="background-color: rgb(255, 250, 209);" -->
+                    <figure class="flash_01" data-color="#f8ddc2"> <!--  class="current" -->
+                        <hgroup class="standard centered flash_01">
                             <span class="label">S'HA TRENCAT LA CONFIANÇA</span>
                             <h2>Teràpia de Parella</h2>
                             <a href="" class="cta">COMENCEM</a>
                         </hgroup>
                     </figure>
-                    <figure data-color="#dfcda3">
+                    <figure class="flash_02" data-color="#dfcda3">
                         <hgroup class="standard centered">
                             <span class="label">PERDUA DE PES SOBTADA</span>
                             <h2>Trastorns Alimentaris</h2>
                             <a href="" class="cta">COMENCEM</a>
                         </hgroup>
                     </figure>
-                    <figure data-color="#cfddbb">
+                    <figure class="flash_03" data-color="#cfddbb">
                         <hgroup class="standard centered">
                             <span class="label">PROBLEMES DE CONCENTRACIO, ATENCIO, MEMORIA</span>
                             <h2>Trastorn del Son</h2>
                             <a href="" class="cta">COMENCEM</a>
                         </hgroup>
                     </figure>
-                    <figure data-color="#e8eff2">
+                    <figure class="flash_04" data-color="#e8eff2">
                         <hgroup class="standard centered">
                             <span class="label">COMPORTAMENT AGRESSIU, DESTRUCTIU O ENGANYOS</span>
                             <h2>Trastorn de Conducta</h2>
                             <a href="" class="cta">COMENCEM</a>
                         </hgroup>
                     </figure>
-                    <figure data-color="#f6dbfc">
+                    <figure class="flash_05" data-color="#f6dbfc">
                         <hgroup class="standard centered">
                             <span class="label">SI ESTAS PREOCUPAT, NO ESPEREU</span>
                             <h2>Trastorns de l’Aprenentatge</h2>
                             <a href="" class="cta">COMENCEM</a>
                         </hgroup>
                     </figure>
-                    <figure data-color="#ffdce7">
-                        <hgroup class="standard centered">
+                    <figure class="flash_06" data-color="#ffdce7">
+                        <hgroup class="standard centered5">
                             <span class="label">LET COLOR BE YOUR GUIDE</span>
                             <h2>Taste by Color</h2>
                             <a href="" class="cta">Explore the coffee spectrum </a>
@@ -220,10 +206,8 @@
                     </figure>
                     <div id="canvas-container">
                         <canvas id="colorCanvas"></canvas>
-                    </div>
-                </section> -->
-                <section class="tbc-banner callout on-screen " style="background-color: rgb(255, 250, 209);">
-                    <hgroup class="standard">
+                    </div>                  
+                    <!-- <hgroup class="standard">
                         <span class="label">S'HA TRENCAT LA CONFIANÇA</span>
                         <h2>Teràpia de Parella</h2>
                         <a href="Front-End/03_parelles.html" class="cta">COMENCEM</a>
@@ -240,8 +224,56 @@
                     <figure data-color="#e0dcd5"></figure>
                     <div id="canvas-container">
                         <canvas id="colorCanvas" width="" height=""></canvas>
-                    </div>
+                    </div> -->
                 </section>
+                
+                <!-- <section class="tbc-banner callout on-screen " style="background-color: rgb(255, 250, 209);"> 
+                    <figure class="current" data-color="#f8ddc2"> 
+                        <hgroup class="standard centered">
+                            <span class="label">S'HA TRENCAT LA CONFIANÇA</span>
+                            <h2>Teràpia de Parella</h2>
+                            <a href="" class="cta">COMENCEM</a>
+                        </hgroup>
+                    </figure>
+                    <figure  data-color="#dfcda3">
+                        <hgroup class="standard centered">
+                            <span class="label">PERDUA DE PES SOBTADA</span>
+                            <h2>Trastorns Alimentaris</h2>
+                            <a href="" class="cta">COMENCEM</a>
+                        </hgroup>
+                    </figure>
+                    <figure data-color="#cfddbb">
+                        <hgroup class="standard centered">
+                            <span class="label">PROBLEMES DE CONCENTRACIO, ATENCIO, MEMORIA</span>
+                            <h2>Trastorn del Son</h2>
+                            <a href="" class="cta">COMENCEM</a>
+                        </hgroup>
+                    </figure>
+                    <figure  data-color="#e8eff2">
+                        <hgroup class="standard centered">
+                            <span class="label">COMPORTAMENT AGRESSIU, DESTRUCTIU O ENGANYOS</span>
+                            <h2>Trastorn de Conducta</h2>
+                            <a href="" class="cta">COMENCEM</a>
+                        </hgroup>
+                    </figure>
+                    <figure  data-color="#f6dbfc">
+                        <hgroup class="standard centered">
+                            <span class="label">SI ESTAS PREOCUPAT, NO ESPEREU</span>
+                            <h2>Trastorns de l’Aprenentatge</h2>
+                            <a href="" class="cta">COMENCEM</a>
+                        </hgroup>
+                    </figure>
+                    <figure  data-color="#ffdce7">
+                        <hgroup class="standard centered5">
+                            <span class="label">LET COLOR BE YOUR GUIDE</span>
+                            <h2>Taste by Color</h2>
+                            <a href="" class="cta">Explore the coffee spectrum </a>
+                        </hgroup>
+                    </figure>
+                    <div id="canvas-container">
+                        <canvas id="colorCanvas"></canvas>
+                    </div>                  
+                </section> -->
 
                 <section class="grid events upcoming on-screen"> <!-- articles recents -->
                     <hgroup class="standard">

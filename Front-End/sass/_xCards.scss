@@ -94,7 +94,14 @@ figure.card{
 		}		
 	}
 	&.small{width: calc(30% - 15px);}
-	&.large{width: calc(30vw - 15px);}
+	&.large{width: 45%;
+		@include breakpoint(mobile){
+			width: 100%;
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			margin-top: 50px ;
+		}
+	} /* calc(30vw - 15px) */
 	&.bottom{
 		figcaption{
 			position: absolute;
@@ -234,12 +241,12 @@ figure.card{
 	}
 }
 .cards{
-	padding: $pad*1.5 $pad 0;
+	padding: $pad*2 $pad 0; /* $pad*1.5 $pad 0; */
 	position: relative;
 	.slick{
-		width: calc(56vw - 20px);
+		width: 60%; /* calc(56vw - 20px) */
 		@include breakpoint(tablet-landscape){
-			max-width: 600px;
+			max-width: 480px;
 			margin: 0 auto;
 		}
 	}

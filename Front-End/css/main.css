@@ -1538,6 +1538,9 @@ section {
   display: block;
   margin: 0;
   padding: 0; }
+  @media (max-width: 767px) and (orientation: portrait) {
+    .slick-list {
+      padding: 0px 50px; } }
   .slick-list:focus {
     outline: none; }
   .slick-list.dragging {
@@ -1559,6 +1562,13 @@ section {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+  @media (max-width: 1024px) {
+    .slick-track {
+      width: 1000px; } }
+  @media (max-width: 767px) {
+    .slick-track {
+      width: 90%;
+      margin: 0px auto; } }
   .slick-track:before, .slick-track:after {
     content: "";
     display: table; }
@@ -1599,7 +1609,8 @@ figure.card {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0); }
+  transform: translateZ(0);
+  /* calc(30vw - 15px) */ }
   figure.card img {
     height: auto;
     display: block;
@@ -1666,7 +1677,13 @@ figure.card {
   figure.card.small {
     width: calc(30% - 15px); }
   figure.card.large {
-    width: calc(30vw - 15px); }
+    width: 45%; }
+    @media (max-width: 767px) {
+      figure.card.large {
+        width: 100%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 50px; } }
   figure.card.bottom figcaption {
     position: absolute;
     bottom: 0;
@@ -1770,13 +1787,15 @@ figure.card {
     display: none; } }
 
 .cards {
-  padding: 90px 60px 0;
+  padding: 120px 60px 0;
+  /* $pad*1.5 $pad 0; */
   position: relative; }
   .cards .slick {
-    width: calc(56vw - 20px); }
+    width: 60%;
+    /* calc(56vw - 20px) */ }
     @media (max-width: 1024px) and (orientation: landscape) {
       .cards .slick {
-        max-width: 600px;
+        max-width: 480px;
         margin: 0 auto; } }
   .cards figure.card img {
     transition: transform 1s cubic-bezier(0.28, 0, 0.18, 1), filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -webkit-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -moz-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -ms-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s, -o-filter 1s cubic-bezier(0.28, 0, 0.18, 1) 0.5s;
