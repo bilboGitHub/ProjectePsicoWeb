@@ -224,6 +224,45 @@ function canviaTot () {
 }
 setInterval(canviaTot, 4000);
 
+
+//-------------------------veil-------------header
+
+$(window).scroll(function(){
+    var pixelss = $(window).scrollTop();
+    $(".veil").css({
+        "max-height": pixelss
+    })
+});
+
+
+// $('bla1').hover(
+//     function(){ $(this).addClass('bla2') },
+//     function(){ $(this).removeClass('bla2') }
+// )
+
+$('#showTractament').hover(
+    function(){ $('#shop').addClass('shown') },
+    function(){ $('#shop').removeClass('shown') }
+)
+
+$('#showTractament').hover(
+    function(){ $('body').addClass('show-drop') },
+    function(){ $('body').removeClass('show-drop') }
+)
+
+$('#shop').hover(
+    function(){ $(this).addClass('shown') },
+    function(){ $(this).removeClass('shown') }
+)
+
+$('#shop').hover(
+    function(){ $(this).addClass('show-drop') },
+    function(){ $(this).removeClass('show-drop') }
+)
+
+
+
+
 // function flashcolor() {
 //     $( ".flash_01" ).fadeToggle(1000, function(){
 //         $( ".flash_01" ).fadeToggle(1000, function(){

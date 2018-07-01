@@ -29,15 +29,20 @@
                             <h5>Nou Pacient</h5>
                             <p>Crea un compte per gaudir dels avantatges.</p>			
                         </hgroup>
-                        <form method="post" action="/account" id="create_customer" accept-charset="UTF-8">
+                        <form method="post" action="" id="create_customer" accept-charset="UTF-8"> <!-- /account -->
                             <input type="hidden" name="form_type" value="create_customer">
                             <input type="hidden" name="utf8" value="✓">
                             <input type="text" name="customer[first_name]" id="FirstName" placeholder="Nom" autofocus="">
                             <input type="text" name="customer[last_name]" id="LastName" placeholder="Cognoms">
                             <input type="email" name="customer[email]" id="Email" class="" placeholder="E-mail" value="" spellcheck="false" autocomplete="off" autocapitalize="off">
                             <input type="password" name="customer[password]" id="CreatePassword" class="" placeholder="Contrasenya">
-                            <input type="submit" value="Registre" class="btn">
+                            <input type="submit" value="Registre" class="btn btnAlerta2">
+                            <!-- <div id="hola2" class="alert2">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                <strong>Gràcies per Registrarte!</strong>
+                            </div> -->
                         </form>
+                        <button id="hola2"></button>
                     </article>
                 </section>
                 <script data-locksmith="">if(Locksmith.state.keys.length > 0){Locksmith.ping()}</script>

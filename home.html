@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="Front-End/css/main.css">
 </head>
 
-<body class="home page-template-default page page-id-5 init loaded hero-start" cz-shortcut-listen="true"> <!--  -->
+<body id="tractamentHeader" class="home page-template-default page page-id-5 init loaded hero-start" cz-shortcut-listen="true"> <!--  -->
+    <main>
     <!-- <main id="main-scrollbar" data-scrollbar="" class="full-height" tabindex="1" style="overflow: hidden; outline: none;"> -->
         <div class="scroll-content">
             <header class="global fixed" style="top: 0px;"> <!-- tot el navbar --> <!--he afegit style="top: 0px;" no se que fa--> <!--  -->
@@ -22,10 +23,10 @@
                             <a href="home.html">INICI</a>  torna a inici
                         </li> -->
                         <li>
-                            <a href="Front-End/02_nosaltres.html">NOSALTRES</a> <!-- filosofia/com treballem/equip -->
+                            <a id="showTractament" href="">TRACTAMENT</a> <!-- llista de tractament -->
                         </li>
                         <li>
-                            <a href="Front-End/03_tractaments.html">TRACTAMENT</a> <!-- llista de tractament -->
+                            <a href="Front-End/02_nosaltres.html">NOSALTRES</a> <!-- filosofia/com treballem/equip -->
                         </li>
                         <li>
                             <a href="Front-End/04_blog.html">BLOG</a> <!-- afegir article amb PHP/articles(imatge+foto+titol+text)amb m'agrada, comentaris, visualitzacions/article amb share+related posts i contacte-->
@@ -58,8 +59,52 @@
                         </li>            
                     </ul>
                 </nav>
+                <div class="veil"></div>
+                <nav class="drop" id="shop"> <!-- class="drop shown" -->
+                    <div class="left container first white" style="padding-top: 120px;">
+                        <ul id="cats" class="">
+                            <li class="menu-item-has-children">
+                                <ul class="sub-menu">
+                                    <li> <a href="Front-End/03_infantil.html">Psicòleg Infantil</a></li>
+                                    <li> <a href="Front-End/03_adolescents.html">Psicòleg Adolescents</a></li>
+                                    <li> <a href="Front-End/03_adults.html">Psicòleg Adults</a></li>
+                                    <li> <a href="Front-End/03_parelles.html">Psicòleg Parelles</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container right gray last" style="padding-top: 120px;">
+                        <figure class="card small top">
+                            <figcaption style="color: white">
+                                <span class="label">Psicòleg</span>
+                                <h3>Infantil</h3>
+                                <p>Trastorns de l’aprenentatge...</p>
+                            </figcaption>
+                            <a href="Front-End/03_infantil.html" class="target"></a>
+                            <img src="Front-End/imatges/janko-ferlic-284664-unsplash(1).jpg" style="display: block;">	                                      
+                        </figure>
+                        <figure class="card small top ">
+                            <figcaption style="color: white">
+                                <span class="label">Psicòleg</span>
+                                <h3>Adolescents</h3>
+                                <p>“No m’agrada res, no sé què fer…”</p>
+                            </figcaption>
+                            <a href="Front-End/03_adolescents.html" class="target"></a>
+                            <img src="Front-End/imatges/sharon-mccutcheon-558221-unsplash(1).jpg" style="display: block;">                                               
+                        </figure>
+                        <figure class="card small top">
+                            <figcaption style="color: white">
+                                <span class="label">Psicòleg</span>
+                                <h3>Adults</h3>
+                                <p>Has estat diagnosticat de …?</p>
+                            </figcaption>
+                            <a href="Front-End/03_adults.html" class="target"></a>
+                            <img src="Front-End/imatges/simon-wijers-37854-unsplash(1).jpg" style="display: block;">                                             
+                        </figure>
+                    </div>		
+                </nav>
             </header>
-            <div class="veil full fixed" style="top: 0px;"></div><!-- no se perque serveix -->
+            <div class="veil full fixed" style="top: 0px;"></div>
             <div id="wrapper" class="">
                 <section id="hero" class="slick"> <!-- grups d'edats(slideShow amb imatges i texts) -->
                     <article id="hero1" class="left slick-slide slick-current slick-active" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 1;" tabindex="-1" data-slick-index="0" aria-hidden="false">
@@ -220,7 +265,7 @@
                         <div>
                             <img src="Front-End/imatges/bridget-flohe-339784-unsplash.jpg" width="1920" height="1280" style="display: block;">
                         </div>
-                        <a href="" class="target"></a>
+                        <a href="Front-End/04_blog.html" class="target"></a>
                         <figcaption>
                             <span class="label">12/06/2018</span>      
                             <h4>Teràpia de parella</h4>
@@ -232,7 +277,7 @@
                         <div>
                             <img src="Front-End/imatges/callie-gibson-597074-unsplash.jpg" width="1920" height="1280" style="display: block;">
                         </div>
-                        <a href="" class="target"></a>
+                        <a href="Front-End/04_blog.html" class="target"></a>
                         <figcaption>
                             <span class="label">13/06/2018</span> <!-- 06/13/2018&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM-1PM -->    
                             <h4>Brot psicòtic</h4>
@@ -242,22 +287,22 @@
                 </section>
 
                 <footer class="global">
-                    <div id="newsletter" class="default">
+                    <!-- <div id="newsletter" class="default">
                         <div id="newsletter-cover">
                             <p><span>Escrigui la seva consulta aquí</span> sobre duptes, preus, horaris, i més.</p>
                             <span id="newsletter-join-btn" class="cta white">CONTACTE</span>
                         </div>
                         <div id="newsletter-form">
                             <form action="" method="GET" novalidate="">
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Introdueix la teva adreça de correu electrònic">
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Introdueix la teva adreça de correu electrònic"> -->
                                 <!-- <input type="submit" value="Subscribe" class="cta" name="subscribe" disabled="" id="mc-embedded-subscribe"> -->
-                            </form>			
+                            <!-- </form>			
                         </div>
-                        <!-- <div id="newsletter-response">
+                        <div id="newsletter-response">
                             <span class="response success">Thanks. Now you're on the list.</span>
                             <span class="response error">You may already be on the list. If not, please try again.</span>						
-                        </div> -->
-                    </div>
+                        </div>
+                    </div> -->
                     <nav class="global">
                         <ul class="main">
                             <li id="menu-item-366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-366">

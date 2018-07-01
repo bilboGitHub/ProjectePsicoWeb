@@ -13,10 +13,55 @@
 </head>
 
 <body class="home page-template-default page page-id-5 init loaded hero-start" cz-shortcut-listen="true"> <!--  -->
+    <section id="header3"></section>
     <main id="main-scrollbar" data-scrollbar="" class="full-height" tabindex="1" style="overflow: hidden; outline: none;">
         <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px); pointer-events: auto;">
-            <header></header>
-            <div class="veil full fixed" style="top: 0px;"></div>
+            <header class="global fixed" style="top: 0px;"> <!-- tot el navbar --> <!--he afegit style="top: 0px;" no se que fa--> <!--  -->
+                <nav class="global"> <!-- tot el navbar -->
+                    <ul class="main left"> <!-- navbar a l'esquerra amb 5 a --> 
+                        <!--<li>
+                            <a href="home.html">INICI</a>  torna a inici
+                        </li> -->
+                        <li>
+                            <a href="Front-End/02_nosaltres.html">NOSALTRES</a> <!-- filosofia/com treballem/equip -->
+                        </li>
+                        <li>
+                            <a href="Front-End/03_tractaments.html">TRACTAMENT</a> <!-- llista de tractament -->
+                        </li>
+                        <li>
+                            <a href="Front-End/04_blog.html">BLOG</a> <!-- afegir article amb PHP/articles(imatge+foto+titol+text)amb m'agrada, comentaris, visualitzacions/article amb share+related posts i contacte-->
+                        </li>                
+                        <li>
+                            <a href="tel:123456789" class="telephone">
+                                <i class="fas fa-phone"></i>
+                                <span class="number">12 345 67 89</span>
+                            </a>
+                        </li> 
+                    </ul>
+
+                    <a href="home.html" class="logo"> <!-- logo central -->
+                        <h1 class="lletraLogo">PSICOEXPERTS</h1> <!-- marca -->
+                        <span>BARCELONA PSICOLEGS</span> <!-- leitmotive -->
+                    </a>
+
+                    <ul class="main right"> <!-- navbar a l'esquerra amb 3 a -->          
+                        <li>
+                            <a href="Front-End/06_contacte.php">CONTACTE/ADREÇA</a> <!-- formulari(CMS-PHP)/contacte(tipus xat)/ -->
+                        </li>
+                        <li>
+                            <a href="Front-End/05_FAQ.php">FAQ</a> <!-- afegir pregunta i resposta amb PHP/preguntes frequents -->
+                        </li>
+                        <li>
+                            <a href="Front-End/07_account.php">ACCOUNT</a> <!-- cites(PHP)/missatges(PHP)/resultats(PHP) -->
+                        </li>
+                        <li>
+                            <a href="home.html">LLENGUA</a> <!-- catala/castella/frances -->
+                        </li>            
+                    </ul>
+                </nav>
+                <div class="veil"></div>
+            </header>
+            <div class="veil full fixed"></div> <!-- style="top: 0px;" -->
             <div id="wrapper" class="">
 
                 
@@ -94,6 +139,7 @@
         <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="Front-End/js/base.min.js"></script>
-    <script src="Front-End/js/libs.min.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script src="Front-End/js/transformar.js"></script>
 </body>
