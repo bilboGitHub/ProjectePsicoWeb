@@ -133,6 +133,11 @@
 					}
 				}
 			}
+			&.herois_01,
+			&.herois_02,
+			&.herois_03{
+				display: none;	
+			}
 		}
 		&.alt{
 			hgroup p{
@@ -316,3 +321,21 @@
 		}
 	}
 }
+// .lletraMoguda{
+//     position: relative;
+//     top: 45%;
+//     animation-name: lletra;
+//     animation-duration: 500ms;
+//     animation-delay: 500ms;
+// }
+
+// @keyframes lletra {
+//     0% {
+//         opacity: 0.5;
+//         top: 10%;
+//     }
+//     100% {
+//         opacity: 1;
+//         top: 45%;
+//     }
+// }

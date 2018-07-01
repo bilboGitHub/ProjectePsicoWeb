@@ -120,13 +120,13 @@ function canviaColor__() { //function name
     document.getElementById('posts').style.background = color; // Setting the random color on your div element.
 }
 
-function canviaColor () {
-    $(".tbc-banner").css('background', function () {
-        if ('background' === '#f8ddc2'){
+// function canviaColor () {
+//     $(".tbc-banner").css('background', function () {
+//         if ('background' === '#f8ddc2'){
 
-        }
-    });
-}
+//         }
+//     });
+// }
 
 
 
@@ -264,13 +264,142 @@ $('#shop').hover(
 
 //-------------------------SHOW MENU-------------header
 
-$('#mobile-toggle').click(
-    function(){ $('body').addClass('show-mobile-menu') },
-    function(){ $('body').removeClass('show-mobile-menu') }
-)
+
+
+// $('#ure_knap').on('click', function() {
+//     var click = $(this).data('clicks');
+//     if (click % 2 == 1) {
+//         $('.ure_billeder').show();
+//     }else{
+//         $('.ure_billeder').hide();
+//     };
+//     $(this).data('clicks',click+1);
+// });
+// $('#mobile-toggle').on('click', function() {
+//     var click = $(this).data('clicks');
+//     if (click % 2 == 1) {
+//         $('.body').show('.show-mobile-menu');
+//     }else{
+//         $('.body').hide('.show-mobile-menu');
+//     };
+//     $(this).data('clicks',click+1);
+// });
 
 
 
+$('#mobile-toggle').click(function() {
+    $( 'body').toggleClass( "show-mobile-menu" );
+});
+
+$('.jordiExpand').click(function() {
+    $(this).toggleClass( "expand" );
+});
+
+
+
+//-------------------------missatge alert-------------contacte
+
+
+// $('#gform_submit_button_3').click(function() {
+//     $('#hola1').toggleClass( "alert1" );
+//   });
+
+
+//-------------------------hero-------------home
+
+
+// $('#hero').hover(
+//     function() { $( '#a').addClass( "slick-current" );
+// });
+
+// $('#showTractament').hover(
+//     function(){ $('#shop').addClass('shown') },
+//     function(){ $('#shop').removeClass('shown') }
+// )
+
+
+
+
+
+{/* <img id="thisImg" alt="img" src="images/img0.png"/>
+<script type="text/javascript">
+    $(function(){
+        //prepare Your data array with img urls
+        var dataArray=new Array();
+        dataArray[0]="images/img1.png";
+        dataArray[1]="images/img2.png";
+        dataArray[2]="images/img3.png";
+        dataArray[3]="images/img0.png";
+
+        //start with id=0 after 5 seconds
+        var thisId=0;
+
+        window.setInterval(function(){
+            $('#thisImg').attr('src',dataArray[thisId]);
+            thisId++; //increment data array id
+            if (thisId==3) thisId=0; //repeat from start
+        },5000);        
+    });
+</script> */}
+
+$(function(){
+    //prepare Your data array with img urls
+    var dataArray=new Array();
+
+    dataArray[0]="Front-End/imatges/nine-kopfer-284781-unsplash.jpg";
+    dataArray[1]="Front-End/imatges/kyle-glenn-678324-unsplash.jpg";
+    dataArray[2]="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg";
+    dataArray[3]="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg";
+
+    //start with id=0 after 5 seconds
+    var thisId=0;
+
+    window.setInterval(function(){
+        $('#thisImg').attr('src',dataArray[thisId]);
+        thisId++; //increment data array id
+        if (thisId==3) thisId=0; //repeat from start
+    },5000);        
+});
+
+
+
+
+function herois() {
+    $( ".herois_01" ).fadeToggle(500, function(){
+        $( ".herois_01" ).fadeToggle(4500, function(){
+            $( ".herois_02" ).fadeToggle(500, function(){
+                $( ".herois_02" ).fadeToggle(4500, function(){
+                    $( ".herois_03" ).fadeToggle(500, function(){
+                        $( ".herois_03" ).fadeToggle(4500, herois);
+                    })
+                })
+            })
+        })
+    });
+}
+herois();
+
+
+
+function changing() {
+    // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.
+    $('#a').toggleClass('slick-current', 1000, function() {
+        // Con el $(this) estoy haciendo referencia al div #a previamente seleccionado, es lo mismo hacer $(this) que $('#a').
+        $(this).toggleClass('slick-current', function() {
+            $('#b').toggleClass('slick-current', 1000, function() {
+                $(this).toggleClass('slick-current');
+                $('#c').toggleClass('slick-current', 1000, function() {
+                    $(this).toggleClass('slick-current');
+                    // En la última parte de la lógica llamo a la propia función para que se ejecute en bucle. Aquí era donde estaba el error, lo he intentado con el delay() y el queue() pero no se ejecutaba en bucle, no me preguntes por qué.
+                    // Total, que ahora puedes jugar como quieras con estos parámetros del toggleClass o del add y removeClass.
+                    changing();
+                })
+            })
+        });
+    });
+}
+
+// changing();
 
 
 // function flashcolor() {
@@ -320,7 +449,7 @@ $('#mobile-toggle').click(
 
 //-------------------------------flash----------hero-------------------
 
-function changing() {
+function changing_() {
     // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.
     $('#a').toggleClass('slick-current slick-active', 5000, function() {
         // Con el $(this) estoy haciendo referencia al div #a previamente seleccionado, es lo mismo hacer $(this) que $('#a').
@@ -338,7 +467,7 @@ function changing() {
     });
 }
 
-changing();
+// changing();
 
 function changing__() {
     // Selecciono el div #a y le hago un toggleClass de la clase hide, con una duración de 1000ms, y que ejecutará una función al acabar, y así sucesivamente.

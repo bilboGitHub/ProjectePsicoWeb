@@ -2597,6 +2597,8 @@ scrollbar .overscroll-glow {
         transition: transform, 5s cubic-bezier(0.28, 0, 0.18, 1), opacity 0.5s cubic-bezier(0.28, 0, 0.18, 1); }
       #hero article hgroup .sequenced span:nth-child(100) span {
         transition: transform, 5s cubic-bezier(0.28, 0, 0.18, 1), opacity 0.5s cubic-bezier(0.28, 0, 0.18, 1); }
+    #hero article hgroup.herois_01, #hero article hgroup.herois_02, #hero article hgroup.herois_03 {
+      display: none; }
   #hero article.alt hgroup p {
     font-size: 1.2rem;
     font-family: "PT Serif", serif;
@@ -4053,6 +4055,25 @@ form button, .rc_layout__content input[type=submit],
   margin: 20px 0;
   position: relative;
   display: block; }
+form .alert1, .rc_layout__content .alert1, .rc_modal__content .alert1 {
+  position: absolute;
+  left: calc(50vw - (250px / 2));
+  top: 55%;
+  padding: 20px;
+  background-color: #dfcda3;
+  opacity: 1;
+  color: white;
+  width: 250px;
+  margin: 0px auto; }
+form .closebtn, .rc_layout__content .closebtn, .rc_modal__content .closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s; }
 
 .text-list {
   background: white;

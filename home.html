@@ -64,15 +64,22 @@
                     </div>
                 </nav>
                 <div id="mobile-menu" class="" data-scrollbar="" tabindex="1" style="overflow: hidden; outline: none;">
-                    <div class="scroll-content">
+                    <div class="scroll-content"> <!-- style="transform: translate3d(0px, 0px, 0px);" -->
                         <ul>
-                            <li class="parent shop-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-342">
+                            <li class="jordiExpand parent shop-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-342">
                                 <a rel="shop" href="#">TRACTAMENTS</a>
                                 <ul id="cats" class="">
                                     <li> <a href="Front-End/03_infantil.html">Psicòleg Infantil</a></li>
                                     <li> <a href="Front-End/03_adolescents.html">Psicòleg Adolescents</a></li>
                                     <li> <a href="Front-End/03_adults.html">Psicòleg Adults</a></li>
                                     <li> <a href="Front-End/03_parelles.html">Psicòleg Parelles</a></li>                                    
+                                </ul>
+                            </li>
+                            <li id="menu-item-459" class="jordiExpand parent menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-459"><a href="#">ALTRES</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-460"><a href="Front-End/08_treball.php">TREBALL</a></li>
+                                    <li id="menu-item-456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456"><a href="Front-End/08_privacitat.html">PRIVACITAT</a></li>
+                                    <li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="#">LLENGUA</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">
@@ -92,13 +99,6 @@
                                 </li>
                             <li class="last menu-item menu-item-type-custom menu-item-object-custom menu-item-188">
                                 <a href="Front-End/07_account.php">ACCOUNT</a>
-                            </li>
-                            <li id="menu-item-459" class="parent menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-459"><a href="#">MES</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-460"><a href="Front-End/08_treball.php">TREBALL</a></li>
-                                    <li id="menu-item-456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456"><a href="Front-End/08_privacitat.html">PRIVACITAT</a></li>
-                                    <li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="#">LLENGUA<</a></li>
-                                </ul>
                             </li>
                         </ul>	
                     </div>
@@ -163,15 +163,82 @@
             <div class="veil full fixed" style="top: 0px;"></div>
             <div id="wrapper" class="">
                 <section id="hero" class="slick"> <!-- grups d'edats(slideShow amb imatges i texts) -->
+
+                    <!-- <article id="hero1" class="left slick-slide slick-current slick-active" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 1;" tabindex="-1" data-slick-index="0" aria-hidden="false">
+                        <img id="thisImg" alt="img" src="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg" style="width: 100vw; top: 0px; display: block; z-index: -1; position: relative;">
+                        <hgroup class="standard" style="width: 100%;">
+                            <span class="label">PROFESSIONALITAT</span>
+                            <h1 class="sequenced"><span><span>Psicoleg</span></span> <span><span>Infantil</span></span></h1>
+                            <p>Aconseguir recuperar el somriure. Trastorns de l’aprenentatge, de conducta, hiperactivitat...</p>
+                            <a href="Front-End/03_infantil.html" class="cta " tabindex="-1">PARLEM</a>
+                        </hgroup>
+                    </article> -->
+
+                    <article id="a" class="left slick-current" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 1;" tabindex="-1" data-slick-index="0" aria-hidden="false">
+                            <img id="thisImg" alt="img" src="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg" style="width: 100vw; top: 0px; display: block; z-index: -1; position: relative;">
+                        <hgroup class="standard herois_01" style="width: 100%;">
+                            <span class="label">PROFESSIONALITAT</span>
+                            <h1 class="sequenced"><span><span>Psicòleg</span></span> <span><span>Infantil</span></span></h1>
+                            <p>Aconseguir recuperar el somriure. Trastorns de l’aprenentatge, de conducta, hiperactivitat...</p>
+                            <a href="Front-End/03_infantil.html" class="cta " tabindex="-1">PARLEM</a>
+                        </hgroup>
+                        <hgroup class="standard herois_02">
+                            <span class="label">CONFIDENCIALITAT</span>
+                            <h1 class="sequenced">
+                                <span><span>Psicòleg</span></span>
+                                <span><span>Adolescents</span></span>
+                            </h1>
+                            <p>Transició entre la infància i l'edat adulta. L'etapa més conflictiva que va entre els 11 i 19 anys.</p>
+                            <a href="Front-End/03_adolescents.html" class="cta">CONTACTE ARA</a>
+                        </hgroup>
+                        <hgroup class="standard herois_03">
+                            <span class="label">VISITEU-NOS</span>
+                            <h1 class="sequenced">
+                                <span><span>Psicòleg</span></span>
+                                <span><span>Adults</span></span>
+                            </h1>
+                            <p>Addiccions, ansietat, crisi de pànic, depressió, insomni, fòbies, pors, TLP, TOC, trastorns psicòtics...</p>
+                            <a href="Front-End/03_adults.html" class="cta">MIRAR TERAPIES</a>
+                        </hgroup>
+                    </article>
+
+                    <!-- <article id="b" class="left herois_02 slick-current">
+                            <div style="position: relative; width: 100vw; height: 50vw;"></div>
+                            <hgroup class="standard">
+                                <span class="label">CONFIDENCIALITAT</span>
+                                <h1 class="sequenced">
+                                    <span><span>Psicoleg</span></span>
+                                    <span><span>Adolescents</span></span>
+                                </h1>
+                                <p>Transició entre la infància i l'edat adulta. L'etapa més conflictiva que va entre els 11 i 19 anys.</p>
+                                <a href="Front-End/03_adolescents.html" class="cta">CONTACTE ARA</a>
+                            </hgroup>
+                        </article>
+    
+                        <article id="c" class="left herois_03 slick-current">
+                            <div style="position: relative; width: 100vw; height: 50vw;"></div>
+                            <hgroup class="standard">
+                                <span class="label">VISITEU-NOS</span>
+                                <h1 class="sequenced">
+                                    <span><span>Psicoleg</span></span>
+                                    <span><span>Adults</span></span>
+                                </h1>
+                                <p>Addiccions, ansietat, crisi de pànic, depressió, insomni, fòbies, pors, TLP, TOC, trastorns psicòtics...</p>
+                                <a href="Front-End/03_adults.html" class="cta">MIRAR TERAPIES</a>
+                            </hgroup>
+                        </article>                 -->
+
+
+                    <!-- <img id="thisImg" alt="img" src="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg" style="width: 100vw; top: 0px; display: block; z-index: -1; position: relative;">
                     <article id="hero1" class="left slick-slide slick-current slick-active" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 1;" tabindex="-1" data-slick-index="0" aria-hidden="false">
-                        <img src="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg" width="100%" style="top: 0px; display: block;">
-                        <hgroup class="standard">
+                        <div style="position: relative; width: 100vw; height: 50vw;"></div>
+                        <hgroup class="standard" style="width: 100%;">
                             <span class="label">PROFESSIONALITAT</span>
                             <h1 class="sequenced"><span><span>Psicoleg</span></span> <span><span>Infantil</span></span></h1>
                             <p>Aconseguir recuperar el somriure. Trastorns de l’aprenentatge, de conducta, hiperactivitat...</p>
                             <a href="Front-End/03_infantil.html" class="cta " tabindex="-1">PARLEM</a>
                         </hgroup>                       
-                    </article>
+                    </article> -->
                     <!-- <article id="a" class="left">
                         <img src="Front-End/imatges/jelleke-vanooteghem-337719-unsplash.jpg" width="1600" height="791"/> 
                         <hgroup class="standard">
