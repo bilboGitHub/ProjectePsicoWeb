@@ -139,6 +139,10 @@ h1.lletraLogo{
     letter-spacing: 0.25rem;
     // padding-bottom: $pad/4;
     line-height: 1;
+    @include breakpoint(tablet){
+        color: white;
+        font-size: 1.4rem;
+    }
 }
 .note{
     text-transform: normal;
@@ -151,6 +155,9 @@ span.number{
     font-size: 1rem;
     letter-spacing: 0.075rem;
     color: #525252;
+    @include breakpoint(tablet){
+        // color: white;
+    }
 }
 .target{
     position: absolute;

@@ -240,6 +240,8 @@ $(window).scroll(function(){
 //     function(){ $(this).removeClass('bla2') }
 // )
 
+//-------------------------DROP TRACTAMENT-------------header
+
 $('#showTractament').hover(
     function(){ $('#shop').addClass('shown') },
     function(){ $('#shop').removeClass('shown') }
@@ -259,6 +261,14 @@ $('#shop').hover(
     function(){ $(this).addClass('show-drop') },
     function(){ $(this).removeClass('show-drop') }
 )
+
+//-------------------------SHOW MENU-------------header
+
+$('#mobile-toggle').click(
+    function(){ $('body').addClass('show-mobile-menu') },
+    function(){ $('body').removeClass('show-mobile-menu') }
+)
+
 
 
 

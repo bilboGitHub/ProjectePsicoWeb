@@ -128,6 +128,29 @@ body {
     top: 0;
 }
 
+.telephone{
+	line-height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.075rem;
+    color: black;
+    display: inline-block;
+    transition: color 1s cubic-bezier(0.28, 0, 0.18, 1);
+    position: relative;
+	display: none;
+	@include breakpoint(tablet){
+			display: block;
+			position: fixed;
+			top: 18px;
+			left: 85%;
+		}
+	@include breakpoint(mobile){
+		display: none;
+	}
+}
+
 header.global{
 	position: fixed;
 	top:0;
@@ -152,6 +175,9 @@ header.global{
 				display: inline-block;
 				transition: color 1s $ease;
 				position: relative;
+				@include breakpoint(tablet){
+					color: white;
+				}
 			}
 		}	
 		ul.main{
@@ -581,26 +607,33 @@ header.global{
 						text-transform: uppercase;
 						position: relative;
 						&:before {
-							content: '\e816';
-							font-family: "fontello";
+							border: solid black;
+							border-width: 0 1px 1px 0;
+							display: inline-block;
+							padding: 4px;	
+							transform: rotate(45deg);
+							-webkit-transform: rotate(45deg);						
+
+							content: '';
+							// font-family: "fontello";
 							font-style: normal;
 							font-weight: normal;
 							speak: none;
 							display: inline-block;
 							text-decoration: inherit;
-							width: 1em;
-							margin-right: 0;
-							text-align: right;
+							// width: 1em;
+							// margin-right: 0;
+							// text-align: right;
 							font-variant: normal;
 							text-transform: none;
-							line-height: 1;
-							margin-left: 0;
+							// line-height: 1;
+							// margin-left: 0;
 							-webkit-font-smoothing: antialiased;
 							-moz-osx-font-smoothing: grayscale;
 							position: absolute;
-							top:50%;
+							top:45%;
 							right:15px;
-							transform: translateY(-50%);
+							// transform: translateY(-50%);
 						}
 					}
 					> ul{

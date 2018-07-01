@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Salome-Psicolegs Infanto-juvenil Barcelona</title>
-    <link rel="stylesheet" href="Front-End/css/normalize.css"> 
+    <link rel="stylesheet" href="Front-End/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i" rel="stylesheet">   
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -32,7 +32,7 @@
                             <a href="Front-End/04_blog.html">BLOG</a> <!-- afegir article amb PHP/articles(imatge+foto+titol+text)amb m'agrada, comentaris, visualitzacions/article amb share+related posts i contacte-->
                         </li>                
                         <li>
-                            <a href="tel:123456789" class="telephone">
+                            <a href="tel:123456789">
                                 <i class="fas fa-phone"></i>
                                 <span class="number">12 345 67 89</span>
                             </a>
@@ -55,11 +55,67 @@
                             <a href="Front-End/07_account.php">ACCOUNT</a> <!-- cites(PHP)/missatges(PHP)/resultats(PHP) -->
                         </li>
                         <li>
-                            <a href="home.html">LLENGUA</a> <!-- catala/castella/frances -->
+                            <a href="#">LLENGUA</a> <!-- catala/castella/frances -->
                         </li>            
                     </ul>
+                    <div id="mobile-toggle" style="color: white">
+                        <i class="icon icon-menu fas fa-bars"></i>
+                        <i class="icon icon-cancel fas fa-times"></i>
+                    </div>
                 </nav>
+                <div id="mobile-menu" class="" data-scrollbar="" tabindex="1" style="overflow: hidden; outline: none;">
+                    <div class="scroll-content">
+                        <ul>
+                            <li class="parent shop-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-342">
+                                <a rel="shop" href="#">TRACTAMENTS</a>
+                                <ul id="cats" class="">
+                                    <li> <a href="Front-End/03_infantil.html">Psicòleg Infantil</a></li>
+                                    <li> <a href="Front-End/03_adolescents.html">Psicòleg Adolescents</a></li>
+                                    <li> <a href="Front-End/03_adults.html">Psicòleg Adults</a></li>
+                                    <li> <a href="Front-End/03_parelles.html">Psicòleg Parelles</a></li>                                    
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">
+                                <a href="Front-End/02_nosaltres.html">NOSALTRES</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185">
+                                <a href="Front-End/04_blog.html">BLOG</a>
+                            </li>
+                            <!-- <li class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-186">
+                                <a href="https://ceremonycoffee.com/locations/">Locations</a>
+                            </li> -->
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-344">
+                                <a href="Front-End/07_account.php">CONTACTE/ADREÇA</a>
+                            </li>
+                            <li class="last menu-item menu-item-type-custom menu-item-object-custom menu-item-188">
+                                    <a href="Front-End/05_FAQ.php">FAQ</a>
+                                </li>
+                            <li class="last menu-item menu-item-type-custom menu-item-object-custom menu-item-188">
+                                <a href="Front-End/07_account.php">ACCOUNT</a>
+                            </li>
+                            <li id="menu-item-459" class="parent menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-459"><a href="#">MES</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-460"><a href="Front-End/08_treball.php">TREBALL</a></li>
+                                    <li id="menu-item-456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456"><a href="Front-End/08_privacitat.html">PRIVACITAT</a></li>
+                                    <li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="#">LLENGUA<</a></li>
+                                </ul>
+                            </li>
+                        </ul>	
+                    </div>
+
+                    <!-- <div class="scrollbar-track scrollbar-track-x" style="display: none;">
+                        <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 1000px; transform: translate3d(0px, 0px, 0px);"></div>
+                    </div>
+                    <div class="scrollbar-track scrollbar-track-y" style="display: none;">
+                        <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 20px; transform: translate3d(0px, 0px, 0px);"></div>
+                    </div>                   
+                    <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas> -->
+                </div>
                 <div class="veil"></div>
+                <a href="tel:123456789" class="telephone">
+                    <i class="fas fa-phone"></i>
+                    <span class="number">12 345 67 89</span>
+                </a>
                 <nav class="drop" id="shop"> <!-- class="drop shown" -->
                     <div class="left container first white" style="padding-top: 120px;">
                         <ul id="cats" class="">
